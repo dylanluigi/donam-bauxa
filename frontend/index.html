@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dona'm Bauxa - Descobreix la musica i els esdeveniments en directe de Mallorca. Concerts, festivals i festes populars.">
+  <title>Dona'm Bauxa - Musica i Esdeveniments de Mallorca</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <style>
+    /* Map marker custom styles */
+    .custom-map-marker {
+      background: transparent !important;
+      border: none !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip to Content -->
+  <a href="#main-content" class="skip-link">Anar al contingut principal</a>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-bauxa sticky-top" aria-label="Navegacio principal">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        Dona'm <span>Bauxa</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Obrir menu de navegacio">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home"><i class="bi bi-house-door"></i> Inici</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#artists"><i class="bi bi-music-note-list"></i> Artistes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#events"><i class="bi bi-calendar-event"></i> Agenda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#map"><i class="bi bi-map"></i> Mapa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#favorits" aria-label="Favorits">
+              <i class="bi bi-heart"></i> Favorits
+              <span id="favBadge" class="badge rounded-pill bg-danger ms-1" style="display:none;">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ===================== HOME VIEW ===================== -->
+    <div data-view="home" style="display:none;">
+
+      <!-- Hero Section -->
+      <header class="hero">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-7">
+              <h1>Descobreix la <span>Bauxa</span> de Mallorca</h1>
+              <p class="mb-4">La teva guia per trobar concerts, festivals i festes populars a l'illa. Explora l'escena musical mallorquina i no et perdis cap nit de bauxa.</p>
+              <div class="d-flex flex-wrap gap-3">
+                <a href="#events" class="btn btn-bauxa btn-lg">
+                  <i class="bi bi-calendar-event"></i> Veure Agenda
+                </a>
+                <a href="#artists" class="btn btn-bauxa-outline btn-lg" style="border-color:rgba(255,255,255,0.5);color:#fff;">
+                  <i class="bi bi-music-note-list"></i> Explorar Artistes
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block text-center">
+              <svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;opacity:0.9;">
+                <circle cx="200" cy="175" r="140" fill="rgba(255,255,255,0.06)"/>
+                <circle cx="200" cy="175" r="100" fill="rgba(255,255,255,0.06)"/>
+                <text x="200" y="150" font-family="Georgia,serif" font-size="60" fill="rgba(255,255,255,0.8)" text-anchor="middle" font-weight="bold">DB</text>
+                <text x="200" y="195" font-family="sans-serif" font-size="14" fill="rgba(255,255,255,0.5)" text-anchor="middle" letter-spacing="4">MUSICA EN DIRECTE</text>
+                <text x="200" y="220" font-family="sans-serif" font-size="12" fill="rgba(255,255,255,0.4)" text-anchor="middle">MALLORCA</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Featured Events Section -->
+      <section class="section-padding" aria-label="Esdeveniments destacats">
+        <div class="container">
+          <h2 class="section-title">Esdeveniments Destacats</h2>
+          <p class="section-subtitle">Els concerts i festivals que no et pots perdre</p>
+          <div class="row" id="featuredEvents">
+            <!-- Dynamically loaded -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Upcoming Events Section -->
+      <section class="section-padding bg-alt" aria-label="Propers esdeveniments">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+            <div>
+              <h2 class="section-title">Propers Esdeveniments</h2>
+              <p class="section-subtitle mb-0">Agenda actualitzada de concerts i festes</p>
+            </div>
+            <a href="#events" class="btn btn-bauxa-outline">
+              Veure tots <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+          <div class="row" id="upcomingEvents">
+            <!-- Dynamically loaded -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Artists Section -->
+      <section class="section-padding" aria-label="Artistes destacats">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+            <div>
+              <h2 class="section-title">Artistes Destacats</h2>
+              <p class="section-subtitle mb-0">El talent musical de l'illa</p>
+            </div>
+            <a href="#artists" class="btn btn-bauxa-outline">
+              Tots els artistes <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+          <div class="row" id="featuredArtists">
+            <!-- Dynamically loaded -->
+          </div>
+        </div>
+      </section>
+
+      <!-- News Section -->
+      <section class="section-padding bg-alt" aria-label="Noticies">
+        <div class="container">
+          <h2 class="section-title">Noticies de l'Escena</h2>
+          <p class="section-subtitle">Actualitat musical de les Illes Balears</p>
+          <div class="row" id="newsGrid">
+            <!-- Dynamically loaded -->
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="section-padding text-center" style="background:linear-gradient(135deg, var(--color-secondary-dark), var(--color-primary-dark)); color:#fff;">
+        <div class="container">
+          <h2 style="color:#fff;" class="mb-3">No et perdis cap bauxa!</h2>
+          <p class="mb-4" style="opacity:0.9;max-width:500px;margin:0 auto;">Explora el mapa de Mallorca per trobar els concerts mes propers a tu.</p>
+          <a href="#map" class="btn btn-bauxa btn-lg">
+            <i class="bi bi-map"></i> Obrir Mapa
+          </a>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ===================== ARTISTS VIEW ===================== -->
+    <div data-view="artists" style="display:none;">
+
+      <!-- Page Header -->
+      <header class="hero" style="padding:3rem 0 2.5rem;">
+        <div class="container">
+          <h1><i class="bi bi-music-note-list"></i> Artistes de <span>Mallorca</span></h1>
+          <p>Explora el directori complet de grups i musics de l'escena mallorquina</p>
+        </div>
+      </header>
+
+      <div class="section-padding">
+        <div class="container">
+
+          <!-- Filter Bar -->
+          <div class="filter-bar" role="search" aria-label="Filtres d'artistes">
+            <div class="row g-3 align-items-end">
+              <div class="col-md-4">
+                <label for="searchArtists" class="form-label small fw-semibold">Cerca</label>
+                <input type="search" class="form-control form-control-bauxa" id="searchArtists"
+                       placeholder="Nom d'artista, genere..." aria-label="Cercar artistes">
+              </div>
+              <div class="col-md-3">
+                <label for="artistsFilterGenre" class="form-label small fw-semibold">Genere</label>
+                <select class="form-select form-select-bauxa" id="artistsFilterGenre" aria-label="Filtrar per genere">
+                  <option value="">Tots els generes</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <label for="artistsFilterZone" class="form-label small fw-semibold">Zona</label>
+                <select class="form-select form-select-bauxa" id="artistsFilterZone" aria-label="Filtrar per zona">
+                  <option value="">Totes les zones</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-bauxa-outline w-100" id="artistsClearFilters" aria-label="Netejar filtres">
+                  <i class="bi bi-x-circle"></i> Netejar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results Count -->
+          <p class="text-muted-custom small mb-3" id="artistsResultsCount"></p>
+
+          <!-- Artists Grid -->
+          <div class="row" id="artistsGrid">
+            <!-- Dynamically loaded -->
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===================== EVENTS VIEW ===================== -->
+    <div data-view="events" style="display:none;">
+
+      <!-- Page Header -->
+      <header class="hero" style="padding:3rem 0 2.5rem;">
+        <div class="container">
+          <h1><i class="bi bi-calendar-event"></i> Agenda <span>Musical</span></h1>
+          <p>Tots els concerts, festivals i festes populars de Mallorca</p>
+        </div>
+      </header>
+
+      <div class="section-padding">
+        <div class="container">
+
+          <!-- Filter Bar -->
+          <div class="filter-bar" role="search" aria-label="Filtres d'esdeveniments">
+            <div class="row g-3 align-items-end">
+              <div class="col-md-3">
+                <label for="searchEvents" class="form-label small fw-semibold">Cerca</label>
+                <input type="search" class="form-control form-control-bauxa" id="searchEvents"
+                       placeholder="Nom, artista, lloc..." aria-label="Cercar esdeveniments">
+              </div>
+              <div class="col-md-2">
+                <label for="eventsFilterGenre" class="form-label small fw-semibold">Genere</label>
+                <select class="form-select form-select-bauxa" id="eventsFilterGenre" aria-label="Filtrar per genere">
+                  <option value="">Tots</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <label for="eventsFilterZone" class="form-label small fw-semibold">Zona</label>
+                <select class="form-select form-select-bauxa" id="eventsFilterZone" aria-label="Filtrar per zona">
+                  <option value="">Totes</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <label for="eventsFilterCategory" class="form-label small fw-semibold">Categoria</label>
+                <select class="form-select form-select-bauxa" id="eventsFilterCategory" aria-label="Filtrar per categoria">
+                  <option value="">Totes</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <label for="eventsFilterDateFrom" class="form-label small fw-semibold">Des de</label>
+                <input type="date" class="form-control form-control-bauxa" id="eventsFilterDateFrom" aria-label="Data des de">
+              </div>
+            </div>
+            <div class="row g-3 mt-1 align-items-end">
+              <div class="col-md-3">
+                <label for="eventsFilterDateTo" class="form-label small fw-semibold">Fins a</label>
+                <input type="date" class="form-control form-control-bauxa" id="eventsFilterDateTo" aria-label="Data fins a">
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-bauxa-outline w-100" id="eventsClearFilters" aria-label="Netejar filtres">
+                  <i class="bi bi-x-circle"></i> Netejar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results Count -->
+          <p class="text-muted-custom small mb-3" id="eventsResultsCount"></p>
+
+          <!-- Events List -->
+          <div class="row" id="eventsGrid">
+            <!-- Dynamically loaded -->
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===================== MAP VIEW ===================== -->
+    <div data-view="map" style="display:none;">
+
+      <!-- Page Header -->
+      <header class="hero" style="padding:2.5rem 0 2rem;">
+        <div class="container">
+          <h1><i class="bi bi-map"></i> Mapa de <span>Bauxa</span></h1>
+          <p>Troba els concerts i festes mes propers a tu a l'illa de Mallorca</p>
+        </div>
+      </header>
+
+      <section class="section-padding">
+        <div class="container">
+          <div class="row">
+
+            <!-- Map Column -->
+            <div class="col-lg-8 mb-4">
+              <!-- Map Filters -->
+              <div class="filter-bar mb-3" role="search" aria-label="Filtres del mapa">
+                <div class="row g-3 align-items-end">
+                  <div class="col-sm-4">
+                    <label for="mapFilterZone" class="form-label small fw-semibold">Zona</label>
+                    <select class="form-select form-select-bauxa" id="mapFilterZone" aria-label="Filtrar per zona">
+                      <option value="">Totes les zones</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="mapFilterCategory" class="form-label small fw-semibold">Categoria</label>
+                    <select class="form-select form-select-bauxa" id="mapFilterCategory" aria-label="Filtrar per categoria">
+                      <option value="">Totes</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-4">
+                    <button class="btn btn-bauxa-outline w-100" id="mapClearFilters" aria-label="Netejar filtres">
+                      <i class="bi bi-x-circle"></i> Netejar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Map Container -->
+              <div id="map" role="application" aria-label="Mapa d'esdeveniments de Mallorca"></div>
+
+              <!-- Legend -->
+              <div class="map-legend mt-3">
+                <strong class="small">Llegenda:</strong>
+                <div class="d-flex flex-wrap gap-3 mt-2">
+                  <div class="map-legend__item">
+                    <span class="map-legend__dot" style="background:#C45A3C;"></span>
+                    Concert
+                  </div>
+                  <div class="map-legend__item">
+                    <span class="map-legend__dot" style="background:#D4A843;"></span>
+                    Festival
+                  </div>
+                  <div class="map-legend__item">
+                    <span class="map-legend__dot" style="background:#6B8E4E;"></span>
+                    Festa Popular
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar: Event List -->
+            <div class="col-lg-4">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="h5 mb-0" style="font-family:var(--font-heading);">Esdeveniments</h2>
+                <span class="text-muted-custom small" id="mapEventsCount"></span>
+              </div>
+              <div id="mapEventsList" style="max-height:600px;overflow-y:auto;">
+                <!-- Dynamically loaded -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ===================== FAVORITS VIEW ===================== -->
+    <div data-view="favorits" style="display:none;">
+
+      <!-- Page Header -->
+      <header class="hero" style="padding:3rem 0 2.5rem;">
+        <div class="container">
+          <h1><i class="bi bi-heart"></i> Els Meus <span>Favorits</span></h1>
+          <p>Els teus artistes i esdeveniments guardats</p>
+        </div>
+      </header>
+
+      <div class="section-padding">
+        <div class="container">
+          <div id="favoritsContent">
+            <!-- Dynamically loaded -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-bauxa">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="footer-brand mb-2">Dona'm Bauxa</div>
+          <p class="small">La plataforma de musica i esdeveniments en directe de Mallorca. Descobreix el talent de l'illa.</p>
+        </div>
+        <div class="col-md-2 mb-4">
+          <h2>Seccions</h2>
+          <ul class="list-unstyled">
+            <li class="mb-1"><a href="#home">Inici</a></li>
+            <li class="mb-1"><a href="#artists">Artistes</a></li>
+            <li class="mb-1"><a href="#events">Agenda</a></li>
+            <li class="mb-1"><a href="#map">Mapa</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h2>Zones de Mallorca</h2>
+          <ul class="list-unstyled">
+            <li class="mb-1">Palma</li>
+            <li class="mb-1">Serra de Tramuntana</li>
+            <li class="mb-1">Raiguer</li>
+            <li class="mb-1">Pla de Mallorca</li>
+            <li class="mb-1">Llevant</li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h2>Contacte</h2>
+          <ul class="list-unstyled">
+            <li class="mb-1"><i class="bi bi-envelope"></i> info@donambauxa.cat</li>
+            <li class="mb-1"><i class="bi bi-instagram"></i> @donambauxa</li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <p class="small mb-0">2026 Dona'm Bauxa. Projecte academic UIB - Tecnologia Multimedia.</p>
+        <p class="small mb-0">Fet amb <i class="bi bi-heart-fill" style="color:var(--color-primary-light);"></i> a Mallorca</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Artist Detail Modal -->
+  <div class="modal fade modal-bauxa" id="artistModal" role="dialog" tabindex="-1" aria-labelledby="artistModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="artistModalLabel">Artista</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tancar"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Dynamically loaded -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event Detail Modal -->
+  <div class="modal fade modal-bauxa" id="eventModal" role="dialog" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="eventModalLabel">Esdeveniment</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tancar"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Dynamically loaded -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Tornar a dalt">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- App JS -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

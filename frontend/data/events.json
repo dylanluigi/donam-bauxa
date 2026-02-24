@@ -1,0 +1,714 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Esdeveniments Musicals de Mallorca",
+  "description": "Agenda de concerts, festivals i festes populars a Mallorca",
+  "numberOfItems": 15,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "MusicEvent",
+        "@id": "event-1",
+        "name": "Antonia Font - Concert de Reunio",
+        "description": "El gran retorn d'Antonia Font als escenaris de Palma. Una nit magica amb els temes que han marcat una generacio sencera de mallorquins.",
+        "startDate": "2026-03-07T21:00:00+01:00",
+        "endDate": "2026-03-07T23:30:00+01:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Trui Teatre",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Cami de Son Rapinya, 29",
+            "addressLocality": "Palma",
+            "addressRegion": "Mallorca",
+            "postalCode": "07013"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.5756,
+            "longitude": 2.6099
+          }
+        },
+        "performer": {
+          "@type": "MusicGroup",
+          "@id": "artist-1",
+          "name": "Antonia Font"
+        },
+        "image": "assets/images/events/antonia-font-concert.svg",
+        "offers": {
+          "@type": "Offer",
+          "price": "35.00",
+          "priceCurrency": "EUR",
+          "url": "https://www.truiteatre.es",
+          "availability": "https://schema.org/InStock"
+        },
+        "genre": ["Pop", "Rock", "Indie"],
+        "zone": "Palma",
+        "featured": true,
+        "category": "concert"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "MusicEvent",
+        "@id": "event-2",
+        "name": "Festival Fora Vila Sounds",
+        "description": "Festival de musica i cultura al cor del Pla de Mallorca. Dos dies de musica en directe, gastronomia local i activitats per a tota la familia.",
+        "startDate": "2026-03-14T17:00:00+01:00",
+        "endDate": "2026-03-15T02:00:00+01:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Finca Son Alegre",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Cami de Son Alegre",
+            "addressLocality": "Sineu",
+            "addressRegion": "Mallorca",
+            "postalCode": "07510"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.6442,
+            "longitude": 3.0014
+          }
+        },
+        "performer": [
+          { "@type": "MusicGroup", "@id": "artist-4", "name": "Donallop" },
+          { "@type": "MusicGroup", "@id": "artist-5", "name": "Mans de Brec" },
+          { "@type": "MusicGroup", "@id": "artist-3", "name": "Anegats" }
+        ],
+        "image": "assets/images/events/fora-vila-sounds.svg",
+        "offers": {
+          "@type": "Offer",
+          "price": "25.00",
+          "priceCurrency": "EUR",
+          "url": "https://www.foravilasounds.com",
+          "availability": "https://schema.org/InStock"
+        },
+        "genre": ["Folk", "Rock", "Pop"],
+        "zone": "Pla de Mallorca",
+        "featured": true,
+        "category": "festival"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "MusicEvent",
+        "@id": "event-3",
+        "name": "Jazz a la Serra - Brams de Tramuntana",
+        "description": "Concert intim de jazz al cor de la Serra de Tramuntana. Brams de Tramuntana presenta el seu nou disc 'Nit Serena' en un entorn magic.",
+        "startDate": "2026-03-08T20:30:00+01:00",
+        "endDate": "2026-03-08T22:30:00+01:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Son Marroig",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Carretera Ma-10",
+            "addressLocality": "Deia",
+            "addressRegion": "Mallorca",
+            "postalCode": "07179"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.7481,
+            "longitude": 2.6234
+          }
+        },
+        "performer": {
+          "@type": "MusicGroup",
+          "@id": "artist-12",
+          "name": "Brams de Tramuntana"
+        },
+        "image": "assets/images/events/jazz-serra.svg",
+        "offers": {
+          "@type": "Offer",
+          "price": "20.00",
+          "priceCurrency": "EUR",
+          "url": "#",
+          "availability": "https://schema.org/InStock"
+        },
+        "genre": ["Jazz", "Fusio"],
+        "zone": "Serra de Tramuntana",
+        "featured": true,
+        "category": "concert"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "MusicEvent",
+        "@id": "event-4",
+        "name": "Festes de Sant Sebastia - Revetla",
+        "description": "La gran revetla de Sant Sebastia, la festa mes gran de Palma. Concerts gratuits a diverses places del centre amb artistes locals i nacionals.",
+        "startDate": "2026-03-20T19:00:00+01:00",
+        "endDate": "2026-03-21T04:00:00+01:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Placa Major",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Placa Major",
+            "addressLocality": "Palma",
+            "addressRegion": "Mallorca",
+            "postalCode": "07002"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.5714,
+            "longitude": 2.6467
+          }
+        },
+        "performer": [
+          { "@type": "MusicGroup", "@id": "artist-3", "name": "Anegats" },
+          { "@type": "MusicGroup", "@id": "artist-7", "name": "Zulu Zulu" },
+          { "@type": "MusicGroup", "@id": "artist-4", "name": "Donallop" }
+        ],
+        "image": "assets/images/events/sant-sebastia.svg",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "url": "https://www.palma.cat",
+          "availability": "https://schema.org/InStock"
+        },
+        "genre": ["Rock", "Folk", "Rumba"],
+        "zone": "Palma",
+        "featured": true,
+        "category": "festa popular"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "MusicEvent",
+        "@id": "event-5",
+        "name": "Joan Miquel Oliver - Gira Electric",
+        "description": "Joan Miquel Oliver presenta els temes del seu ultim disc en format electric amb banda completa. Una nit de pop experimental en catala.",
+        "startDate": "2026-03-21T21:30:00+01:00",
+        "endDate": "2026-03-21T23:30:00+01:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Sala Factoria de Sons",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Carrer de Sant Magi, 54",
+            "addressLocality": "Palma",
+            "addressRegion": "Mallorca",
+            "postalCode": "07013"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.5699,
+            "longitude": 2.6346
+          }
+        },
+        "performer": {
+          "@type": "MusicGroup",
+          "@id": "artist-9",
+          "name": "Joan Miquel Oliver"
+        },
+        "image": "assets/images/events/jmo-gira.svg",
+        "offers": {
+          "@type": "Offer",
+          "price": "18.00",
+          "priceCurrency": "EUR",
+          "url": "https://www.factoriadessons.com",
+          "availability": "https://schema.org/InStock"
+        },
+        "genre": ["Indie", "Electronica", "Pop Experimental"],
+        "zone": "Palma",
+        "featured": false,
+        "category": "concert"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "MusicEvent",
+        "@id": "event-6",
+        "name": "Nit de Xeremies a Valldemossa",
+        "description": "Trobada de xeremiers de tot Mallorca al poble de Valldemossa. Una nit per gaudir de la musica mes ancestral de l'illa.",
+        "startDate": "2026-03-28T20:00:00+01:00",
+        "endDate": "2026-03-28T23:00:00+01:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Placa de la Cartoixa",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Placa de la Cartoixa",
+            "addressLocality": "Valldemossa",
+            "addressRegion": "Mallorca",
+            "postalCode": "07170"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.7105,
+            "longitude": 2.6224
+          }
+        },
+        "performer": {
+          "@type": "MusicGroup",
+          "@id": "artist-10",
+          "name": "Xeremiers de Sa Calatrava"
+        },
+        "image": "assets/images/events/nit-xeremies.svg",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "url": "#",
+          "availability": "https://schema.org/InStock"
+        },
+        "genre": ["Tradicional", "Folk"],
+        "zone": "Serra de Tramuntana",
+        "featured": false,
+        "category": "festa popular"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "MusicEvent",
+        "@id": "event-7",
+        "name": "Mallorca Live Festival 2026",
+        "description": "El festival mes gran de Mallorca torna amb tres dies de musica nacional i internacional. L'escenari balear acull artistes locals destacats.",
+        "startDate": "2026-05-15T16:00:00+02:00",
+        "endDate": "2026-05-17T04:00:00+02:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Antiguo Aquapark",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Avenida del Parc",
+            "addressLocality": "Calvia",
+            "addressRegion": "Mallorca",
+            "postalCode": "07181"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.5234,
+            "longitude": 2.5145
+          }
+        },
+        "performer": [
+          { "@type": "MusicGroup", "@id": "artist-1", "name": "Antonia Font" },
+          { "@type": "MusicGroup", "@id": "artist-9", "name": "Joan Miquel Oliver" },
+          { "@type": "MusicGroup", "@id": "artist-11", "name": "La Femme Contradiction" }
+        ],
+        "image": "assets/images/events/mallorca-live.svg",
+        "offers": {
+          "@type": "Offer",
+          "price": "65.00",
+          "priceCurrency": "EUR",
+          "url": "https://www.mallorcalivefestival.com",
+          "availability": "https://schema.org/LimitedAvailability"
+        },
+        "genre": ["Pop", "Rock", "Indie", "Electronica"],
+        "zone": "Ponent",
+        "featured": true,
+        "category": "festival"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "MusicEvent",
+        "@id": "event-8",
+        "name": "Maria del Mar Bonet - Recital Mediterrani",
+        "description": "La gran dama de la canco mallorquina ofereix un recital intim amb temes del seu repertori classic i noves composicions inspirades en la Mediterrania.",
+        "startDate": "2026-04-05T20:00:00+02:00",
+        "endDate": "2026-04-05T22:00:00+02:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Teatre Principal",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Carrer de la Riera, 2",
+            "addressLocality": "Palma",
+            "addressRegion": "Mallorca",
+            "postalCode": "07003"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.5712,
+            "longitude": 2.6479
+          }
+        },
+        "performer": {
+          "@type": "MusicGroup",
+          "@id": "artist-2",
+          "name": "Maria del Mar Bonet"
+        },
+        "image": "assets/images/events/bonet-recital.svg",
+        "offers": {
+          "@type": "Offer",
+          "price": "30.00",
+          "priceCurrency": "EUR",
+          "url": "https://www.teatreprincipal.com",
+          "availability": "https://schema.org/InStock"
+        },
+        "genre": ["Folk", "Canco d'Autor"],
+        "zone": "Palma",
+        "featured": false,
+        "category": "concert"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "MusicEvent",
+        "@id": "event-9",
+        "name": "Fira de Manacor - Nit de Rumba",
+        "description": "La nit de musica de la Fira de Manacor amb Zulu Zulu com a cap de cartell. Rumba, fusio i molta energia a la capital del Llevant.",
+        "startDate": "2026-04-12T22:00:00+02:00",
+        "endDate": "2026-04-13T02:00:00+02:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Placa del Mercat",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Placa del Mercat",
+            "addressLocality": "Manacor",
+            "addressRegion": "Mallorca",
+            "postalCode": "07500"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.5697,
+            "longitude": 3.2094
+          }
+        },
+        "performer": {
+          "@type": "MusicGroup",
+          "@id": "artist-7",
+          "name": "Zulu Zulu"
+        },
+        "image": "assets/images/events/fira-manacor.svg",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "url": "#",
+          "availability": "https://schema.org/InStock"
+        },
+        "genre": ["Rumba", "Fusio"],
+        "zone": "Llevant",
+        "featured": false,
+        "category": "festa popular"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "item": {
+        "@type": "MusicEvent",
+        "@id": "event-10",
+        "name": "Cap pela a Cappella Night",
+        "description": "Concert especial de Cap pela al Teatre de Soller. Una experiencia musical unica nomes amb veus humanes en un espai amb una acustica extraordinaria.",
+        "startDate": "2026-03-29T20:00:00+01:00",
+        "endDate": "2026-03-29T21:30:00+01:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Teatre Defensora Sollerense",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Carrer de la Rectoria",
+            "addressLocality": "Soller",
+            "addressRegion": "Mallorca",
+            "postalCode": "07100"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.7659,
+            "longitude": 2.7146
+          }
+        },
+        "performer": {
+          "@type": "MusicGroup",
+          "@id": "artist-8",
+          "name": "Cap pela"
+        },
+        "image": "assets/images/events/cap-pela-night.svg",
+        "offers": {
+          "@type": "Offer",
+          "price": "15.00",
+          "priceCurrency": "EUR",
+          "url": "#",
+          "availability": "https://schema.org/InStock"
+        },
+        "genre": ["A Cappella", "Pop"],
+        "zone": "Serra de Tramuntana",
+        "featured": false,
+        "category": "concert"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "item": {
+        "@type": "MusicEvent",
+        "@id": "event-11",
+        "name": "Donallop - Festa Major d'Inca",
+        "description": "Donallop tanca la Festa Major d'Inca amb un concert ple d'humor, folk i bona energia. Un imprescindible per als fans de la musica festiva mallorquina.",
+        "startDate": "2026-04-19T22:30:00+02:00",
+        "endDate": "2026-04-20T00:30:00+02:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Placa d'Espanya",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Placa d'Espanya",
+            "addressLocality": "Inca",
+            "addressRegion": "Mallorca",
+            "postalCode": "07300"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.7216,
+            "longitude": 2.9110
+          }
+        },
+        "performer": {
+          "@type": "MusicGroup",
+          "@id": "artist-4",
+          "name": "Donallop"
+        },
+        "image": "assets/images/events/donallop-inca.svg",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "url": "#",
+          "availability": "https://schema.org/InStock"
+        },
+        "genre": ["Folk", "Pop", "Humor"],
+        "zone": "Raiguer",
+        "featured": false,
+        "category": "festa popular"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "item": {
+        "@type": "MusicEvent",
+        "@id": "event-12",
+        "name": "Electro Balear Night",
+        "description": "La Femme Contradiction encapcala una nit de musica electronica i synth-pop a la terrassa del MACA. Visualitzacions en directe i sons futuristes amb vistes al mar.",
+        "startDate": "2026-04-26T23:00:00+02:00",
+        "endDate": "2026-04-27T03:00:00+02:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Es Baluard Museu",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Placa Porta de Santa Catalina, 10",
+            "addressLocality": "Palma",
+            "addressRegion": "Mallorca",
+            "postalCode": "07012"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.5688,
+            "longitude": 2.6373
+          }
+        },
+        "performer": {
+          "@type": "MusicGroup",
+          "@id": "artist-11",
+          "name": "La Femme Contradiction"
+        },
+        "image": "assets/images/events/electro-balear.svg",
+        "offers": {
+          "@type": "Offer",
+          "price": "12.00",
+          "priceCurrency": "EUR",
+          "url": "#",
+          "availability": "https://schema.org/InStock"
+        },
+        "genre": ["Electronica", "Synth-Pop"],
+        "zone": "Palma",
+        "featured": false,
+        "category": "concert"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "item": {
+        "@type": "MusicEvent",
+        "@id": "event-13",
+        "name": "Al-Mayurqa - 45 Anys de Musica",
+        "description": "Concert homenatge als 45 anys d'Al-Mayurqa, amb col-laboracions especials d'artistes que han estat influenciats per la seva musica.",
+        "startDate": "2026-05-02T20:00:00+02:00",
+        "endDate": "2026-05-02T22:30:00+02:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Auditorium de Palma",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Passeig Maritim, 18",
+            "addressLocality": "Palma",
+            "addressRegion": "Mallorca",
+            "postalCode": "07014"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.5634,
+            "longitude": 2.6250
+          }
+        },
+        "performer": {
+          "@type": "MusicGroup",
+          "@id": "artist-6",
+          "name": "Al-Mayurqa"
+        },
+        "image": "assets/images/events/al-mayurqa-45.svg",
+        "offers": {
+          "@type": "Offer",
+          "price": "22.00",
+          "priceCurrency": "EUR",
+          "url": "https://www.auditoriumpalma.com",
+          "availability": "https://schema.org/InStock"
+        },
+        "genre": ["Folk", "Tradicional"],
+        "zone": "Palma",
+        "featured": false,
+        "category": "concert"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "item": {
+        "@type": "MusicEvent",
+        "@id": "event-14",
+        "name": "Anegats - Rock a Pollenca",
+        "description": "Anegats porta el seu rock contundent en catala al Claustre de Sant Domingo de Pollenca. Una de les cites imprescindibles del rock mallorqui.",
+        "startDate": "2026-03-15T21:00:00+01:00",
+        "endDate": "2026-03-15T23:00:00+01:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Claustre de Sant Domingo",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Carrer de Guillem Cifre de Colonya",
+            "addressLocality": "Pollenca",
+            "addressRegion": "Mallorca",
+            "postalCode": "07460"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.8775,
+            "longitude": 3.0161
+          }
+        },
+        "performer": {
+          "@type": "MusicGroup",
+          "@id": "artist-3",
+          "name": "Anegats"
+        },
+        "image": "assets/images/events/anegats-pollenca.svg",
+        "offers": {
+          "@type": "Offer",
+          "price": "15.00",
+          "priceCurrency": "EUR",
+          "url": "#",
+          "availability": "https://schema.org/InStock"
+        },
+        "genre": ["Rock", "Rock en Catala"],
+        "zone": "Nord",
+        "featured": false,
+        "category": "concert"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 15,
+      "item": {
+        "@type": "MusicEvent",
+        "@id": "event-15",
+        "name": "Mans de Brec - Nit de Ball Folk",
+        "description": "Mans de Brec convida a una nit de ball folk a la placa de Sineu. Jotes, boleros i mateixes amb instruments tradicionals. Tothom hi es convidat a ballar!",
+        "startDate": "2026-04-04T21:00:00+02:00",
+        "endDate": "2026-04-04T23:30:00+02:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Placa des Fossar",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Placa des Fossar",
+            "addressLocality": "Sineu",
+            "addressRegion": "Mallorca",
+            "postalCode": "07510"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.6468,
+            "longitude": 2.9996
+          }
+        },
+        "performer": {
+          "@type": "MusicGroup",
+          "@id": "artist-5",
+          "name": "Mans de Brec"
+        },
+        "image": "assets/images/events/ball-folk-sineu.svg",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "url": "#",
+          "availability": "https://schema.org/InStock"
+        },
+        "genre": ["Folk", "Tradicional"],
+        "zone": "Pla de Mallorca",
+        "featured": false,
+        "category": "festa popular"
+      }
+    }
+  ]
+}

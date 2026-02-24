@@ -1,0 +1,93 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Noticies de l'Escena Musical Balear",
+  "description": "Actualitat sobre musica i cultura a les Illes Balears",
+  "numberOfItems": 6,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "NewsArticle",
+        "@id": "news-1",
+        "headline": "Antonia Font confirma el seu retorn als escenaris per a 2026",
+        "description": "El grup palmesa ha anunciat una serie de concerts que marcaran el seu retorn despres de mes de cinc anys d'absencia. Les entrades es posaran a la venda la propera setmana.",
+        "datePublished": "2026-02-15",
+        "image": "assets/images/events/antonia-font-concert.svg",
+        "author": { "@type": "Person", "name": "Redaccio Dona'm Bauxa" },
+        "category": "Noticies"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "NewsArticle",
+        "@id": "news-2",
+        "headline": "Mallorca Live Festival 2026 esgota els primers abonaments en 48 hores",
+        "description": "El festival mes gran de l'illa ha batut records de venda anticipada. S'ha obert una segona tanda d'entrades amb preus especials per a residents balears.",
+        "datePublished": "2026-02-10",
+        "image": "assets/images/events/mallorca-live.svg",
+        "author": { "@type": "Person", "name": "Redaccio Dona'm Bauxa" },
+        "category": "Festivals"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "NewsArticle",
+        "@id": "news-3",
+        "headline": "Donallop publica nou single i anuncia gira per pobles de Mallorca",
+        "description": "El duo mallorqui presenta 'Bona Nit, Mallorca', el primer avancament del seu tercer disc. La gira recorrera mes de 15 pobles de l'illa durant la primavera.",
+        "datePublished": "2026-02-05",
+        "image": "assets/images/artists/donallop.svg",
+        "author": { "@type": "Person", "name": "Redaccio Dona'm Bauxa" },
+        "category": "Noticies"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "NewsArticle",
+        "@id": "news-4",
+        "headline": "L'Ajuntament de Palma amplia el pressupost per a festes populars amb musica en directe",
+        "description": "El consistori destinara un 20% mes de pressupost a contractar artistes locals per a les festes de barri. Una bona noticia per a l'escena musical mallorquina.",
+        "datePublished": "2026-01-28",
+        "image": "assets/images/events/sant-sebastia.svg",
+        "author": { "@type": "Person", "name": "Redaccio Dona'm Bauxa" },
+        "category": "Cultura"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "NewsArticle",
+        "@id": "news-5",
+        "headline": "Joan Miquel Oliver compon la banda sonora d'un documental sobre la Serra",
+        "description": "El cantautor de Sa Pobla ha creat la musica original per al documental 'Tramuntana Viva', que es presentara al Festival de Cinema de Palma.",
+        "datePublished": "2026-01-20",
+        "image": "assets/images/artists/joan-miquel-oliver.svg",
+        "author": { "@type": "Person", "name": "Redaccio Dona'm Bauxa" },
+        "category": "Noticies"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "NewsArticle",
+        "@id": "news-6",
+        "headline": "Nova sala de concerts a Manacor: 'Es Cocle' obrira portes a l'abril",
+        "description": "Manacor tindra una nova sala amb capacitat per a 300 persones. L'espai vol ser un referent de la musica en directe al Llevant de Mallorca.",
+        "datePublished": "2026-01-15",
+        "image": "assets/images/events/fira-manacor.svg",
+        "author": { "@type": "Person", "name": "Redaccio Dona'm Bauxa" },
+        "category": "Cultura"
+      }
+    }
+  ]
+}
