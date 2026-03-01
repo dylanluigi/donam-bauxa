@@ -1,4 +1,51 @@
-\chapter{Introduction}
+\chapter{Introducció}
 \label{chapter:introduction}
 
-\emph{An introduction... \cite{example-article}}
+\section{Context i Motivació}
+
+L'illa de Mallorca alberga una escena musical i cultural d'una riquesa extraordinària. Des de les festes de la Part Forana fins als festivals de música moderna als pobles de l'interior, passant pels concerts de grups emergents als locals de Palma, l'oferta d'esdeveniments en directe és abundant, variada i profundament arrelada a la identitat de l'illa. Grups de rock, folk, jazz, música tradicional mallorquina, electrònica i molts altres gèneres conviuen en un ecosistema creatiu que, malgrat la seva vitalitat, pateix una visibilitat digital notablement insuficient.
+
+En l'actualitat, la informació sobre concerts, actuacions i festivals mallorquins es troba fragmentada entre nombroses fonts: pàgines web de locals i sales de concert, perfils a xarxes socials com Instagram o Facebook, aplicacions de ticketing genèriques de cobertura estatal i, en molts casos, grups de missatgeria instantània d'abast local. Aquesta dispersió genera ineficiències tant per al públic consumidor de cultura, que ha de consultar múltiples plataformes per tenir una visió completa de l'oferta, com per als artistes i grups, que han de gestionar la seva presència digital en diversos canals de manera simultània i sense garanties de retre a l'audiència potencial de l'illa.
+
+Davant aquesta situació, sorgeix la necessitat d'una plataforma digital centralitzada, específicament dissenyada per a l'ecosistema cultural mallorquí, que actui com a punt de trobada entre el talent local i el seu públic. \textit{Dona'm Bauxa} neix precisament amb aquesta vocació: ser el referent digital de la música en directe i la cultura popular de Mallorca.
+
+\section{Objectius del Projecte}
+
+El projecte \textit{Dona'm Bauxa} persegueix els objectius generals següents:
+
+\begin{itemize}
+    \item \textbf{Centralitzar} la informació sobre concerts, festivals i actes culturals mallorquins en una única plataforma web d'accés lliure.
+    \item \textbf{Visibilitzar} el talent artístic local, oferint fitxes detallades dels grups i intèrprets de l'illa amb informació biogràfica, discogràfica i de contacte.
+    \item \textbf{Facilitar} la descoberta de nous artistes i esdeveniments mitjançant un sistema de cerca avançada i filtres per gènere musical, zona geogràfica i franja horària.
+    \item \textbf{Integrar} tecnologies de geolocalització per representar visualment en un mapa interactiu els espais, sales i places on es produeixen els esdeveniments.
+    \item \textbf{Oferir} una experiència d'usuari òptima en dispositius mòbils, atès el perfil d'ús predominantment itinerant del públic objectiu.
+    \item \textbf{Garantir} l'accessibilitat universal de la plataforma, assegurant que qualsevol persona, independentment de les seves capacitats, pugui gaudir del contingut sense barreres.
+\end{itemize}
+
+Des d'un punt de vista tècnic, el projecte té com a objectiu específic demostrar la viabilitat d'una aplicació web modern basada en dades estructurades en format JSON, integrada amb serveis externs de tercers (API de Spotify, Leaflet per a mapes interactius i API de calendaris), i concebuda seguint les millors pràctiques de disseny responsiu, accessibilitat i experiència d'usuari.
+
+\section{Abast i Limitacions}
+
+El present document se centra en la fase de proposta i anàlisi de requisits. No constitueix, per tant, una especificació tècnica de baix nivell ni inclou el codi font de la implementació. L'abast del projecte comprèn:
+
+\begin{itemize}
+    \item La identificació i descripció del grup de treball.
+    \item La justificació i contextualització de la temàtica escollida.
+    \item L'anàlisi funcional completa del sistema: funcionalitats, interaccions, fluxos d'ús i tipus de contingut.
+    \item L'anàlisi no funcional del sistema: requisits de rendiment, accessibilitat, seguretat, escalabilitat i experiència d'usuari.
+\end{itemize}
+
+La implementació efectiva de la plataforma constituirà una fase posterior del projecte, fora de l'abast del present document. Tanmateix, les decisions de disseny adoptades en aquesta fase de proposta estan orientades a facilitar una implementació realista i eficient amb les tecnologies web actuals.
+
+Geogràficament, la proposta se centra en l'àmbit de l'illa de Mallorca, tot i que l'arquitectura preveu una possible extensió futura als territoris de les Illes Balears (Menorca, Eivissa i Formentera) sense necessitat de redissenyar l'estructura fonamental del sistema.
+
+\section{Estructura del Document}
+
+El present informe s'organitza en les seccions següents:
+
+\begin{itemize}
+    \item El \textbf{Capítol~\ref{chapter:identificacio}} presenta la identificació del grup de treball, la temàtica escollida i la seva justificació, el públic objectiu i el valor diferencial de la proposta.
+    \item El \textbf{Capítol~\ref{chapter:funcional}} desenvolupa l'anàlisi funcional del sistema, detallant les funcionalitats principals i secundàries, les interaccions de l'usuari, el flux principal d'ús, els tipus de contingut gestionats i les integracions previstes amb serveis externs.
+    \item El \textbf{Capítol~\ref{chapter:nofuncional}} exposa l'anàlisi no funcional, abordant els requisits de disseny responsiu, accessibilitat, usabilitat, escalabilitat, seguretat, compatibilitat multiplataforma i experiència d'usuari.
+    \item El \textbf{Capítol~\ref{chapter:conclusion}} recull les conclusions del treball i apunta les perspectives de futur de la plataforma.
+\end{itemize}

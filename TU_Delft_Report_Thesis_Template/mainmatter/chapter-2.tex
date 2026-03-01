@@ -1,26 +1,89 @@
-\chapter{About the Template}
-%\label{chapter:title}
+\chapter{Identificació del Grup i Contextualització Temàtica}
+\label{chapter:identificacio}
 
-This template aims to simplify and improve the (Xe)LaTeX report/thesis template by Delft University of Technology with the following three main design principles:
+\section{Identificació del Grup}
+
+El present projecte ha estat elaborat per dos estudiants de la Universitat de les Illes Balears en el marc de l'assignatura de Tecnologia Multimèdia. La Taula~\ref{tab:integrants} recull les dades identificatives dels integrants del grup.
+
+\begin{table}[h]
+\centering
+\caption{Integrants del grup de treball.}
+\label{tab:integrants}
+\begin{tabular}{lll}
+\toprule
+\textbf{Nom i cognoms} & \textbf{DNI} \\
+\midrule
+Josep Ferriol Font         & {[DNI]} \\
+Dylan Luigi Canning Garcia & {[DNI]} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Ambdós integrants han participat de manera equitativa en totes les fases de la proposta, des de la concepció inicial de la idea fins a la redacció definitiva del present document. La divisió de les tasques ha seguit un criteri de complementarietat: mentre que un dels membres s'ha centrat preferentment en l'anàlisi funcional i la definició de les integracions tecnològiques, l'altre ha assumit la coordinació de l'anàlisi no funcional i la revisió dels criteris d'accessibilitat i experiència d'usuari. En qualsevol cas, ambdues parts han participat activament en la revisió creuada de tots els apartats del document.
+
+\section{Àmbit Escollit}
+
+L'àmbit temàtic sobre el qual pivota el projecte és la \textbf{música, la cultura popular i els esdeveniments de lleure} en el context de l'illa de Mallorca. Més concretament, \textit{Dona'm Bauxa} s'ubica en la intersecció de les categories de música en directe, artistes locals i agenda cultural, amb una mirada específicament orientada a la producció cultural autòctona de les Illes Balears.
+
+La plataforma cobrirà una àmplia tipologia d'esdeveniments i formats culturals, entre els quals destaquen:
 
 \begin{itemize}
-  \item \textbf{Simplicity First:} A class file that has been reduced by nearly 70\% to simplify customization;
-  \item \textbf{Effortless:} A careful selection of common packages to get started immediately;
-  \item \textbf{Complete:} Ready-to-go when it comes to the document and file structure.
+    \item \textbf{Concerts en sala}: actuacions de grups i solistes en locals d'aforament reduït o mitjà, caracteritzats per la seva proximitat i la seva atmosfera de descoberta.
+    \item \textbf{Festivals}: esdeveniments de major abast i durada, com ara el Festival de Música Clàssica de Deià, el Mallorca Live Festival o els múltiples certàmens de música folk i tradicional que es distribueixen per tota la geografía insular.
+    \item \textbf{Festes populars}: actuacions integrades en el calendari festiu dels municipis, incloent-hi verbenes, revetlles de Sant Joan i esdeveniments similars on la música tradicional mallorquina hi és protagonista.
+    \item \textbf{Actuacions en espais alternatius}: concerts als patis d'edificis patrimonials, places, mercats i altres espais singulars que formen part de la identitat cultural de l'illa.
+    \item \textbf{Artistes i grups mallorquins}: no tan sols com a participants en esdeveniments, sinó com a subjectes de contingut propi amb fitxes biogràfiques, discografia i material audiovisual associat.
 \end{itemize}
 
-\noindent This template works with pdfLaTeX, XeLaTeX and LuaLaTeX. In order to adhere to the TU Delft house style, either XeLaTeX or LuaLaTeX is required, as it supports TrueType and OpenType fonts. BibLaTeX is used for the bibliography with as backend biber. Please visit \url{https://dzwaneveld.github.io/report/} for the full documentation.
+\section{Justificació de la Temàtica}
 
-\section*{Documentation (Abridged)}
+L'elecció de la música i la cultura mallorquina com a eix temàtic del projecte respon a una confluència de factors que combinen la rellevància social, la necessitat digital real i l'interès personal dels membres del grup.
 
-As a report/thesis is generally a substantial document, the chapters and appendices have been separated into different files and folders for convenience. The folders are based on the three parts in the document: the frontmatter, mainmatter and appendix. All files are inserted in the main file, \texttt{report.tex}, using the \texttt{\textbackslash input\{filename\}} command. The document class, which can be found in \texttt{tudelft-report.cls}, is based on the book class. 
+\subsection{Una mancança digital identificable}
 
-The template will automatically generate a cover when the \texttt{\textbackslash makecover} command is used. The title, subtitle and author will also be present on the title page. To give greater flexibility over the title page, the layout is specified in \texttt{title-report.tex}. A title page for theses is also available: \texttt{title-thesis.tex}. Change the corresponding \texttt{\textbackslash input\{...\}} command in the main file to switch. 
+L'ecosistema digital de Mallorca no disposa, a dia d'avui, d'una plataforma web especialitzada que centralitzi de manera eficient la informació sobre concerts i artistes locals. Les opcions existents presenten diverses limitacions: els portals culturals institucionals solen ser de navegació feixuga i actualització lenta; les xarxes socials ofereixen una excel·lent immediatesa però una capacitat de cerca i filtratge molt limitades; les grans plataformes de ticketing operen a escala estatal o internacional i donen poca visibilitat als artistes i esdeveniments locals de menor envergadura.
 
-The bibliography has been set up in \texttt{report.tex} to allow for easy customization. It is included in the table of contents and renamed to 'References' using the \texttt{heading=bibintoc} and \texttt{title=References} options of the \texttt{\textbackslash printbibliography} command respectively. If you would like to use a different .bib file, change the command \texttt{\textbackslash addbibresource{report.bib}} accordingly.
+Aquesta mancança és especialment acusada per als grups emergents de l'illa, que sovint depenen exclusivament d'Instagram o de grups de WhatsApp per arribar al seu públic potencial. \textit{Dona'm Bauxa} es proposa com a eina de democratització de la visibilitat cultural: un espai on el grup de folk d'un municipi de l'interior tingui la mateixa accessibilitat digital que un artista consolidat.
 
-\emph{→ Visit \url{https://dzwaneveld.github.io/report/} for the full documentation.}
+\subsection{La riquesa de l'escena musical mallorquina}
 
-\section*{License}
+Mallorca és una illa amb una tradició musical rica i diversa. La música popular mallorquina, amb instruments com el flabiol, el tambor o els xeremiers, coexisteix amb escenes actives de rock, jazz, electrònica, hip-hop i música contemporània. Aquesta diversitat justifica un espai digital propi que la representi i la doni a conèixer tant al públic local com als visitants.
 
-This template by Daan Zwaneveld is licensed under CC BY-NC 4.0. To view a copy of this license, visit \url{https://creativecommons.org/licenses/by-nc/4.0/}. No attribution is required in PDF outputs created using this template.
+\subsection{El turisme cultural com a factor diferencial}
+
+L'illa rep anualment milions de visitants, una part creixent dels quals cerquen experiències culturals autèntiques que vagin més enllà del sol i platja. \textit{Dona'm Bauxa} té el potencial de convertir-se en un recurs valuós per als turistes culturalment motivats, oferint una finestra a la música i als esdeveniments locals en diverses llengües.
+
+\section{Públic Objectiu}
+
+El públic objectiu de \textit{Dona'm Bauxa} es pot segmentar en dos grans grups primaris i un grup secundari:
+
+\subsection{Grup primari: residents a Mallorca interessats en la cultura local}
+
+El segment principal d'usuaris el formen els residents a l'illa d'entre \textbf{16 i 60 anys} que cerquen activitats d'oci cultural en directe. Dins d'aquest segment, es distingeixen dos subperfils:
+
+\begin{itemize}
+    \item \textbf{Joves (16--30 anys)}: usuaris amb alta familiaritat tecnològica, que accediran preferentment des de dispositiu mòbil, i que cerquen concerts de grups emergents, festivals de música moderna i esdeveniments nocturns. Valoren la immediatesa, la recomanació social i la integració amb aplicacions d'escolta com Spotify.
+    \item \textbf{Adults (31--60 anys)}: usuaris amb interessos més amplis, que inclouen concerts de gèneres consolidats, festivals familiars i festes populars. Accediran des de múltiples dispositius i valoraran la claredat de la informació, la facilitat per afegir esdeveniments al calendari personal i la geolocalització de les sales.
+\end{itemize}
+
+\subsection{Grup primari: artistes i grups mallorquins}
+
+Els propis creadors culturals constitueixen un segment d'usuaris de notable rellevància per a la plataforma. Per a ells, \textit{Dona'm Bauxa} representa una eina de \textbf{visibilitat i difusió}: un espai on tenir una presència digital estructurada i ben indexada, independent dels vaivens de les xarxes socials. En fases posteriors de desenvolupament, es preveu la possibilitat que els artistes puguin gestionar directament el seu perfil i la seva agenda d'actuacions.
+
+\subsection{Grup secundari: visitants i turistes amb interès cultural}
+
+Mallorca és una de les destinacions turístiques més visitades d'Europa, i un segment creixent de visitants manifesta interès per la cultura autòctona. Per a aquest grup, \textit{Dona'm Bauxa} pot actuar com a guia cultural personalitzada que complementa l'oferta turística convencional, especialment durant les temporades primaveral i tardorenca, de turisme cultural de major qualitat.
+
+\section{Valor Diferencial de la Proposta}
+
+\textit{Dona'm Bauxa} se situa en un espai de mercat clarament identificat i, per ara, desatès. El seu valor diferencial respecte a les alternatives existents es pot resumir en quatre eixos principals:
+
+\begin{enumerate}
+    \item \textbf{Enfocament exclusivament local}: A diferència de les grans plataformes de ticketing o les agendes culturals genèriques d'abast estatal, \textit{Dona'm Bauxa} se centra única i específicament en l'ecosistema musical i cultural de Mallorca. Aquesta especialització li permet oferir un nivell de detall i de cobertura que les plataformes generalistes no poden assolir.
+
+    \item \textbf{Integració de dades d'artistes i d'esdeveniments en un sol espai}: La majoria de les solucions actuals se centren o bé en la venda d'entrades, o bé en la biografia dels artistes, o bé en l'agenda d'esdeveniments, però rarament les combinen de manera coherent. \textit{Dona'm Bauxa} integra les tres dimensions, creant una experiència holística que permet a l'usuari passar de descobrir un artista a trobar el seu proper concert en tres clics.
+
+    \item \textbf{Geolocalització i contextualització geogràfica}: La incorporació d'un mapa interactiu de Mallorca com a interfície de navegació dels esdeveniments constitueix un element diferenciador de gran potencial, especialment per als visitants que no coneixen la geografia de l'illa i que poden descobrir concerts propers a la seva ubicació actual.
+
+    \item \textbf{Integració amb l'ecosistema d'escolta digital}: La connexió amb l'API de Spotify permet que l'usuari pugui escoltar la música d'un artista directament des de la seva fitxa, sense necessitat de sortir de la plataforma. Aquesta integració suavitza la barrera entre el descobriment i el consum musical, i afavoreix la decisió de compra d'entrades.
+\end{enumerate}

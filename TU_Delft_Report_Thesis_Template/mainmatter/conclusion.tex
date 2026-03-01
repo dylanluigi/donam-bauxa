@@ -1,4 +1,45 @@
-\chapter{Conclusion}
+\chapter{Conclusions i Perspectives de Futur}
 \label{chapter:conclusion}
 
-\emph{A conclusion...}
+\section{Síntesi del Projecte}
+
+El present document ha exposat de manera detallada i estructurada la proposta de disseny de \textit{Dona'm Bauxa}, una plataforma web dedicada a la centralització i difusió de la informació sobre música en directe, artistes locals i esdeveniments culturals de l'illa de Mallorca. Des de la identificació de la problemàtica fins a l'especificació dels requisits funcionals i no funcionals, el document ha traçat un full de ruta clar per al desenvolupament d'un producte digital que respon a una necessitat real i identificable de l'ecosistema cultural mallorquí.
+
+La proposta parteix d'un diagnòstic contrastable: l'escena musical mallorquina és rica, variada i activa, però pateix una visibilitat digital insuficient a causa de la dispersió de la informació en múltiples canals poc integrats. \textit{Dona'm Bauxa} s'hi proposa com a solució específica i localitzada, apostant per la proximitat, el talent autòcton i l'ús de tecnologies web modernes per cohesionar digitalment el teixit cultural de l'illa.
+
+\section{Assoliment dels Objectius}
+
+El document ha donat resposta a la totalitat dels punts requerits per a la memòria de proposta:
+
+\begin{itemize}
+    \item S'ha identificat el grup de treball, format per Josep Ferriol Font i Dylan Luigi Canning Garcia, amb les seves dades completes.
+    \item S'ha justificat amb rigor l'àmbit temàtic escollit, la música i la cultura popular mallorquina, i s'han delimitat el públic objectiu i el valor diferencial de la proposta respecte a les alternatives existents al mercat.
+    \item S'ha realitzat una anàlisi funcional exhaustiva que descriu les funcionalitats principals (cercador d'artistes, agenda d'esdeveniments, sistema de filtres) i secundàries (favorits, integració multimèdia, notícies), les interaccions de l'usuari, el flux principal d'ús, els tipus de contingut gestionats (JSON, imatges, àudio via Spotify, vídeo via YouTube, dades geogràfiques) i les integracions previstes amb serveis externs (Leaflet/OpenStreetMap, Spotify Web API, format iCalendar).
+    \item S'ha desenvolupat una anàlisi no funcional completa que aborda el disseny responsiu (\textit{mobile-first}), l'accessibilitat (nivell AA de les WCAG~2.1), la usabilitat (principis de Nielsen, regla dels tres clics), l'escalabilitat (de dades i geogràfica), la seguretat (HTTPS, protecció davant XSS, gestió de claus d'API), la compatibilitat multiplataforma (matriu de navegadors i sistemes operatius) i l'experiència d'usuari (rendiment, identitat visual, microcòpia, onboarding).
+\end{itemize}
+
+\section{Cohesió entre Forma i Contingut}
+
+Un aspecte que es vol subratllar és la coherència entre la proposta de valor de la plataforma i les decisions de disseny adoptades. La decisió d'implementar un disseny \textit{mobile-first} no és una imposició tècnica sinó una conseqüència directa del perfil d'ús del públic objectiu. L'adopció dels estàndards WCAG~2.1 no és un mer compliment normatiu sinó una aposta per la inclusivitat cultural, en línia amb la vocació de la plataforma de fer la cultura accessible a tothom. La integració amb Spotify respon a la realitat de consum musical del públic jove i adult actual. En definitiva, cada decisió funcional i no funcional ha estat motivada per l'observació de les necessitats reals dels usuaris i del context específic de l'illa de Mallorca.
+
+\section{Perspectives de Futur}
+
+\textit{Dona'm Bauxa} concep el seu desenvolupament com un procés incremental, en el qual la fase inicial, centrada en les funcionalitats essencials d'exploració d'artistes i agenda d'esdeveniments, obre la porta a un conjunt d'ampliacions progressives. Les perspectives de futur més rellevants inclouen:
+
+\begin{itemize}
+    \item \textbf{Perfils d'artista autogestionats}: una fase posterior podria permetre als propis artistes i grups crear i gestionar el seu perfil a la plataforma, afegir les seves pròpies dates de concerts i penjar material fotogràfic i audiovisual. Aquesta funcionalitat convertiria \textit{Dona'm Bauxa} en un ecosistema bidireccional on el contingut el generen els propis actors de l'escena cultural.
+
+    \item \textbf{Extensió a les Illes Balears}: tal com s'ha previst en l'arquitectura de dades, la plataforma es podria ampliar per cobrir l'oferta cultural de Menorca, Eivissa i Formentera, convertint-se en el referent digital de la música en directe de tot l'arxipèlag balear.
+
+    \item \textbf{Sistema de recomanació personalitzada}: a partir de les interaccions de l'usuari (favorits, historial de concerts consultats, gèneres filtrats), es podria implementar un motor de recomanació senzill basat en la similitud de preferències, que suggereixi artistes i esdeveniments rellevants per a cada usuari.
+
+    \item \textbf{Integració amb sistemes de ticketing}: en lloc de redirigir l'usuari a plataformes externes per a la compra d'entrades, una fase avançada podria explorar la integració directa amb passarel·les de pagament, convertint \textit{Dona'm Bauxa} en una plataforma de venda d'entrades per a esdeveniments mallorquins.
+
+    \item \textbf{Versió multilingüe}: donada la important presència de visitants estrangers a l'illa, una versió de la plataforma en anglès, alemany i castellà ampliaria significativament l'abast del servei i el seu impacte en el turisme cultural.
+\end{itemize}
+
+\section{Reflexió Final}
+
+\textit{Dona'm Bauxa} és, en el seu nucli, una proposta de servei públic cultural. La seva raó de ser no és comercial sinó cultural: posar la tecnologia al servei de la conservació, la difusió i la celebració de la identitat musical de Mallorca. En un moment en què la digitalització transforma ràpidament els hàbits de consum cultural, una plataforma com \textit{Dona'm Bauxa} pot contribuir a que la bauxa mallorquina, la festa, la música i el gaudi col·lectiu, trobi el seu espai natural al món digital, sense perdre l'escalfor i l'autenticitat que la fan única.
+
+El repte tècnic és apassionant; la causa cultural, encara més.

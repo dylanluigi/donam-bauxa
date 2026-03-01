@@ -7,7 +7,21 @@
 %% Additional packages and commands
 \usepackage{parskip}
 \setlist{itemsep=-2pt} % Reducing white space in lists slightly
-\renewcommand{\deg}{\si{\degree}\xspace} % Use \deg easily, everywhere
+
+%% UTF-8 support inside listings (for accented characters in code blocks)
+\lstset{
+  extendedchars=true,
+  inputencoding=utf8,
+  literate=
+    {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+    {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+    {À}{{\`A}}1 {È}{{\`E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+    {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+    {ï}{{\"i}}1 {ü}{{\"u}}1 {ë}{{\"e}}1
+    {Ï}{{\"I}}1 {Ü}{{\"U}}1
+    {·}{{$\cdot$}}1
+    {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1
+}
 
 %% ----------------------------------------------------------------------
 %%    Begin of document + Frontmatter (Roman page numbering)
@@ -18,14 +32,14 @@
 \frontmatter
 
 %% Define the main parameters
-\title{A Title to the Report}
-\subtitle{A Catchy Optional Subtitle \\ that Grabs the Attention}
-\author{Author}
+\title{Dona'm Bauxa}
+\subtitle{Plataforma Digital per a la Descoberta\\de Música i Esdeveniments Mallorquins}
+\author{Josep Ferriol Font \newline Dylan Luigi Canning Garcia}
 
-\subject{AB1234: Optional Course Name} % Cover only
-\affiliation{Delft University of Technology} % Cover only
+\subject{Tecnologia Multimèdia} % Cover only
+\affiliation{Universitat de les Illes Balears} % Cover only
 \coverimage{figures/cover.jpg} % Aspect ratio of 2:3 (portrait) recommended
-\definecolor{title}{HTML}{4884d6} % Color for cover title
+\definecolor{title}{HTML}{c0392b} % Color for cover title
 
 \makecover
 
@@ -49,7 +63,7 @@
 
 \input{mainmatter/chapter-2}
 \input{mainmatter/chapter-3}
-%\input{mainmatter/chapter-4} % Create file to add
+\input{mainmatter/chapter-4}
 
 \input{mainmatter/conclusion}
 
@@ -59,7 +73,7 @@
 \setcounter{biburlucpenalty}{7000}
 
 %% Add bibliography
-\printbibliography[heading=bibintoc,title=References]
+\printbibliography[heading=bibintoc,title=Referències]
 
 %% ----------------------------------------------------------------------
 %%    Appendix (Letters for chapters)
@@ -69,6 +83,5 @@
 
 \input{appendix/appendix-a}
 \input{appendix/appendix-b}
-%\input{appendix/appendix-c} % Create file to add
 
 \end{document}

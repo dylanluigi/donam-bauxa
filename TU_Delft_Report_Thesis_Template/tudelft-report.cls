@@ -174,8 +174,8 @@
             \includegraphics[width=0.35\linewidth]{figures/logo-white.pdf}};
 
         %% Add the banner with the title, subtitle, subject and author(s)
-        \node[below=2cm,fill=black!85,minimum width={\paperwidth},inner ysep=25pt,opacity=0.6,text opacity=1] at (current page.north) {%
-            \begin{minipage}{0.9\paperwidth}
+        \node[anchor=south east,fill=black!85,minimum width={0.68\paperwidth},inner ysep=25pt,inner xsep=20pt,opacity=1] at ([yshift=15mm]current page.south east) {%
+            \begin{minipage}{0.63\paperwidth}
                 %% Format and add the title
                 \color{title}\raggedright\largetitlestyle\fontsize{50}{50}\selectfont%
                     \@title \\[0.5ex]

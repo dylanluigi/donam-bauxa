@@ -1,2 +1,185 @@
-%\chapter{Title}
-%\label{chapter:title}
+\chapter{Anàlisi Funcional del Sistema}
+\label{chapter:funcional}
+
+L'anàlisi funcional descriu \textit{què} farà el sistema, és a dir, quines capacitats oferirà als seus usuaris i quins processos d'informació gestionarà internament. En el present capítol es detallen les funcionalitats principals i secundàries de la plataforma \textit{Dona'm Bauxa}, les interaccions que s'establiran entre l'usuari i el sistema, el flux principal d'ús, els tipus de contingut que es gestionaran i les integracions previstes amb serveis i APIs externs.
+
+\section{Funcionalitats Principals}
+
+Les funcionalitats principals constitueixen el nucli irrenunciable de la plataforma, sense les quals el sistema no podria complir la seva missió fonamental de centralitzar i difondre la informació cultural mallorquina.
+
+\subsection{Cercador d'Artistes i Grups Mallorquins}
+
+La plataforma disposarà d'un cercador de text lliure que permetrà a l'usuari trobar artistes i grups musicals per nom, gènere o paraula clau relacionada. Cada artista o grup tindrà una fitxa individual que inclourà els elements següents:
+
+\begin{itemize}
+    \item \textbf{Informació biogràfica}: nom artístic i nom real dels membres, any de formació, municipi d'origen i una descripció narrativa de la trajectòria del grup o artista.
+    \item \textbf{Gènere o gèneres musicals}: categorització per estil (rock, folk mallorquí, jazz, electrònica, flamenc, clàssic, hip-hop, etc.), que permetrà la navegació temàtica per l'escena local.
+    \item \textbf{Discografia}: llista d'àlbums, EPs o singles publicats, amb portades, any de publicació i, si escau, reproductor integrat via Spotify.
+    \item \textbf{Material fotogràfic}: galeria d'imatges del grup en directe i en estudi.
+    \item \textbf{Agenda de concerts}: relació dels propers concerts de l'artista, amb data, hora, ubicació i enllaç a l'entrada corresponent.
+    \item \textbf{Xarxes socials i contacte}: botons d'accés directe als perfils d'Instagram, Facebook, YouTube, Spotify i, si escau, correu de contacte per a reserva d'actuacions.
+\end{itemize}
+
+\subsection{Agenda d'Esdeveniments}
+
+L'agenda constitueix l'element central de la plataforma des de la perspectiva de l'usuari ocasional, és a dir, aquell que cerca «on poder anar aquest cap de setmana» sense tenir necessàriament un artista concret en ment. L'agenda inclourà:
+
+\begin{itemize}
+    \item \textbf{Llista d'esdeveniments}: visualització cronològica de tots els concerts, festivals i actes culturals programats, amb informació sintètica (data, nom de l'acte, artista principal, lloc i preu aproximat d'entrada).
+    \item \textbf{Vista de calendari}: representació mensual dels esdeveniments que facilita la planificació a mitjà termini.
+    \item \textbf{Destacats del cap de setmana}: secció a la pàgina d'inici que mostra automàticament els esdeveniments dels propers dos o tres dies, fomentant la consulta impulsiva.
+    \item \textbf{Detall d'esdeveniment}: pàgina individual per a cada acte, amb tota la informació rellevant: cartell de l'esdeveniment, artistes participants, hora d'inici i de fi, recinte i adreça exacta, preu i enllaços de compra d'entrades.
+\end{itemize}
+
+\subsection{Sistema de Filtres}
+
+Per donar resposta a la diversitat del públic objectiu, el sistema implementarà un sistema de filtres combinables que permetrà a l'usuari personalitzar la seva cerca tant des de l'agenda com des del cercador d'artistes. Els filtres disponibles seran:
+
+\begin{itemize}
+    \item \textbf{Per gènere musical}: rock, pop, folk, jazz, electrònica, música tradicional mallorquina, flamenc, clàssica, reggae, hip-hop i altres.
+    \item \textbf{Per zona geogràfica}: Palma, Raiguer, Tramuntana, Migjorn, Llevant i Pla de Mallorca, seguint la divisió comarcal de l'illa.
+    \item \textbf{Per franja de dates}: un selector de dates d'inici i fi que permeti buscar esdeveniments dins d'un període concret.
+    \item \textbf{Per preu}: filtres per entrada gratuïta, entrada de pagament o ambdues opcions.
+    \item \textbf{Per tipus d'espai}: sala de concerts, espai a l'aire lliure, teatre, festival, espai patrimonial, etc.
+\end{itemize}
+
+Tots els filtres seran combinables entre si i la seva aplicació actualitzarà els resultats en temps real, sense necessitat de recarregar la pàgina, gràcies a la gestió del contingut del costat del client.
+
+\section{Funcionalitats Secundàries}
+
+Les funcionalitats secundàries amplien i enriqueixen l'experiència bàsica de la plataforma sense ser indispensables per al funcionament fonamental del sistema. S'implementaran en fases posteriors de desenvolupament, tot i que el disseny de l'arquitectura les preveurà des del principi.
+
+\subsection{Secció de Favorits}
+
+L'usuari podrà marcar com a favorits aquells artistes o grups que li despertin interès especial. La llista de favorits serà accessible des d'una secció dedicada del menú de navegació, i permetrà:
+
+\begin{itemize}
+    \item Visualitzar d'un cop d'ull els propers concerts dels grups guardats com a preferits.
+    \item Rebre alertes (via notificació push o correu electrònic) quan un artista favorit anunciï un nou concert a Mallorca.
+    \item Compartir la llista de favorits amb altres usuaris mitjançant un enllaç generat automàticament per la plataforma.
+\end{itemize}
+
+La persistència de la llista de favorits s'implementarà inicialment a través de l'\textit{localStorage} del navegador, sense necessitat d'un compte d'usuari, per reduir la fricció d'adopció. En fases posteriors, s'explorarà la creació d'un sistema de perfils d'usuari per a la sincronització entre dispositius.
+
+\subsection{Accés Directe a Plataformes Externes}
+
+Des de la fitxa de cada artista i des del detall de cada esdeveniment, l'usuari trobarà botons d'acció directa que el conduiran a:
+
+\begin{itemize}
+    \item \textbf{Compra d'entrades}: enllaç a la plataforma de ticketing oficial de l'esdeveniment (Ticketmaster, Entradas.com, WeGo, o el sistema propi del local), obert en una nova pestanya.
+    \item \textbf{Escolta en Spotify}: si l'artista té perfil a Spotify, un reproductor integrat (\textit{embed}) permetrà escoltar la seva música sense abandonar \textit{Dona'm Bauxa}.
+    \item \textbf{Vídeos a YouTube}: si l'artista o l'organitzador de l'esdeveniment disposa de vídeos en directe o clips musicals a YouTube, s'incrustaran en la fitxa corresponent.
+    \item \textbf{Xarxes socials}: botons que obren directament el perfil de l'artista o de l'esdeveniment a Instagram, Facebook i Twitter/X.
+\end{itemize}
+
+\subsection{Secció de Notícies}
+
+Es preveu una secció de notícies sobre l'actualitat de l'escena musical balear, que podria incloure entrevistes amb artistes locals, cròniques de concerts, anuncis de nous àlbums o informació sobre convocatòries musicals. En una fase inicial, el contingut d'aquesta secció podria ser gestionat manualment per l'equip de la plataforma, mentre que en fases posteriors s'explorarien fórmules de generació de contingut amb la participació dels propis artistes.
+
+\section{Interaccions de l'Usuari}
+
+Les interaccions entre l'usuari i el sistema s'han dissenyat per ser naturals, immediates i coherents amb els patrons d'ús habituals en aplicacions web mòbils. Es defineixen les interaccions principals següents:
+
+\begin{itemize}
+    \item \textbf{Cerca per text lliure}: l'usuari escriu un nom d'artista, gènere o lloc al camp de cerca i el sistema retorna resultats en temps real mentre l'usuari escriu, amb suggeriments automàtics.
+    \item \textbf{Exploració del mapa}: l'usuari interactua amb el mapa interactiu de Mallorca, fa zoom, clica sobre marcadors i accedeix als detalls dels esdeveniments associats a cada punt geogràfic.
+    \item \textbf{Aplicació de filtres}: l'usuari activa i desactiva filtres a través d'un panell lateral o d'una barra de filtres horitzontal, i els resultats s'actualitzen sense necessitat de recàrrega.
+    \item \textbf{Marcatge de favorits}: l'usuari clica sobre una icona de cor o estrella a la fitxa d'un artista o d'un esdeveniment per afegir-lo a la seva llista personal.
+    \item \textbf{Addició al calendari}: des del detall d'un esdeveniment, l'usuari pot afegir-lo al seu calendari personal (Google Calendar, Apple Calendar o Outlook) amb un sol clic, gràcies a la generació automàtica d'un fitxer en format \texttt{.ics}.
+    \item \textbf{Compartició}: cada fitxa d'artista i cada pàgina d'esdeveniment disposarà d'un botó de «Compartir» que generarà un enllaç permanent (URL canònica) i permetrà compartir-lo via WhatsApp, Telegram, correu electrònic o copiant l'adreça al porta-retalls.
+    \item \textbf{Reproducció de contingut multimèdia}: l'usuari podrà reproduir fragments de música via Spotify o vídeos via YouTube directament des de la fitxa de l'artista, sense abandonar la plataforma.
+\end{itemize}
+
+\section{Flux Principal d'Ús}
+
+El flux principal d'ús descriu el recorregut típic que realitza un usuari representatiu en la seva interacció amb la plataforma. Seguint el perfil majoritari del públic objectiu, un resident a Mallorca que consulta l'aplicació des del mòbil en cerca de plans musicals per al cap de setmana, el flux principal és el següent:
+
+\begin{enumerate}
+    \item L'usuari accedeix a la pàgina d'inici de \textit{Dona'm Bauxa} des del seu telèfon mòbil. La pàgina d'inici li mostra immediatament la secció de \textbf{Destacats del Cap de Setmana}, amb tres o quatre concerts programats per als propers dies.
+    \item L'usuari es fixa en un dels concerts destacats i clica sobre la targeta per accedir al \textbf{detall de l'esdeveniment}.
+    \item Des de la pàgina de detall, consulta la informació del concert (data, hora, sala, preu), visualitza el cartell i llegeix la descripció de l'acte. A continuació, clica sobre el nom de l'artista principal per accedir a la seva \textbf{fitxa}.
+    \item A la fitxa de l'artista, l'usuari descobreix que el grup té un àlbum publicat a Spotify i utilitza el reproductor integrat per escoltar-ne un parell de cançons. Li agrada el que escolta.
+    \item L'usuari clica sobre la icona de cor per \textbf{afegir el grup als seus favorits} i, tot seguit, torna a la pàgina de detall del concert per \textbf{afegir-lo al seu calendari} de Google.
+    \item Finalment, l'usuari clica sobre l'enllaç de compra d'entrades, que l'obre en una nova pestanya, i completa la transacció a la plataforma de ticketing externa.
+    \item Satisfet amb l'experiència, l'usuari \textbf{comparteix} l'esdeveniment via WhatsApp amb un grup d'amics per si volen acompanyar-lo.
+\end{enumerate}
+
+Aquest flux, que ha de poder completar-se en menys de \textbf{dos minuts} i en no més de \textbf{set passos}, reflecteix el principi de disseny de la plataforma: accés ràpid a la informació clau i fricció mínima entre el descobriment i la decisió d'assistir.
+
+\section{Tipus de Contingut Gestionats}
+
+\textit{Dona'm Bauxa} gestionarà una diversitat de tipus de contingut que requerirà una arquitectura de dades ben dissenyada i estratègies específiques per a cada tipus.
+
+\subsection{Dades Estructurades en Format JSON}
+
+El nucli de la base de dades de la plataforma s'estructurarà en format JSON, organitzat en tres entitats principals:
+
+\begin{itemize}
+    \item \textbf{Artista}: objecte que conté l'identificador únic, el nom artístic, els membres del grup, el gènere o gèneres musicals, el municipi d'origen, la biografia, la discografia (llista d'objectes \textit{àlbum}), les xarxes socials i l'identificador de Spotify.
+    \item \textbf{Esdeveniment}: objecte que conté l'identificador únic, el títol de l'acte, la data i hora d'inici i de fi, l'identificador de la sala o espai, la llista d'artistes participants (referència als seus identificadors), el preu, l'URL de compra d'entrades i l'URL del cartell.
+    \item \textbf{Espai}: objecte que descriu el recinte on té lloc l'acte, amb nom, adreça postal, coordenades geogràfiques (latitud i longitud), aforament màxim i un breu text descriptiu.
+\end{itemize}
+
+Aquestes tres entitats estaran interconnectades per relació de referències creuades d'identificadors, seguint el principi de \textit{normalització} de les dades per evitar la redundància.
+
+Les tres entitats principals s'alineen amb el vocabulari obert de \textbf{Schema.org} (\url{https://schema.org}), l'estàndard de metadades estructurades promogut pel W3C i adoptat pels principals motors de cerca, com Google, Bing i Yahoo!, per a la generació de \textit{rich results} i la millora del posicionament orgànic. Concretament:
+
+\begin{itemize}
+    \item L'entitat \textbf{Artista} s'alinea amb els tipus \texttt{schema:MusicGroup}, per a grups i bandes, i \texttt{schema:Person}, per a intèrprets individuals, ambdós subtipus de \texttt{schema:Agent}. Les propietats \texttt{schema:name}, \texttt{schema:genre} i \texttt{schema:sameAs} permetran vincular el perfil de la plataforma amb els perfils oficials a Spotify o Wikidata.
+    \item L'entitat \textbf{Esdeveniment} s'alinea amb el tipus \texttt{schema:MusicEvent}, subtipus de \texttt{schema:Event}, incorporant propietats com \texttt{schema:startDate}, \texttt{schema:endDate}, \texttt{schema:location} i \texttt{schema:offers}. Aquesta alineació permet que els concerts indexats apareguin a Google com a esdeveniments amb data i ubicació destacats als resultats de cerca.
+    \item L'entitat \textbf{Espai} s'alinea amb el tipus \texttt{schema:Place}, amb les propietats \texttt{schema:geo}, de tipus \texttt{schema:GeoCoordinates}, per a les coordenades geogràfiques, i \texttt{schema:address}, de tipus \texttt{schema:PostalAddress}, per a l'adreça postal estructurada.
+    \item Els preus de les entrades s'estructuraran seguint el tipus \texttt{schema:Offer}, amb les propietats \texttt{schema:price}, \texttt{schema:priceCurrency} i \texttt{schema:url} per a l'accés directe a la compra.
+\end{itemize}
+
+L'adopció del vocabulari Schema.org no suposa un cost de desenvolupament rellevant, ja que les propietats s'injecten com a metadades de tipus \texttt{application/ld+json} al \texttt{<head>} de cada pàgina, sense modificar l'HTML visible. La implementació permetrà que \textit{Dona'm Bauxa} competeixi en visibilitat amb plataformes molt més grans, aprofitant la riquesa semàntica de les dades locals com a avantatge diferencial.
+
+\subsection{Contingut Multimèdia}
+
+El sistema gestionarà els tipus de contingut multimèdia següents:
+
+\begin{itemize}
+    \item \textbf{Imatges}: cartells d'esdeveniments en format JPEG o WebP (relació d'aspecte 2:3 recomanada), fotografies d'artistes (format quadrat per als avatars, format panoràmic per als encapçalaments), i imatges dels espais (format panoràmic). Totes les imatges seran emmagatzemades de manera centralitzada i se n'oferiran versions en diverses resolucions per optimitzar el rendiment en mòbil.
+    \item \textbf{Àudio via Spotify}: no s'emmagatzemarà contingut d'àudio localment. En comptes d'això, s'integraran els reproductors \textit{embed} de Spotify, que es carreguen de manera dinàmica a partir de l'identificador de l'artista o de la llista de reproducció.
+    \item \textbf{Vídeo via YouTube}: de manera anàloga a l'àudio, els vídeos es carregaran via \textit{embed} de YouTube, evitant l'emmagatzematge i el cost de transmissió de vídeo propis.
+\end{itemize}
+
+\subsection{Dades Geogràfiques}
+
+Per a la representació cartogràfica dels esdeveniments i espais, el sistema gestionarà dades de geolocalització en format estàndard:
+
+\begin{itemize}
+    \item \textbf{Coordenades geogràfiques}: cada espai disposarà d'un parell de valors de latitud i longitud en sistema de coordenades WGS84, compatibles amb els estàndards de les principals biblioteques de mapes.
+    \item \textbf{Rutes i polígons}: en el cas de festivals distribuïts per diversos espais, el sistema permetrà representar múltiples punts associats al mateix acte.
+\end{itemize}
+
+\section{Integracions Previstes}
+
+\textit{Dona'm Bauxa} preveu la integració amb les API i serveis externs descrits a continuació.
+
+\subsection{Geolocalització: Leaflet / Google Maps API}
+
+Per a la representació del mapa interactiu de Mallorca, es preveu la integració amb una biblioteca de mapes de codi obert, preferentment \textbf{Leaflet.js} combinada amb dades cartogràfiques d'\textbf{OpenStreetMap}. Aquesta opció és gratuïta, de qualitat cartogràfica contrastada i no implica costos d'ús a partir d'un cert volum de sol·licituds, a diferència de l'API de Google Maps, que es considerarà com a alternativa en cas que Leaflet no satisfaci algun requisit funcional específic.
+
+La integració permetrà:
+\begin{itemize}
+    \item Mostrar un mapa centrat a l'illa de Mallorca amb marcadors per a cada espai que té un concert programat.
+    \item Agrupar marcadors propers en clústers quan el nivell de zoom és baix, per evitar la saturació visual del mapa.
+    \item Mostrar una targeta de resum (\textit{popup}) en clicar sobre un marcador, amb el nom de la sala, el concert més proper i un botó per accedir al detall.
+    \item Geolocalitzar l'usuari (prèvia sol·licitud de permís) per calcular la distància als espais més propers i ordenar els resultats en conseqüència.
+\end{itemize}
+
+\subsection{Spotify Web API}
+
+La integració amb l'\textbf{API de Spotify} permetrà enriquir les fitxes dels artistes amb contingut d'escolta directa. Concretament, s'usaran els \textit{endpoints} públics de l'API per obtenir:
+
+\begin{itemize}
+    \item Informació bàsica de l'artista (nom verificat, imatge de perfil, gèneres i popularitat).
+    \item Llista de darrers àlbums i singles publicats.
+    \item Reproductor \textit{embed} oficial de Spotify, que permet escoltar pistes completes (per a usuaris Premium) o fragments de 30 segons (per a usuaris gratuïts) sense abandonar la plataforma.
+\end{itemize}
+
+L'autenticació amb l'API de Spotify s'implementarà mitjançant el flux \textit{Client Credentials Flow}, atès que s'accedirà únicament a dades públiques d'artistes i no es requerirà autenticació de l'usuari final en la fase inicial.
+
+\subsection{Integració amb Aplicacions de Calendari}
+
+Per facilitar la planificació dels usuaris, cada pàgina de detall d'un esdeveniment oferirà la possibilitat d'\textbf{afegir l'acte al calendari personal} del dispositiu. Això s'implementarà generant dinàmicament un fitxer en format \textbf{iCalendar} (\texttt{.ics}), estàndard obert compatible amb Google Calendar, Apple Calendar (iOS i macOS), Microsoft Outlook i la majoria de les aplicacions de calendari del mercat. El fitxer inclourà el títol de l'esdeveniment, la data i hora, la ubicació (amb adreça postal i coordenades), la descripció i l'URL de compra d'entrades.

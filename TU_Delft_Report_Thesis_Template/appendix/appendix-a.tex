@@ -1,31 +1,71 @@
-\chapter{Source Code Example}
-%\label{chapter:title}
+\chapter{Estructura Proposada de les Dades JSON}
+\label{appendix:json}
 
-\emph{Adding source code to your report/thesis is supported with the package {\normalfont\texttt{listings}}. An example can be found below. Files can be added using {\normalfont\texttt{\textbackslash lstinputlisting[language=<language>]\{<filename>\}}}.}
+En el present annex s'il·lustren els esquemes de les tres entitats principals de la base de dades de \textit{Dona'm Bauxa} en format JSON. Aquests esquemes representen la proposta inicial d'estructura i podran ser refinats durant la fase d'implementació.
 
-\begin{lstlisting}[language=Python]
-"""
-ISA Calculator: import the function, specify the height and it will return a
-list in the following format: [Temperature,Density,Pressure,Speed of Sound].
-Note that there is no check to see if the maximum altitude is reached.
-"""
+\section*{Entitat: Artista}
 
-import math
-g0 = 9.80665
-R = 287.0
-layer1 = [0, 288.15, 101325.0]
-alt = [0,11000,20000,32000,47000,51000,71000,86000]
-a = [-.0065,0,.0010,.0028,0,-.0028,-.0020]
+\begin{lstlisting}[language={}]
+{
+  "id": "artista-001",
+  "nom_artistic": "Els Ocells de Tramuntana",
+  "membres": ["Miquel Riera", "Aina Mas", "Tomeu Vich"],
+  "generes": ["folk mallorqui", "rock"],
+  "municipi_origen": "Soller",
+  "any_formacio": 2018,
+  "biografia": "Grup de folk rock format a la Vall de Soller...",
+  "spotify_id": "0TnOYISbd1XYRBk9myaseg",
+  "instagram": "@elsocellsdetramuntana",
+  "facebook": "ElsOcellsDeTramuntana",
+  "youtube_channel": "UCxxxxxx",
+  "discografia": [
+    {
+      "titol": "Vent de Migjorn",
+      "any": 2021,
+      "tipus": "album",
+      "portada_url": "imatges/discografia/vent-de-migjorn.jpg"
+    }
+  ]
+}
+\end{lstlisting}
 
-def atmosphere(h):
-    for i in range(0,len(alt)-1):
-        if h >= alt[i]:
-            layer0 = layer1[:]
-            layer1[0] = min(h,alt[i+1])
-            if a[i] != 0:
-                layer1[1] = layer0[1] + a[i]*(layer1[0]-layer0[0])
-                layer1[2] = layer0[2] * (layer1[1]/layer0[1])**(-g0/(a[i]*R))
-            else:
-                layer1[2] = layer0[2]*math.exp((-g0/(R*layer1[1]))*(layer1[0]-layer0[0]))
-    return [layer1[1],layer1[2]/(R*layer1[1]),layer1[2],math.sqrt(1.4*R*layer1[1])]
+\section*{Entitat: Espai}
+
+\begin{lstlisting}[language={}]
+{
+  "id": "espai-012",
+  "nom": "Sala Margarita",
+  "adreca": "Carrer dels Oms, 15",
+  "codi_postal": "07003",
+  "municipi": "Palma",
+  "illa": "Mallorca",
+  "latitud": 39.5696,
+  "longitud": 2.6502,
+  "aforament": 350,
+  "tipus": "sala de concerts",
+  "web": "https://salamargarita.cat",
+  "telefon": "+34 971 000 000",
+  "descripcio": "Sala de concerts emblematica del centre de Palma..."
+}
+\end{lstlisting}
+
+\section*{Entitat: Esdeveniment}
+
+\begin{lstlisting}[language={}]
+{
+  "id": "event-2025-042",
+  "titol": "Vent de Migjorn - Tour de Presentacio",
+  "data_inici": "2025-04-12T21:30:00",
+  "data_fi": "2025-04-12T23:30:00",
+  "espai_id": "espai-012",
+  "artistes_ids": ["artista-001"],
+  "preu_general": 12.00,
+  "preu_anticipada": 9.00,
+  "entrada_gratuita": false,
+  "url_entrades": "https://ticketing.exemple.com/event-2025-042",
+  "cartell_url": "imatges/cartells/vent-de-migjorn-tour.jpg",
+  "descripcio": "Concert de presentacio del nou album...",
+  "generes": ["folk mallorqui", "rock"],
+  "destacat": true
+}
 \end{lstlisting}
