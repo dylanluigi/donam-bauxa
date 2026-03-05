@@ -14,12 +14,37 @@ const CATEGORY_COLORS = {
 const MALLORCA_CENTER = [39.6153, 2.9110];
 const DEFAULT_ZOOM = 9;
 
+const LEAFLET_CSS = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+const LEAFLET_JS  = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+const LEAFLET_CSS_INTEGRITY = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+const LEAFLET_JS_INTEGRITY  = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+let leafletLoadPromise = null;
+
+function loadLeaflet() {
+  if (leafletLoadPromise) return leafletLoadPromise;
+  leafletLoadPromise = new Promise((resolve, reject) => {
+    if (window.L) { resolve(); return; }
+    if (!document.querySelector(`link[href="${LEAFLET_CSS}"]`)) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet'; link.href = LEAFLET_CSS;
+      link.integrity = LEAFLET_CSS_INTEGRITY; link.crossOrigin = '';
+      document.head.appendChild(link);
+    }
+    const script = document.createElement('script');
+    script.src = LEAFLET_JS; script.integrity = LEAFLET_JS_INTEGRITY;
+    script.crossOrigin = ''; script.onload = resolve; script.onerror = reject;
+    document.head.appendChild(script);
+  });
+  return leafletLoadPromise;
+}
+
 /**
  * Initializes a Leaflet map in the specified container.
  * @param {string} containerId - DOM element ID for the map
- * @returns {Object} Leaflet map instance
+ * @returns {Promise<Object>} Leaflet map instance
  */
-export function initMap(containerId) {
+export async function initMap(containerId) {
+  await loadLeaflet();
   const map = L.map(containerId, {
     scrollWheelZoom: true,
     zoomControl: true

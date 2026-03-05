@@ -5,24 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Dona'm Bauxa - Descobreix la musica i els esdeveniments en directe de Mallorca. Concerts, festivals i festes populars.">
   <title>Dona'm Bauxa - Musica i Esdeveniments de Mallorca</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-  <!-- Google Fonts -->
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <!-- DNS prefetch fallback -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://unpkg.com">
 
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS: synchronous local copy (layout-critical, async causes CLS) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons: async (non-layout-critical) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></noscript>
 
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <!-- Google Fonts: async with display=swap -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"></noscript>
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/main.css">
+  <!-- Critical CSS: synchronous (own styles only) -->
+  <link rel="stylesheet" href="css/main.min.css">
+
+  <!-- Modulepreload: start downloading JS modules early -->
+  <link rel="modulepreload" href="js/app.js">
+  <link rel="modulepreload" href="js/modules/dataLoader.js">
+  <link rel="modulepreload" href="js/modules/renderer.js">
+  <link rel="modulepreload" href="js/modules/filters.js">
+  <link rel="modulepreload" href="js/modules/ui.js">
+  <link rel="modulepreload" href="js/router.js">
 
   <style>
     /* Map marker custom styles */
@@ -30,6 +45,13 @@
       background: transparent !important;
       border: none !important;
     }
+    /* Reserve space for dynamic containers to prevent CLS */
+    #featuredEvents { min-height: 350px; }
+    #upcomingEvents { min-height: 650px; }
+    #featuredArtists { min-height: 380px; }
+    #newsGrid { min-height: 320px; }
+    /* Font fallback metrics to reduce CLS from font swap */
+    body { font-synthesis: none; }
   </style>
 </head>
 <body>
@@ -74,7 +96,7 @@
   <main id="main-content">
 
     <!-- ===================== HOME VIEW ===================== -->
-    <div data-view="home" style="display:none;">
+    <div data-view="home">
 
       <!-- Hero Section -->
       <header class="hero">
@@ -93,7 +115,7 @@
               </div>
             </div>
             <div class="col-lg-5 d-none d-lg-block text-center">
-              <svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;opacity:0.9;">
+              <svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg" width="380" height="332" style="max-width:380px;opacity:0.9;">
                 <circle cx="200" cy="175" r="140" fill="rgba(255,255,255,0.06)"/>
                 <circle cx="200" cy="175" r="100" fill="rgba(255,255,255,0.06)"/>
                 <text x="200" y="150" font-family="Georgia,serif" font-size="60" fill="rgba(255,255,255,0.8)" text-anchor="middle" font-weight="bold">DB</text>
@@ -111,7 +133,18 @@
           <h2 class="section-title">Esdeveniments Destacats</h2>
           <p class="section-subtitle">Els concerts i festivals que no et pots perdre</p>
           <div class="row" id="featuredEvents">
-            <!-- Dynamically loaded -->
+            <div class="col-md-6 mb-4" aria-hidden="true">
+              <div class="skeleton-block" style="min-height:350px;background:var(--color-bg-alt);border-radius:var(--card-radius);"></div>
+            </div>
+            <div class="col-md-6 mb-4" aria-hidden="true">
+              <div class="skeleton-block" style="min-height:350px;background:var(--color-bg-alt);border-radius:var(--card-radius);"></div>
+            </div>
+            <div class="col-md-6 mb-4" aria-hidden="true">
+              <div class="skeleton-block" style="min-height:350px;background:var(--color-bg-alt);border-radius:var(--card-radius);"></div>
+            </div>
+            <div class="col-md-6 mb-4" aria-hidden="true">
+              <div class="skeleton-block" style="min-height:350px;background:var(--color-bg-alt);border-radius:var(--card-radius);"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -129,7 +162,11 @@
             </a>
           </div>
           <div class="row" id="upcomingEvents">
-            <!-- Dynamically loaded -->
+            <div class="col-12 mb-3" aria-hidden="true"><div class="skeleton-block" style="height:130px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
+            <div class="col-12 mb-3" aria-hidden="true"><div class="skeleton-block" style="height:130px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
+            <div class="col-12 mb-3" aria-hidden="true"><div class="skeleton-block" style="height:130px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
+            <div class="col-12 mb-3" aria-hidden="true"><div class="skeleton-block" style="height:130px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
+            <div class="col-12 mb-3" aria-hidden="true"><div class="skeleton-block" style="height:130px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
           </div>
         </div>
       </section>
@@ -147,7 +184,10 @@
             </a>
           </div>
           <div class="row" id="featuredArtists">
-            <!-- Dynamically loaded -->
+            <div class="col-md-6 col-lg-4 mb-4" aria-hidden="true"><div class="skeleton-block" style="height:380px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
+            <div class="col-md-6 col-lg-4 mb-4" aria-hidden="true"><div class="skeleton-block" style="height:380px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
+            <div class="col-md-6 col-lg-4 mb-4" aria-hidden="true"><div class="skeleton-block" style="height:380px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
+            <div class="col-md-6 col-lg-4 mb-4" aria-hidden="true"><div class="skeleton-block" style="height:380px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
           </div>
         </div>
       </section>
@@ -158,7 +198,9 @@
           <h2 class="section-title">Noticies de l'Escena</h2>
           <p class="section-subtitle">Actualitat musical de les Illes Balears</p>
           <div class="row" id="newsGrid">
-            <!-- Dynamically loaded -->
+            <div class="col-md-6 col-lg-4 mb-4" aria-hidden="true"><div class="skeleton-block" style="height:320px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
+            <div class="col-md-6 col-lg-4 mb-4" aria-hidden="true"><div class="skeleton-block" style="height:320px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
+            <div class="col-md-6 col-lg-4 mb-4" aria-hidden="true"><div class="skeleton-block" style="height:320px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
           </div>
         </div>
       </section>
@@ -483,12 +525,17 @@
     <i class="bi bi-chevron-up"></i>
   </button>
 
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <!-- Data prefetch: start fetching JSON before module parses -->
+  <script>
+    window.__dataPreload = {
+      events:  fetch('data/events.json').then(r => r.json()),
+      artists: fetch('data/artists.json').then(r => r.json()),
+      news:    fetch('data/news.json').then(r => r.json())
+    };
+  </script>
 
   <!-- App JS -->
   <script type="module" src="js/app.js"></script>

@@ -334,7 +334,7 @@ async function initMapView() {
   // Small delay to let the container become visible before Leaflet measures it
   await new Promise(resolve => setTimeout(resolve, 50));
 
-  leafletMap = initMap('map');
+  leafletMap = await initMap('map');
 
   // Populate filters only on first init
   if (!initializedViews.has('map')) {

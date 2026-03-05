@@ -175,7 +175,7 @@ img {
 
 .btn-bauxa-outline {
   background: transparent;
-  color: var(--color-primary);
+  color: #A3432A;
   border: 2px solid var(--color-primary);
   padding: 0.55rem 1.5rem;
   border-radius: var(--btn-radius);
@@ -242,6 +242,7 @@ img {
   transition: all var(--transition-base);
   box-shadow: var(--shadow-sm);
   height: 100%;
+  contain: layout style;
 }
 
 .card-bauxa:hover {
@@ -293,7 +294,7 @@ img {
 }
 
 .badge-price {
-  background: var(--color-accent);
+  background: #4A6B35;
   color: #fff;
   font-size: 0.8rem;
   font-weight: 700;
@@ -302,7 +303,7 @@ img {
 }
 
 .badge-price--free {
-  background: var(--color-success);
+  background: #3D7A52;
 }
 
 .badge-category {
@@ -548,7 +549,7 @@ img {
   width: 60px;
   min-width: 60px;
   height: 60px;
-  background: var(--color-primary);
+  background: #8B3D28;
   color: #fff;
   border-radius: 0.5rem;
   font-weight: 700;
@@ -682,13 +683,13 @@ img {
 
 .news-card__date {
   font-size: 0.8rem;
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .news-card__category {
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--color-primary);
+  color: #A3432A;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -789,7 +790,14 @@ img {
 
 .animate-fade-in-up {
   animation: fadeInUp 0.5s ease forwards;
+  contain: layout;
 }
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+.skeleton-block { animation: skeleton-pulse 1.5s ease-in-out infinite; }
 
 /* --------------------------------------------------------------------------
    Skip to Content (Accessibility)
@@ -888,6 +896,18 @@ img {
 .spotify-embed iframe {
   border: none;
   border-radius: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   Print Styles
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Content-visibility for below-fold sections (improves LCP)
+   -------------------------------------------------------------------------- */
+.bg-alt,
+[data-view="home"] > .section-padding:nth-child(n+3) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
 }
 
 /* --------------------------------------------------------------------------

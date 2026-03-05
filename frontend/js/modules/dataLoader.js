@@ -12,15 +12,20 @@ const cache = new Map();
  * @returns {Promise<Object>} Parsed JSON data
  */
 export async function loadData(path) {
-  if (cache.has(path)) {
-    return cache.get(path);
+  if (cache.has(path)) return cache.get(path);
+
+  let preload = null;
+  if (window.__dataPreload) {
+    if (path === 'data/events.json')  { preload = window.__dataPreload.events;  window.__dataPreload.events  = null; }
+    if (path === 'data/artists.json') { preload = window.__dataPreload.artists; window.__dataPreload.artists = null; }
+    if (path === 'data/news.json')    { preload = window.__dataPreload.news;    window.__dataPreload.news    = null; }
   }
+
   try {
-    const response = await fetch(path);
-    if (!response.ok) {
-      throw new Error(`Failed to load ${path}: ${response.status}`);
-    }
-    const data = await response.json();
+    const data = preload ? await preload : await fetch(path).then(r => {
+      if (!r.ok) throw new Error(`Failed to load ${path}: ${r.status}`);
+      return r.json();
+    });
     cache.set(path, data);
     return data;
   } catch (error) {
