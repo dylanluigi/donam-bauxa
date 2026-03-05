@@ -20,7 +20,7 @@
           "name": "Palma",
           "address": { "@type": "PostalAddress", "addressLocality": "Palma", "addressRegion": "Mallorca" }
         },
-        "image": "assets/images/artists/antonia-font.svg",
+        "image": "assets/images/artists/antonia-font.jpg",
         "sameAs": [
           "https://open.spotify.com/intl-es/artist/503mwh1GWEiWy9bzzpiTFW",
           "https://www.instagram.com/antoniafont_oficial/"
@@ -56,7 +56,7 @@
           "name": "Palma",
           "address": { "@type": "PostalAddress", "addressLocality": "Palma", "addressRegion": "Mallorca" }
         },
-        "image": "assets/images/artists/maria-del-mar-bonet.svg",
+        "image": "assets/images/artists/maria-del-mar-bonet.jpg",
         "sameAs": [
           "https://open.spotify.com/artist/4HCgOSMQRCkN9q3Bs11lCl",
           "https://ca.wikipedia.org/wiki/Maria_del_Mar_Bonet"
@@ -86,7 +86,7 @@
           "name": "Inca",
           "address": { "@type": "PostalAddress", "addressLocality": "Inca", "addressRegion": "Mallorca" }
         },
-        "image": "assets/images/artists/anegats.svg",
+        "image": "assets/images/artists/anegats.jpg",
         "sameAs": [
           "https://open.spotify.com/artist/3hXxBJMNakGDUsFjknI9TX",
           "https://www.instagram.com/anegats/"
@@ -116,7 +116,7 @@
           "name": "Binissalem",
           "address": { "@type": "PostalAddress", "addressLocality": "Binissalem", "addressRegion": "Mallorca" }
         },
-        "image": "assets/images/artists/donallop.svg",
+        "image": "assets/images/artists/donallop.jpg",
         "sameAs": [
           "https://open.spotify.com/artist/0hYCcY1UMUwNyqvLNjI9kR",
           "https://www.instagram.com/donallop/"
@@ -145,7 +145,7 @@
           "name": "Sineu",
           "address": { "@type": "PostalAddress", "addressLocality": "Sineu", "addressRegion": "Mallorca" }
         },
-        "image": "assets/images/artists/mans-de-brec.svg",
+        "image": "assets/images/artists/mans-de-brec.jpg",
         "sameAs": [
           "https://open.spotify.com/artist/example5",
           "https://www.instagram.com/mansdebrec/"
@@ -174,7 +174,7 @@
           "name": "Palma",
           "address": { "@type": "PostalAddress", "addressLocality": "Palma", "addressRegion": "Mallorca" }
         },
-        "image": "assets/images/artists/al-mayurqa.svg",
+        "image": "assets/images/artists/al-mayurqa.jpg",
         "sameAs": [
           "https://ca.wikipedia.org/wiki/Al-Mayurqa"
         ],
@@ -202,7 +202,7 @@
           "name": "Manacor",
           "address": { "@type": "PostalAddress", "addressLocality": "Manacor", "addressRegion": "Mallorca" }
         },
-        "image": "assets/images/artists/zulu-zulu.svg",
+        "image": "assets/images/artists/zulu-zulu.jpg",
         "sameAs": [
           "https://www.instagram.com/zuluzulumusic/"
         ],
@@ -230,7 +230,7 @@
           "name": "Soller",
           "address": { "@type": "PostalAddress", "addressLocality": "Soller", "addressRegion": "Mallorca" }
         },
-        "image": "assets/images/artists/cap-pela.svg",
+        "image": "assets/images/artists/cap-pela.jpg",
         "sameAs": [
           "https://open.spotify.com/artist/example8",
           "https://www.instagram.com/cappela.music/"
@@ -259,7 +259,7 @@
           "name": "Sa Pobla",
           "address": { "@type": "PostalAddress", "addressLocality": "Sa Pobla", "addressRegion": "Mallorca" }
         },
-        "image": "assets/images/artists/joan-miquel-oliver.svg",
+        "image": "assets/images/artists/joan-miquel-oliver.jpg",
         "sameAs": [
           "https://open.spotify.com/artist/2v9lWpABkOatYJwj3DNZFZ",
           "https://www.instagram.com/joanmigueloliver/"
@@ -289,7 +289,7 @@
           "name": "Palma",
           "address": { "@type": "PostalAddress", "addressLocality": "Palma", "addressRegion": "Mallorca" }
         },
-        "image": "assets/images/artists/xeremiers.svg",
+        "image": "assets/images/artists/xeremiers.jpg",
         "sameAs": [],
         "album": [],
         "zone": "Palma",
@@ -312,7 +312,7 @@
           "name": "Palma",
           "address": { "@type": "PostalAddress", "addressLocality": "Palma", "addressRegion": "Mallorca" }
         },
-        "image": "assets/images/artists/la-femme-contradiction.svg",
+        "image": "assets/images/artists/la-femme-contradiction.jpg",
         "sameAs": [
           "https://www.instagram.com/lafemmecontradiction/"
         ],
@@ -340,7 +340,7 @@
           "name": "Deia",
           "address": { "@type": "PostalAddress", "addressLocality": "Deia", "addressRegion": "Mallorca" }
         },
-        "image": "assets/images/artists/brams-de-tramuntana.svg",
+        "image": "assets/images/artists/brams-de-tramuntana.jpg",
         "sameAs": [
           "https://www.instagram.com/bramsdetramuntana/"
         ],

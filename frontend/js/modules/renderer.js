@@ -26,6 +26,50 @@ function generatePlaceholderSVG(name, bgColor = '#1B4965') {
 }
 
 /**
+ * Generates a <picture> element with AVIF, WebP, and JPEG sources.
+ * Falls back to the inline SVG placeholder if no image path is provided.
+ * @param {string} imagePath - Path to the JPEG fallback image (e.g. "assets/images/artists/name.jpg")
+ * @param {string} altText - Alt text for the image
+ * @param {string} name - Item name (used for placeholder fallback)
+ * @param {string} [bgColor='#1B4965'] - Background color for placeholder
+ * @param {Object} [options={}] - Additional options
+ * @param {boolean} [options.lazy=true] - Whether to lazy load the image
+ * @param {boolean} [options.highPriority=false] - Whether this is an LCP/above-the-fold image
+ * @param {number} [options.width=800] - Image width attribute
+ * @param {number} [options.height=600] - Image height attribute
+ * @param {string} [options.className=''] - CSS class for the img element
+ * @returns {string} HTML string with <picture> element or SVG fallback
+ */
+function generatePictureElement(imagePath, altText, name, bgColor = '#1B4965', options = {}) {
+  if (!imagePath) {
+    return generatePlaceholderSVG(name, bgColor);
+  }
+
+  const {
+    lazy = true,
+    highPriority = false,
+    width = 800,
+    height = 600,
+    className = ''
+  } = options;
+
+  // Derive AVIF and WebP paths from the JPEG path
+  const basePath = imagePath.replace(/\.[^.]+$/, '');
+  const avifPath = basePath + '.avif';
+  const webpPath = basePath + '.webp';
+
+  const loadingAttr = lazy && !highPriority ? ' loading="lazy"' : '';
+  const fetchPriorityAttr = highPriority ? ' fetchpriority="high"' : '';
+  const classAttr = className ? ` class="${className}"` : '';
+
+  return `<picture>
+    <source srcset="${avifPath}" type="image/avif">
+    <source srcset="${webpPath}" type="image/webp">
+    <img src="${imagePath}" alt="${escapeHtml(altText)}" width="${width}" height="${height}"${loadingAttr}${fetchPriorityAttr}${classAttr}>
+  </picture>`;
+}
+
+/**
  * Escapes HTML special characters.
  * @param {string} text
  * @returns {string}
@@ -84,7 +128,7 @@ export function renderArtistCard(artist) {
     <div class="col-md-6 col-lg-4 mb-4 animate-fade-in-up">
       <article class="card-bauxa artist-card" data-artist-id="${artist['@id']}">
         <div class="artist-card__image-wrapper">
-          ${generatePlaceholderSVG(artist.name, bgColors[colorIndex])}
+          ${generatePictureElement(artist.image, artist.name, artist.name, bgColors[colorIndex], { width: 800, height: 600, className: 'artist-card__img' })}
           <div class="artist-card__favorite">
             <button class="btn-favorite ${favClass}"
                     data-fav-type="artist"
@@ -219,6 +263,7 @@ export function renderFeaturedEvent(event) {
   return `
     <div class="col-md-6 mb-4 animate-fade-in-up">
       <article class="featured-event">
+        ${event.image ? generatePictureElement(event.image, event.name, event.name, '#0F2E42', { lazy: false, highPriority: true, width: 800, height: 600, className: 'featured-event__img' }) : ''}
         <div class="featured-event__overlay"></div>
         <div class="featured-event__content">
           <span class="featured-event__badge">${escapeHtml(event.category || 'concert')}</span>
@@ -253,6 +298,9 @@ export function renderNewsCard(article) {
   return `
     <div class="col-md-6 col-lg-4 mb-4 animate-fade-in-up">
       <article class="card-bauxa">
+        ${article.image ? `<div class="news-card__image-wrapper">
+          ${generatePictureElement(article.image, article.headline, article.headline, '#1B4965', { width: 800, height: 600, className: 'news-card__img' })}
+        </div>` : ''}
         <div class="card-body">
           <div class="d-flex justify-content-between align-items-center mb-2">
             <span class="news-card__category">${escapeHtml(article.category || '')}</span>

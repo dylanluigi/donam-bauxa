@@ -501,6 +501,19 @@ img {
   object-fit: cover;
 }
 
+.artist-card__image-wrapper picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.artist-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .artist-card__favorite {
   position: absolute;
   top: 0.75rem;
@@ -584,6 +597,21 @@ img {
   background: linear-gradient(135deg, var(--color-secondary-dark), var(--color-secondary));
 }
 
+.featured-event picture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.featured-event__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .featured-event__overlay {
   position: absolute;
   inset: 0;
@@ -632,10 +660,24 @@ img {
 /* --------------------------------------------------------------------------
    News Card
    -------------------------------------------------------------------------- */
-.news-card__image {
+.news-card__image,
+.news-card__image-wrapper {
   height: 180px;
-  object-fit: cover;
+  overflow: hidden;
   background: var(--color-bg-alt);
+}
+
+.news-card__image-wrapper picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.news-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .news-card__date {
