@@ -1,0 +1,1751 @@
+[
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Antònia Font",
+        "genre": [
+            "Pop",
+            "Experimental Pop",
+            "Rock",
+            "Indie"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Mallorcan band formed in 1997, known for its distinctive blend of festive music and imaginative lyrics in Catalan.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Antònia_Font",
+            "https://open.spotify.com/artist/6o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Rels B",
+        "genre": [
+            "Latin R&B",
+            "Urban",
+            "Latin Pop",
+            "Hip Hop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Spanish rapper and songwriter from Palma de Mallorca, a prominent figure in the Spanish urban music scene.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/Rels_B",
+            "https://open.spotify.com/artist/2j69p8is98vIidYx9mYvI1"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Maria del Mar Bonet",
+        "genre": [
+            "Folk",
+            "Traditional Mediterranean",
+            "Singer-songwriter"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Legendary singer and composer from Palma, a leading figure of the Nova Cançó movement and a bridge to Mediterranean folk.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Maria_del_Mar_Bonet_i_Verdaguer",
+            "https://open.spotify.com/artist/3j69p8is98vIidYx9mYvI1"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Tomeu Penya",
+        "genre": [
+            "Country",
+            "Pop-Rock",
+            "Folk"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Iconic singer-songwriter from Vilafranca de Bonany, known for his unique blend of country music and Mallorcan character.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Tomeu_Penya",
+            "https://open.spotify.com/artist/4X9z9K4o7v7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Xanguito",
+        "genre": [
+            "Folk-Pop",
+            "Festive Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Popular Mallorcan group known for its festive melodies and optimistic lyrics that have become local anthems.",
+        "sameAs": [
+            "https://open.spotify.com/artist/5o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "O-Erra",
+        "genre": [
+            "Pop-Rock",
+            "Festive"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Dynamic band from Manacor, recognized for their high-energy concerts and modern pop-rock sound.",
+        "sameAs": [
+            "https://open.spotify.com/artist/6o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Anegats",
+        "genre": [
+            "Rock",
+            "Pop-Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Established rock band from Mallorca, celebrated for their longevity and songs that deeply connect with the local identity.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Anegats",
+            "https://open.spotify.com/artist/1o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Marc Seguí",
+        "genre": [
+            "Pop",
+            "Indie Pop",
+            "Urban"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Singer from Palma who gained national fame with his melodic pop and versatile urban style.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/Marc_Seguí",
+            "https://open.spotify.com/artist/2X9z9K4o7v7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Maria Jaume",
+        "genre": [
+            "Indie Pop",
+            "Folk Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Singer-songwriter from Lloret de Vistalegre, blending folk and pop with an intimate and personal voice.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Maria_Jaume_Martorell",
+            "https://open.spotify.com/artist/3j69p8is98vIidYx9mYvI1"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Joan Miquel Oliver",
+        "genre": [
+            "Art Pop",
+            "Psychedelic Pop",
+            "Experimental"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Founding member and primary composer of Antònia Font, also a prolific solo artist known for his surrealist pop.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Joan_Miquel_Oliver_i_Figuerola",
+            "https://open.spotify.com/artist/4o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Maika Makovski",
+        "genre": [
+            "Indie Rock",
+            "Underground Rock",
+            "Art Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Multi-talented artist and musician from Palma, known for her powerful vocals and eclectic rock sound.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/Maika_Makovski",
+            "https://open.spotify.com/artist/5XROpF1yIcXOcMjDkswghI"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Concha Buika",
+        "genre": [
+            "Flamenco",
+            "Jazz",
+            "Soul"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Grammy-nominated singer from Palma, internationally acclaimed for her soul-stirring fusion of flamenco and jazz.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/Concha_Buika",
+            "https://open.spotify.com/artist/6o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Chenoa",
+        "genre": [
+            "Pop",
+            "Latin Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Renowned pop singer and television personality who grew up in Mallorca, rising to fame through Operación Triunfo.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/Chenoa",
+            "https://open.spotify.com/artist/0o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "L.A.",
+        "genre": [
+            "Indie Rock",
+            "Alternative Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Musical project of Luis Albert Segura, known for its polished international indie-rock sound and English lyrics.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/L.A._(banda)",
+            "https://open.spotify.com/artist/1o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Sexy Sadie",
+        "genre": [
+            "Indie Rock",
+            "Indie Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Pioneering Spanish indie-rock band from Mallorca, influential in the 90s alternative music scene.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/Sexy_Sadie",
+            "https://open.spotify.com/artist/2j69p8is98vIidYx9mYvI1"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Ossifar",
+        "genre": [
+            "Humorous Pop-Rock",
+            "Parody"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Much-loved Mallorcan comedy-rock group known for their satirical songs and social commentary in local dialect.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Ossifar",
+            "https://open.spotify.com/artist/3o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Fora des Sembrat",
+        "genre": [
+            "Pop-Rock",
+            "Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Influential Mallorcan band active during the Rock Català boom, merging pop-rock with local themes.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Fora_des_Sembrat",
+            "https://open.spotify.com/artist/4X9z9K4o7v7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Da Souza",
+        "genre": [
+            "Alternative Pop",
+            "Indie Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Intelligent and melodic pop band from Mallorca, known for their evolving sound and clever songwriting.",
+        "sameAs": [
+            "https://open.spotify.com/artist/5o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Júlia Colom",
+        "genre": [
+            "Mediterranean Folk",
+            "Art Pop",
+            "Jazz"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Soulful singer from Valldemossa who modernizes traditional 'tonades' through a jazz and art-pop lens.",
+        "sameAs": [
+            "https://open.spotify.com/artist/6o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Samantha Hudson",
+        "genre": [
+            "Synth-pop",
+            "Electropop",
+            "Provocative Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Artist, singer, and activist who rose to prominence in Mallorca through her transgressive and satirical pop.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/Samantha_Hudson",
+            "https://open.spotify.com/artist/0j69p8is98vIidYx9mYvI1"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Guillem d'Efak",
+        "genre": [
+            "Nova Cançó",
+            "Jazz",
+            "Blues"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Legendary singer, actor, and poet from Manacor, a foundational figure in the recovery of Mallorcan song.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Guillem_d'Efak",
+            "https://open.spotify.com/artist/1j69p8is98vIidYx9mYvI1"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Xavibo",
+        "genre": [
+            "Urban Pop",
+            "Emo Rap",
+            "Indie"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Artist from Palma who blends urban flows with emotional and introspective lyrics.",
+        "sameAs": [
+            "https://open.spotify.com/artist/2o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Dollar Selmouni",
+        "genre": [
+            "Urban",
+            "Hip Hop",
+            "Soul"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Palma-born artist known for his soulful urban style, blending rap with a deep sense of social reality.",
+        "sameAs": [
+            "https://open.spotify.com/artist/3o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Fades",
+        "genre": [
+            "Urban Pop",
+            "Electronic",
+            "LGTBIQ+ Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Musical trio from Mallorca crafting pop and urban sounds with strong messages of queer empowerment.",
+        "sameAs": [
+            "https://open.spotify.com/artist/4o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Plan-ET",
+        "genre": [
+            "Urban",
+            "Trap",
+            "Reggaeton"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Rising artist in the Mallorcan urban scene, exploring modern trap and reggaeton rhythms in Catalan.",
+        "sameAs": [
+            "https://open.spotify.com/artist/5o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Maria Hein",
+        "genre": [
+            "Indie Pop",
+            "Folk Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Young singer-songwriter from Felanitx, celebrated for her delicate and luminous pop-folk sound.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Maria_Hein_i_Oliver",
+            "https://open.spotify.com/artist/6o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Miquel Serra",
+        "genre": [
+            "Folk-Pop",
+            "Rock",
+            "Experimental"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Singer-songwriter known for his vocal simplicity and profound, minimalist pop compositions.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Miquel_Serra",
+            "https://open.spotify.com/artist/1o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Joana Gomila",
+        "genre": [
+            "New Folk",
+            "Experimental",
+            "Electronic"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Composer and performer from Manacor who reinvents Balearic folk through an electronic lens.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Joana_Gomila_i_Sansó",
+            "https://open.spotify.com/artist/2X9z9K4o7v7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Clara Fiol",
+        "genre": [
+            "Folk",
+            "Jazz",
+            "Electronic"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Singer and poet from Palma, member of Marala, known for blending traditional sounds with jazz.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Clara_Fiol_Dols",
+            "https://open.spotify.com/artist/3j69p8is98vIidYx9mYvI1"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Salvatge Cor",
+        "genre": [
+            "Art Pop",
+            "Lo-fi",
+            "Indie"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Musical project led by Llorenç Romera Pericàs, known for its evolving 'art pop' sound.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Salvatge_Cor",
+            "https://open.spotify.com/artist/4X9z9K4o7v7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Oso Leone",
+        "genre": [
+            "Folk-Pop",
+            "Electronic",
+            "R&B"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Band from Mallorca known for their ethereal sound blending folk with electronic and soul influences.",
+        "sameAs": [
+            "https://open.spotify.com/artist/6o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "The Prussians",
+        "genre": [
+            "Indie Rock",
+            "Electronic Groove"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Indie-rock band from Mallorca characterized by an electronic groove vibe and soulful vocals.",
+        "sameAs": [
+            "https://open.spotify.com/artist/2o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Sunflowers",
+        "genre": [
+            "Alternative Pop-Rock",
+            "Indie Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Legendary Mallorcan band of the late 90s, known for their melodic pop-rock hits like 'Happy Birthday'.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/Sunflowers_(banda)",
+            "https://open.spotify.com/artist/3o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Els Ocults",
+        "genre": [
+            "Pop-Rock",
+            "Catalan"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Classic band from Manacor blending Mediterranean roots with Anglo-Saxon rock.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Ocults",
+            "https://open.spotify.com/artist/4o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Tots Sants",
+        "genre": [
+            "Rock",
+            "Punk",
+            "Funk"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Mallorcan band that emerged during the Rock Català movement, known for their powerful hard rock sound.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Tots_Sants_(grup)",
+            "https://open.spotify.com/artist/5o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Roig!",
+        "genre": [
+            "Pop",
+            "Psychedelic Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Band from Manacor creating addictive power pop with psychedelic textures.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Roig!",
+            "https://open.spotify.com/artist/6o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Jorra i Gomorra",
+        "genre": [
+            "Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Personal project of Manacor musician Jorra Santiago, known for his unique approach to pop.",
+        "sameAs": [
+            "https://open.spotify.com/artist/0o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Reïna",
+        "genre": [
+            "Pop",
+            "Pop-Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Pop band from Manacor, winners of Sona9 2020, known for their classic 'pop de tota la vida' sound.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Reïna_(grup)",
+            "https://open.spotify.com/artist/1o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Amulet",
+        "genre": [
+            "Indie-Folk",
+            "Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Artistic name of Antoni Mulet, blending indie-folk with epic and imaginative themes.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Amulet_(músic)",
+            "https://open.spotify.com/artist/2X9z9K4o7v7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Baaldo",
+        "genre": [
+            "Pop",
+            "Urban",
+            "Electronic"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Pop singer from Palma known for blending urban rhythms with electronic pop and a strong visual aesthetic.",
+        "sameAs": [
+            "https://open.spotify.com/artist/3j69p8is98vIidYx9mYvI1"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Cabot",
+        "genre": [
+            "Pop-Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Pop-rock quintet from Marratxí, known for their linguistic richness and storytelling in Catalan.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Cabot_(grup_musical)",
+            "https://open.spotify.com/artist/4X9z9K4o7v7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Pitxorines",
+        "genre": [
+            "Folk",
+            "Traditional",
+            "Jazz"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Innovative folk group reinterpreting traditional Mallorcan music with classical and jazz elements.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Pitxorines",
+            "https://open.spotify.com/artist/5o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Ses Bubotes",
+        "genre": [
+            "Pop-Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Festive pop-rock band from Mallorca known for their humorous and sarcastic take on local society.",
+        "sameAs": [
+            "https://open.spotify.com/artist/6o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Suasi i els Electrodomèstics",
+        "genre": [
+            "Pop-Rock",
+            "Rock-Folk"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Band led by Pep Suasi, blending pop-rock with American-influenced folk roots.",
+        "sameAs": [
+            "https://open.spotify.com/artist/0o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Tancat per Defunció",
+        "genre": [
+            "Independent Rock",
+            "Pop-Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Influential independent rock group from Sabadell with strong ties and performances in Mallorca.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Tancat_per_Defunci%C3%B3",
+            "https://open.spotify.com/artist/1o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Al-Mayurqa",
+        "genre": [
+            "Traditional",
+            "Folk"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Musical group dedicated to dignifying and updating traditional Mallorcan music and culture.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Al-Mayurqa_(grup)",
+            "https://open.spotify.com/artist/2j69p8is98vIidYx9mYvI1"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Música Nostra",
+        "genre": [
+            "Traditional",
+            "Popular"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Pioneering group in the recovery and modernization of traditional Balearic dance and music.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/M%C3%BAsica_Nostra",
+            "https://open.spotify.com/artist/3j69p8is98vIidYx9mYvI1"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Nou Romancer",
+        "genre": [
+            "Traditional",
+            "Folk",
+            "World Music"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Group specialized in recovering the tradition of 'romanços' and popular songs from a modern perspective.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Nou_Romancer",
+            "https://open.spotify.com/artist/4X9z9K4o7v7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Cap Pela",
+        "genre": [
+            "A Cappella",
+            "Vocal"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Renowned a cappella vocal group covering international hits and traditional Mallorcan songs.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Cap_Pela",
+            "https://open.spotify.com/artist/5o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Taverners",
+        "genre": [
+            "Folk",
+            "Traditional"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Contemporary folk group from Mallorca reviving heritage through popular music and social themes.",
+        "sameAs": [
+            "https://open.spotify.com/artist/6o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Saïm",
+        "genre": [
+            "Post-Hardcore",
+            "Indie Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Mallorcan power trio known for their raw, emotive sound and energetic live performances.",
+        "sameAs": [
+            "https://open.spotify.com/artist/2oX9Z7id2q6vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Peligro!",
+        "genre": [
+            "Indie Rock",
+            "Punk"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Indie rock trio from Mallorca formed in 2018, characterized by a 90s rock sound with satirical lyrics.",
+        "sameAs": [
+            "https://open.spotify.com/artist/0o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Go Cactus",
+        "genre": [
+            "Garage Rock",
+            "Surf Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Garage rock band from Mallorca known for their direct and punchy sound.",
+        "sameAs": [
+            "https://open.spotify.com/artist/3o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Urtain",
+        "genre": [
+            "Rock",
+            "Pop Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Mallorcan rock band formed in 2007, blending melodic pop with powerful rock riffs.",
+        "sameAs": [
+            "https://open.spotify.com/artist/4X9z9K4o7v7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Satellites",
+        "genre": [
+            "Experimental Rock",
+            "Post-Punk"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Veteran Mallorcan band known for their evolving sound from elegant pop to experimental post-punk.",
+        "sameAs": [
+            "https://open.spotify.com/artist/5o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Lava Fizz",
+        "genre": [
+            "Indie Rock",
+            "Dream Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Indie band from Mallorca blending dreamy guitars and synthesizers with emotive melodies.",
+        "sameAs": [
+            "https://open.spotify.com/artist/6o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Yoko Factor",
+        "genre": [
+            "Alternative Rock",
+            "Garage Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Mallorcan alternative rock duo known for their slow, heavy desert rock sound.",
+        "sameAs": [
+            "https://open.spotify.com/artist/0o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Bilo",
+        "genre": [
+            "Psychedelic Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Psychedelic pop and rock band from Mallorca, winners of PopRock 2022.",
+        "sameAs": [
+            "https://open.spotify.com/artist/1o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Escorpio",
+        "genre": [
+            "Post-Punk"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Mallorcan post-punk band with a dark, raw sound inspired by the early 80s scene.",
+        "sameAs": [
+            "https://open.spotify.com/artist/2X9z9K4o7v7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Donallop",
+        "genre": [
+            "Dream Pop",
+            "Folk Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Mallorcan musical duo known for their atmospheric dream pop sound and poetic lyrics in Catalan.",
+        "sameAs": [
+            "https://open.spotify.com/artist/3j69p8is98vIidYx9mYvI1"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "BOC",
+        "genre": [
+            "Folk Fusion",
+            "Epic Folk"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Fusion band from Mallorca that blends traditional instruments with hardcore and metal influences.",
+        "sameAs": [
+            "https://open.spotify.com/artist/4o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "MDMAR",
+        "genre": [
+            "Pop Folk"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Singer-songwriter Maria del Mar Payeras from Mallorca, known for her captivating pop-folk songs.",
+        "sameAs": [
+            "https://open.spotify.com/artist/5XROpF1yIcXOcMjDkswghI"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Marga Rotger",
+        "genre": [
+            "Folk-Pop",
+            "Mediterranean"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Mallorcan folk-pop artist whose music incorporates Mediterranean and jazz elements.",
+        "sameAs": [
+            "https://open.spotify.com/artist/6o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Marta Elka",
+        "genre": [
+            "Folk",
+            "Jazz",
+            "Swing"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Prominent Mallorcan violinist and singer who blends traditional folk with jazz and swing.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Marta_Elka",
+            "https://open.spotify.com/artist/0j69p8is98vIidYx9mYvI1"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Biel Majoral",
+        "genre": [
+            "Folk",
+            "Traditional"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Legendary Mallorcan musician and activist, a key figure in the recovery of traditional folk.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Biel_Majoral",
+            "https://open.spotify.com/artist/1o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Joan Bibiloni",
+        "genre": [
+            "Jazz Fusion",
+            "Mediterranean Folk"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Renowned guitarist and composer from Manacor, a pioneer in blending Mediterranean traditions with jazz.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Joan_Bibiloni",
+            "https://open.spotify.com/artist/2j69p8is98vIidYx9mYvI1"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Victor Uris",
+        "genre": [
+            "Blues"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Iconic Mallorcan harmonica player and pioneer of the blues scene in the Balearic Islands.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Victor_Uris",
+            "https://open.spotify.com/artist/3o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Damià Timoner",
+        "genre": [
+            "Mediterranean Guitar"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Guitarist from Manacor known for his distinctive Mediterranean style and classical training.",
+        "sameAs": [
+            "https://open.spotify.com/artist/4o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Miquel Brunet",
+        "genre": [
+            "Jazz",
+            "Contemporary Classical"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Pianist, composer, and producer from Bunyola, known for his work in jazz and prominent local projects.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Miquel_Brunet_Estarellas",
+            "https://open.spotify.com/artist/5j69p8is98vIidYx9mYvI1"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Antoni Parera Fons",
+        "genre": [
+            "Contemporary Classical",
+            "Opera"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Distinguished Mallorcan composer and producer, winner of the National Music Prize 2016.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Antoni_Parera_Fons"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Joan Valent",
+        "genre": [
+            "Contemporary Classical",
+            "Film Score"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Renowned Mallorcan composer known for his film scores and innovative contemporary classical music.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/Joan_Valent",
+            "https://open.spotify.com/artist/2o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Jaume Anglada",
+        "genre": [
+            "Rock and Roll",
+            "Folk Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Singer-songwriter and performer from Palma, known for his rock and roll style and television work.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/Jaume_Anglada",
+            "https://open.spotify.com/artist/3o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Victoria Maldi",
+        "genre": [
+            "Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Prominent Mallorcan singer and television presenter known for her pop albums and media presence.",
+        "sameAs": [
+            "https://open.spotify.com/artist/4X9z9K4o7v7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Llorenç Santamaria",
+        "genre": [
+            "Melodic Pop",
+            "Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Famous Mallorcan singer known for his romantic ballads and early rock career with Z-66.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/Lorenzo_Santamaría",
+            "https://open.spotify.com/artist/5o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Los Javaloyas",
+        "genre": [
+            "Pop",
+            "Latin",
+            "Folk"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Iconic and long-running pop band from Mallorca, popular since the 1950s.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/Los_Javaloyas",
+            "https://open.spotify.com/artist/6o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Peor Impossible",
+        "genre": [
+            "Synth-pop",
+            "Electronic Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Influential band from the Movida Madrileña era, originating from Palma and featuring Rossy de Palma.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/Peor_Impossible",
+            "https://open.spotify.com/artist/0o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "La Búsqueda",
+        "genre": [
+            "Mediterranean Rock",
+            "Folk-Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Mallorcan rock band known for their Mediterranean-influenced sound and international tours in the 90s.",
+        "sameAs": [
+            "https://open.spotify.com/artist/1o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Cerebros Exprimidos",
+        "genre": [
+            "Hardcore Punk"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Seminal hardcore punk band from Palma, active since the mid-80s with an aggressive, raw sound.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/Cerebros_Exprimidos",
+            "https://open.spotify.com/artist/2X9z9K4o7v7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Trèvol",
+        "genre": [
+            "Folk Fusion",
+            "Pop Folk"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Local folk group focused on traditional sounds with a modern pop sensibility.",
+        "sameAs": [
+            "https://open.spotify.com/artist/3j69p8is98vIidYx9mYvI1"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Nita",
+        "genre": [
+            "Alternative Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Alternative rock band from Mallorca led by Natalia Gómez, known for their emotional intensity.",
+        "sameAs": [
+            "https://open.spotify.com/artist/4X9z9K4o7v7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Caspary",
+        "genre": [
+            "Indie Rock",
+            "Pop Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Indie rock band from Sa Pobla known for fresh melodies and powerful riffs in Catalan.",
+        "sameAs": [
+            "https://open.spotify.com/artist/5o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Llvna",
+        "genre": [
+            "Latin Pop",
+            "Spanish Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Artist blending pop with traditional and urban influences, known for her track \"MALLORCA\".",
+        "sameAs": [
+            "https://open.spotify.com/artist/6o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Mon Joan Tiquat",
+        "genre": [
+            "Eclectic Pop",
+            "Jazz Fusion"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Artistic project of Joan Vila, blending author songs with jazz and electronic textures.",
+        "sameAs": [
+            "https://open.spotify.com/artist/0o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Mut",
+        "genre": [
+            "Indie Pop-Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Mallorcan band known for their energetic indie-pop sound and catchy Spanish melodies.",
+        "sameAs": [
+            "https://open.spotify.com/artist/1o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Oprimits",
+        "genre": [
+            "Ska",
+            "Punk Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Legendary Mallorcan band blending ska, punk, and rock with social and political lyrics.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Oprimits",
+            "https://open.spotify.com/artist/2X9z9K4o7v7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Rumba Katxai",
+        "genre": [
+            "Rumba",
+            "Cumbia",
+            "Ska"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Multicultural band from Mallorca fusing Latin rhythms with reggae and rumba energy.",
+        "sameAs": [
+            "https://open.spotify.com/artist/3j69p8is98vIidYx9mYvI1"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Tiu",
+        "genre": [
+            "Singer-songwriter",
+            "Pop folk"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Artistic name of Beatriu Herrero, known for her intimate songs about Mallorcan life and gastronomy.",
+        "sameAs": [
+            "https://open.spotify.com/artist/4X9z9K4o7v7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Tugores",
+        "genre": [
+            "Mediterranean Jazz",
+            "Cinematic Music"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Project of guitarist Jaume Tugores, merging Mediterranean melodies with cinematic soundscapes.",
+        "sameAs": [
+            "https://open.spotify.com/artist/5o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Valtonyc",
+        "genre": [
+            "Hip-hop",
+            "Rap"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Controversial Mallorcan rapper known for his political lyrics in Catalan and high-profile legal battle.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Valtonyc",
+            "https://open.spotify.com/artist/6o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Papa Topo",
+        "genre": [
+            "Indie Pop",
+            "Synth-pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Indie pop band from Binissalem known for their eclectic sound and viral hits like 'Oso Panda'.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/Papa_Topo",
+            "https://open.spotify.com/artist/0o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Daniel Higiénico",
+        "genre": [
+            "Rock",
+            "Humorous Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Versatile artist known for his theatrical live shows and satirical lyrics blending rock, blues, and rumba.",
+        "sameAs": [
+            "https://open.spotify.com/artist/1o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Bruno Sotos",
+        "genre": [
+            "Pop",
+            "Folk"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Singer-songwriter from Andratx whose emotional performance on Got Talent became a viral success.",
+        "sameAs": [
+            "https://open.spotify.com/artist/2j69p8is98vIidYx9mYvI1"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Ricky Merino",
+        "genre": [
+            "Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Pop singer and television presenter from Palma, rising to fame through Operación Triunfo 2017.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/Ricky_Merino",
+            "https://open.spotify.com/artist/3o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Negre",
+        "genre": [
+            "Synth-pop",
+            "Pop"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Synth-pop band from Santa Maria del Camí, winners of Pop Rock 2023 contest in Palma.",
+        "sameAs": [
+            "https://open.spotify.com/artist/4X9z9K4o7v7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Ánimos Parrec",
+        "genre": [
+            "Rock and Roll",
+            "Pop-Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Rock band from Pla de Mallorca known for their ironical lyrics and powerful direct sound.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/Ánimos_Parrec",
+            "https://open.spotify.com/artist/5o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Isla Iglú",
+        "genre": [
+            "Indie Pop Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Indie pop-rock band from Mallorca blending electronica and Brit-pop influences.",
+        "sameAs": [
+            "https://open.spotify.com/artist/6o0O6P6X7T7vXqG9v6X4oO"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "La Granja",
+        "genre": [
+            "Power Pop",
+            "Pop Rock"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Legendary 80s pop-rock band from Palma, recognized for their gold record 'Deliciosamente amargo'.",
+        "sameAs": [
+            "https://es.wikipedia.org/wiki/La_Granja_(banda)"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Marcel Cranc",
+        "genre": [
+            "Experimental Pop",
+            "Folk"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Artistic alter ego of Miquel Vicensastre, known for his intimate and emotive experimental folk-pop.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Marcel_Cranc"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Grollers de sa Factoria",
+        "genre": [
+            "Folk Big Band",
+            "Traditional"
+        ],
+        "homeLocation": {
+            "@type": "Place",
+            "name": "Illes Balears"
+        },
+        "description": "Large folk ensemble from Santa Maria del Camí blending traditional instruments with rock and punk.",
+        "sameAs": [
+            "https://ca.wikipedia.org/wiki/Grollers_de_sa_Factoria"
+        ]
+    }
+]
