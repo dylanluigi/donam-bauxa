@@ -9,7 +9,7 @@
             "Rock",
             "Indie"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -29,7 +29,7 @@
             "Latin Pop",
             "Hip Hop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -48,7 +48,7 @@
             "Traditional Mediterranean",
             "Singer-songwriter"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -67,7 +67,7 @@
             "Pop-Rock",
             "Folk"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -85,7 +85,7 @@
             "Folk-Pop",
             "Festive Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -102,7 +102,7 @@
             "Pop-Rock",
             "Festive"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -119,7 +119,7 @@
             "Rock",
             "Pop-Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -138,7 +138,7 @@
             "Indie Pop",
             "Urban"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -156,7 +156,7 @@
             "Indie Pop",
             "Folk Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -175,7 +175,7 @@
             "Psychedelic Pop",
             "Experimental"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -194,7 +194,7 @@
             "Underground Rock",
             "Art Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -213,7 +213,7 @@
             "Jazz",
             "Soul"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -231,7 +231,7 @@
             "Pop",
             "Latin Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -249,7 +249,7 @@
             "Indie Rock",
             "Alternative Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -267,7 +267,7 @@
             "Indie Rock",
             "Indie Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -285,7 +285,7 @@
             "Humorous Pop-Rock",
             "Parody"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -303,7 +303,7 @@
             "Pop-Rock",
             "Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -321,7 +321,7 @@
             "Alternative Pop",
             "Indie Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -339,7 +339,7 @@
             "Art Pop",
             "Jazz"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -357,7 +357,7 @@
             "Electropop",
             "Provocative Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -376,7 +376,7 @@
             "Jazz",
             "Blues"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -395,7 +395,7 @@
             "Emo Rap",
             "Indie"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -413,7 +413,7 @@
             "Hip Hop",
             "Soul"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -431,7 +431,7 @@
             "Electronic",
             "LGTBIQ+ Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -449,7 +449,7 @@
             "Trap",
             "Reggaeton"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -466,7 +466,7 @@
             "Indie Pop",
             "Folk Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -485,7 +485,7 @@
             "Rock",
             "Experimental"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -504,7 +504,7 @@
             "Experimental",
             "Electronic"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -523,7 +523,7 @@
             "Jazz",
             "Electronic"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -542,7 +542,7 @@
             "Lo-fi",
             "Indie"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -561,7 +561,7 @@
             "Electronic",
             "R&B"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -578,7 +578,7 @@
             "Indie Rock",
             "Electronic Groove"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -595,7 +595,7 @@
             "Alternative Pop-Rock",
             "Indie Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -613,7 +613,7 @@
             "Pop-Rock",
             "Catalan"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -632,7 +632,7 @@
             "Punk",
             "Funk"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -650,7 +650,7 @@
             "Pop",
             "Psychedelic Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -667,7 +667,7 @@
         "genre": [
             "Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -684,7 +684,7 @@
             "Pop",
             "Pop-Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -702,7 +702,7 @@
             "Indie-Folk",
             "Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -721,7 +721,7 @@
             "Urban",
             "Electronic"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -737,7 +737,7 @@
         "genre": [
             "Pop-Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -756,7 +756,7 @@
             "Traditional",
             "Jazz"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -773,7 +773,7 @@
         "genre": [
             "Pop-Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -790,7 +790,7 @@
             "Pop-Rock",
             "Rock-Folk"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -807,7 +807,7 @@
             "Independent Rock",
             "Pop-Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -825,7 +825,7 @@
             "Traditional",
             "Folk"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -843,7 +843,7 @@
             "Traditional",
             "Popular"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -862,7 +862,7 @@
             "Folk",
             "World Music"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -880,7 +880,7 @@
             "A Cappella",
             "Vocal"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -898,7 +898,7 @@
             "Folk",
             "Traditional"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -915,7 +915,7 @@
             "Post-Hardcore",
             "Indie Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -932,7 +932,7 @@
             "Indie Rock",
             "Punk"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -949,7 +949,7 @@
             "Garage Rock",
             "Surf Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -966,7 +966,7 @@
             "Rock",
             "Pop Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -983,7 +983,7 @@
             "Experimental Rock",
             "Post-Punk"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1000,7 +1000,7 @@
             "Indie Rock",
             "Dream Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1017,7 +1017,7 @@
             "Alternative Rock",
             "Garage Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1033,7 +1033,7 @@
         "genre": [
             "Psychedelic Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1049,7 +1049,7 @@
         "genre": [
             "Post-Punk"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1066,7 +1066,7 @@
             "Dream Pop",
             "Folk Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1083,7 +1083,7 @@
             "Folk Fusion",
             "Epic Folk"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1099,7 +1099,7 @@
         "genre": [
             "Pop Folk"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1116,7 +1116,7 @@
             "Folk-Pop",
             "Mediterranean"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1134,7 +1134,7 @@
             "Jazz",
             "Swing"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1152,7 +1152,7 @@
             "Folk",
             "Traditional"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1170,7 +1170,7 @@
             "Jazz Fusion",
             "Mediterranean Folk"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1187,7 +1187,7 @@
         "genre": [
             "Blues"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1204,7 +1204,7 @@
         "genre": [
             "Mediterranean Guitar"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1221,7 +1221,7 @@
             "Jazz",
             "Contemporary Classical"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1239,7 +1239,7 @@
             "Contemporary Classical",
             "Opera"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1256,7 +1256,7 @@
             "Contemporary Classical",
             "Film Score"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1274,7 +1274,7 @@
             "Rock and Roll",
             "Folk Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1291,7 +1291,7 @@
         "genre": [
             "Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1308,7 +1308,7 @@
             "Melodic Pop",
             "Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1327,7 +1327,7 @@
             "Latin",
             "Folk"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1345,7 +1345,7 @@
             "Synth-pop",
             "Electronic Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1363,7 +1363,7 @@
             "Mediterranean Rock",
             "Folk-Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1379,7 +1379,7 @@
         "genre": [
             "Hardcore Punk"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1397,7 +1397,7 @@
             "Folk Fusion",
             "Pop Folk"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1413,7 +1413,7 @@
         "genre": [
             "Alternative Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1430,7 +1430,7 @@
             "Indie Rock",
             "Pop Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1447,7 +1447,7 @@
             "Latin Pop",
             "Spanish Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1464,7 +1464,7 @@
             "Eclectic Pop",
             "Jazz Fusion"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1480,7 +1480,7 @@
         "genre": [
             "Indie Pop-Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1497,7 +1497,7 @@
             "Ska",
             "Punk Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1516,7 +1516,7 @@
             "Cumbia",
             "Ska"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1533,7 +1533,7 @@
             "Singer-songwriter",
             "Pop folk"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1550,7 +1550,7 @@
             "Mediterranean Jazz",
             "Cinematic Music"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1567,7 +1567,7 @@
             "Hip-hop",
             "Rap"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1585,7 +1585,7 @@
             "Indie Pop",
             "Synth-pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1603,7 +1603,7 @@
             "Rock",
             "Humorous Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1620,7 +1620,7 @@
             "Pop",
             "Folk"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1636,7 +1636,7 @@
         "genre": [
             "Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1654,7 +1654,7 @@
             "Synth-pop",
             "Pop"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1671,7 +1671,7 @@
             "Rock and Roll",
             "Pop-Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1688,7 +1688,7 @@
         "genre": [
             "Indie Pop Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1705,7 +1705,7 @@
             "Power Pop",
             "Pop Rock"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1722,7 +1722,7 @@
             "Experimental Pop",
             "Folk"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
@@ -1739,7 +1739,7 @@
             "Folk Big Band",
             "Traditional"
         ],
-        "homeLocation": {
+        "location": {
             "@type": "Place",
             "name": "Illes Balears"
         },
