@@ -36,12 +36,29 @@ export async function loadData(path) {
 
 /**
  * Extracts items from a Schema.org ItemList.
+ * Hydrates Schema.org additionalProperty values into flat fields for easy access,
+ * and maps areaServed → zone for internal use.
  * @param {Object} data - Schema.org ItemList object
- * @returns {Array<Object>} Array of item objects
+ * @returns {Array<Object>} Array of item objects with hydrated properties
  */
 export function extractItems(data) {
   if (!data || !data.itemListElement) return [];
-  return data.itemListElement.map(entry => entry.item);
+  return data.itemListElement.map(entry => {
+    const item = { ...entry.item };
+    // Hydrate additionalProperty into flat fields
+    if (Array.isArray(item.additionalProperty)) {
+      for (const prop of item.additionalProperty) {
+        if (prop.name && prop.name !== '@type') {
+          item[prop.name] = prop.value;
+        }
+      }
+    }
+    // Map Schema.org areaServed → zone for internal use
+    if (item.areaServed && !item.zone) {
+      item.zone = item.areaServed;
+    }
+    return item;
+  });
 }
 
 /**
