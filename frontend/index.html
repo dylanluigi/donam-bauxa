@@ -88,6 +88,12 @@
               <span id="favBadge" class="badge rounded-pill bg-danger ms-1" style="display:none;">0</span>
             </a>
           </li>
+          <li class="nav-item" id="adminNavItem" style="display:none;">
+            <a class="nav-link" href="#admin"><i class="bi bi-gear"></i> Admin</a>
+          </li>
+          <li class="nav-item" id="authNavItem">
+            <a class="nav-link" href="/auth/google" id="authLink"><i class="bi bi-person-circle"></i> <span id="authLabel">Login</span></a>
+          </li>
         </ul>
       </div>
     </div>
@@ -440,6 +446,154 @@
           <div id="favoritsContent">
             <!-- Dynamically loaded -->
           </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===================== ADMIN VIEW ===================== -->
+    <div data-view="admin" style="display:none;">
+
+      <header class="hero" style="padding:3rem 0 2.5rem;">
+        <div class="container">
+          <h1><i class="bi bi-gear"></i> Administracio d'<span>Artistes</span></h1>
+          <p>Afegeix nous artistes al directori (Schema.org MusicGroup)</p>
+        </div>
+      </header>
+
+      <div class="section-padding">
+        <div class="container">
+
+          <div id="adminNotAuth" style="display:none;">
+            <div class="empty-state">
+              <i class="bi bi-shield-lock"></i>
+              <p>Has d'iniciar sessio amb un compte autoritzat.</p>
+              <a href="/auth/google" class="btn btn-bauxa"><i class="bi bi-google"></i> Iniciar Sessio amb Google</a>
+            </div>
+          </div>
+
+          <div id="adminContent" style="display:none;">
+            <div id="adminAlert" style="display:none;" class="mb-4"></div>
+
+            <form id="addArtistForm" class="card-bauxa" style="padding:2rem;">
+              <h2 class="h4 mb-4" style="font-family:var(--font-heading);">Nou Artista</h2>
+
+              <div class="row g-3">
+                <!-- Required fields -->
+                <div class="col-md-6">
+                  <label for="artistName" class="form-label small fw-semibold">Nom *</label>
+                  <input type="text" class="form-control form-control-bauxa" id="artistName" required
+                         placeholder="Nom del grup o artista">
+                </div>
+                <div class="col-md-6">
+                  <label for="artistGenres" class="form-label small fw-semibold">Generes * <span class="text-muted">(separats per coma)</span></label>
+                  <input type="text" class="form-control form-control-bauxa" id="artistGenres" required
+                         placeholder="Pop, Rock, Indie...">
+                </div>
+                <div class="col-12">
+                  <label for="artistDescription" class="form-label small fw-semibold">Descripcio *</label>
+                  <textarea class="form-control form-control-bauxa" id="artistDescription" rows="3" required
+                            placeholder="Breu descripcio de l'artista o grup..."></textarea>
+                </div>
+
+                <!-- Optional fields -->
+                <div class="col-md-4">
+                  <label for="artistFoundingDate" class="form-label small fw-semibold">Any de formacio</label>
+                  <input type="text" class="form-control form-control-bauxa" id="artistFoundingDate"
+                         placeholder="2015" pattern="[0-9]{4}" maxlength="4">
+                </div>
+                <div class="col-md-4">
+                  <label for="artistLocation" class="form-label small fw-semibold">Localitat</label>
+                  <input type="text" class="form-control form-control-bauxa" id="artistLocation"
+                         placeholder="Palma, Manacor, Inca...">
+                </div>
+                <div class="col-md-4">
+                  <label for="artistZone" class="form-label small fw-semibold">Zona (areaServed)</label>
+                  <select class="form-select form-select-bauxa" id="artistZone">
+                    <option value="">Selecciona zona</option>
+                    <option value="Palma">Palma</option>
+                    <option value="Serra de Tramuntana">Serra de Tramuntana</option>
+                    <option value="Raiguer">Raiguer</option>
+                    <option value="Pla de Mallorca">Pla de Mallorca</option>
+                    <option value="Llevant">Llevant</option>
+                    <option value="Migjorn">Migjorn</option>
+                  </select>
+                </div>
+
+                <!-- Links -->
+                <div class="col-md-4">
+                  <label for="artistSpotify" class="form-label small fw-semibold">Spotify URL</label>
+                  <input type="url" class="form-control form-control-bauxa" id="artistSpotify"
+                         placeholder="https://open.spotify.com/artist/...">
+                </div>
+                <div class="col-md-4">
+                  <label for="artistInstagram" class="form-label small fw-semibold">Instagram URL</label>
+                  <input type="url" class="form-control form-control-bauxa" id="artistInstagram"
+                         placeholder="https://www.instagram.com/...">
+                </div>
+                <div class="col-md-4">
+                  <label for="artistWikipedia" class="form-label small fw-semibold">Wikipedia URL</label>
+                  <input type="url" class="form-control form-control-bauxa" id="artistWikipedia"
+                         placeholder="https://ca.wikipedia.org/wiki/...">
+                </div>
+
+                <!-- Image -->
+                <div class="col-md-6">
+                  <label for="artistImage" class="form-label small fw-semibold">Ruta imatge</label>
+                  <input type="text" class="form-control form-control-bauxa" id="artistImage"
+                         placeholder="assets/images/artists/nom-artista.jpg">
+                </div>
+                <div class="col-md-6 d-flex align-items-end">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="artistFeatured">
+                    <label class="form-check-label small" for="artistFeatured">Artista destacat (apareix a la portada)</label>
+                  </div>
+                </div>
+
+                <!-- Members -->
+                <div class="col-12">
+                  <label for="artistMembers" class="form-label small fw-semibold">Membres <span class="text-muted">(separats per coma)</span></label>
+                  <input type="text" class="form-control form-control-bauxa" id="artistMembers"
+                         placeholder="Pau Debon, Joan Miquel Oliver...">
+                </div>
+
+                <!-- Albums -->
+                <div class="col-12">
+                  <label class="form-label small fw-semibold">Albums</label>
+                  <div id="albumsContainer">
+                    <div class="row g-2 mb-2 album-row">
+                      <div class="col-8">
+                        <input type="text" class="form-control form-control-bauxa form-control-sm album-name"
+                               placeholder="Nom de l'album">
+                      </div>
+                      <div class="col-4">
+                        <input type="text" class="form-control form-control-bauxa form-control-sm album-year"
+                               placeholder="Any" pattern="[0-9]{4}" maxlength="4">
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-bauxa-outline mt-1" id="addAlbumRow">
+                    <i class="bi bi-plus-circle"></i> Afegir album
+                  </button>
+                </div>
+
+                <!-- Submit -->
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-bauxa btn-lg" id="submitArtist">
+                    <i class="bi bi-plus-lg"></i> Afegir Artista
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <!-- JSON Preview -->
+            <details class="mt-4">
+              <summary class="small fw-semibold" style="cursor:pointer;">Previsualitzar JSON (Schema.org)</summary>
+              <pre id="jsonPreview" class="mt-2 p-3" style="background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);font-size:0.8rem;max-height:400px;overflow:auto;"></pre>
+            </details>
+
+          </div>
+
         </div>
       </div>
 

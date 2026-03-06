@@ -38,7 +38,7 @@ export function registerMapCleanup(fn) {
  */
 function resolveView() {
   const hash = window.location.hash.replace('#', '') || 'home';
-  const validViews = ['home', 'artists', 'events', 'map', 'favorits'];
+  const validViews = ['home', 'artists', 'events', 'map', 'favorits', 'admin'];
   return validViews.includes(hash) ? hash : 'home';
 }
 

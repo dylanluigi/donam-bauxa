@@ -1,3 +1,5 @@
 .claude/
 .obsidian/
 TU_Delft_Report_Thesis_Template/
+node_modules/
+.env

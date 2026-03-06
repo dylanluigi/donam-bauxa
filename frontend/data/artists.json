@@ -3,7 +3,7 @@
   "@type": "ItemList",
   "name": "Artistes de Mallorca",
   "description": "Directori d'artistes i grups musicals de l'escena mallorquina",
-  "numberOfItems": 12,
+  "numberOfItems": 14,
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -13,12 +13,20 @@
         "@id": "artist-1",
         "name": "Antonia Font",
         "description": "Grup de pop-rock en mallorqui format a Palma el 1997. Pioners de la musica en catala amb un so unic que barreja pop, rock i electronica.",
-        "genre": ["Pop", "Rock", "Indie"],
+        "genre": [
+          "Pop",
+          "Rock",
+          "Indie"
+        ],
         "foundingDate": "1997",
         "foundingLocation": {
           "@type": "Place",
           "name": "Palma",
-          "address": { "@type": "PostalAddress", "addressLocality": "Palma", "addressRegion": "Mallorca" }
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Palma",
+            "addressRegion": "Mallorca"
+          }
         },
         "image": "assets/images/artists/antonia-font.jpg",
         "sameAs": [
@@ -26,20 +34,53 @@
           "https://www.instagram.com/antoniafont_oficial/"
         ],
         "member": [
-          { "@type": "Person", "name": "Pau Debon" },
-          { "@type": "Person", "name": "Joan Miquel Oliver" },
-          { "@type": "Person", "name": "Jaume Manresa" }
+          {
+            "@type": "Person",
+            "name": "Pau Debon"
+          },
+          {
+            "@type": "Person",
+            "name": "Joan Miquel Oliver"
+          },
+          {
+            "@type": "Person",
+            "name": "Jaume Manresa"
+          }
         ],
         "album": [
-          { "@type": "MusicAlbum", "name": "Antonia Font", "datePublished": "1999" },
-          { "@type": "MusicAlbum", "name": "A Antonia Font", "datePublished": "2002" },
-          { "@type": "MusicAlbum", "name": "Taxi", "datePublished": "2007" },
-          { "@type": "MusicAlbum", "name": "Lamparetes", "datePublished": "2011" }
+          {
+            "@type": "MusicAlbum",
+            "name": "Antonia Font",
+            "datePublished": "1999"
+          },
+          {
+            "@type": "MusicAlbum",
+            "name": "A Antonia Font",
+            "datePublished": "2002"
+          },
+          {
+            "@type": "MusicAlbum",
+            "name": "Taxi",
+            "datePublished": "2007"
+          },
+          {
+            "@type": "MusicAlbum",
+            "name": "Lamparetes",
+            "datePublished": "2011"
+          }
         ],
         "areaServed": "Palma",
         "additionalProperty": [
-          { "@type": "PropertyValue", "name": "spotifyId", "value": "503mwh1GWEiWy9bzzpiTFW" },
-          { "@type": "PropertyValue", "name": "featured", "value": true }
+          {
+            "@type": "PropertyValue",
+            "name": "spotifyId",
+            "value": "503mwh1GWEiWy9bzzpiTFW"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "featured",
+            "value": true
+          }
         ]
       }
     },
@@ -51,12 +92,20 @@
         "@id": "artist-2",
         "name": "Maria del Mar Bonet",
         "description": "Cantautora mallorquina, una de les veus mes importants de la canco en catala. Ha recorregut el mon amb la seva musica arrelada al Mediterrani.",
-        "genre": ["Folk", "Canco d'Autor", "Mediterrania"],
+        "genre": [
+          "Folk",
+          "Canco d'Autor",
+          "Mediterrania"
+        ],
         "foundingDate": "1967",
         "foundingLocation": {
           "@type": "Place",
           "name": "Palma",
-          "address": { "@type": "PostalAddress", "addressLocality": "Palma", "addressRegion": "Mallorca" }
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Palma",
+            "addressRegion": "Mallorca"
+          }
         },
         "image": "assets/images/artists/maria-del-mar-bonet.jpg",
         "sameAs": [
@@ -64,14 +113,34 @@
           "https://ca.wikipedia.org/wiki/Maria_del_Mar_Bonet"
         ],
         "album": [
-          { "@type": "MusicAlbum", "name": "Maria del Mar Bonet", "datePublished": "1969" },
-          { "@type": "MusicAlbum", "name": "Jardí Tancat", "datePublished": "1981" },
-          { "@type": "MusicAlbum", "name": "Ultramar", "datePublished": "2006" }
+          {
+            "@type": "MusicAlbum",
+            "name": "Maria del Mar Bonet",
+            "datePublished": "1969"
+          },
+          {
+            "@type": "MusicAlbum",
+            "name": "Jardí Tancat",
+            "datePublished": "1981"
+          },
+          {
+            "@type": "MusicAlbum",
+            "name": "Ultramar",
+            "datePublished": "2006"
+          }
         ],
         "areaServed": "Palma",
         "additionalProperty": [
-          { "@type": "PropertyValue", "name": "spotifyId", "value": "4HCgOSMQRCkN9q3Bs11lCl" },
-          { "@type": "PropertyValue", "name": "featured", "value": true }
+          {
+            "@type": "PropertyValue",
+            "name": "spotifyId",
+            "value": "4HCgOSMQRCkN9q3Bs11lCl"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "featured",
+            "value": true
+          }
         ]
       }
     },
@@ -83,12 +152,19 @@
         "@id": "artist-3",
         "name": "Anegats",
         "description": "Grup de rock en catala de Mallorca, coneguts per les seves lletres reivindicatives i els seus directes intensos. Referents del rock en catala a les Illes.",
-        "genre": ["Rock", "Rock en Catala"],
+        "genre": [
+          "Rock",
+          "Rock en Catala"
+        ],
         "foundingDate": "2001",
         "foundingLocation": {
           "@type": "Place",
           "name": "Inca",
-          "address": { "@type": "PostalAddress", "addressLocality": "Inca", "addressRegion": "Mallorca" }
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Inca",
+            "addressRegion": "Mallorca"
+          }
         },
         "image": "assets/images/artists/anegats.jpg",
         "sameAs": [
@@ -96,14 +172,34 @@
           "https://www.instagram.com/anegats/"
         ],
         "album": [
-          { "@type": "MusicAlbum", "name": "Mos ho buidarem tot", "datePublished": "2003" },
-          { "@type": "MusicAlbum", "name": "Illes", "datePublished": "2010" },
-          { "@type": "MusicAlbum", "name": "L'Ultima Bauxa", "datePublished": "2018" }
+          {
+            "@type": "MusicAlbum",
+            "name": "Mos ho buidarem tot",
+            "datePublished": "2003"
+          },
+          {
+            "@type": "MusicAlbum",
+            "name": "Illes",
+            "datePublished": "2010"
+          },
+          {
+            "@type": "MusicAlbum",
+            "name": "L'Ultima Bauxa",
+            "datePublished": "2018"
+          }
         ],
         "areaServed": "Raiguer",
         "additionalProperty": [
-          { "@type": "PropertyValue", "name": "spotifyId", "value": "3hXxBJMNakGDUsFjknI9TX" },
-          { "@type": "PropertyValue", "name": "featured", "value": false }
+          {
+            "@type": "PropertyValue",
+            "name": "spotifyId",
+            "value": "3hXxBJMNakGDUsFjknI9TX"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "featured",
+            "value": false
+          }
         ]
       }
     },
@@ -115,12 +211,20 @@
         "@id": "artist-4",
         "name": "Donallop",
         "description": "Duo musical de Mallorca que combina folk, pop i humor amb lletres en catala. La seva musica es fresca, divertida i arrelada a la cultura popular mallorquina.",
-        "genre": ["Folk", "Pop", "Humor"],
+        "genre": [
+          "Folk",
+          "Pop",
+          "Humor"
+        ],
         "foundingDate": "2014",
         "foundingLocation": {
           "@type": "Place",
           "name": "Binissalem",
-          "address": { "@type": "PostalAddress", "addressLocality": "Binissalem", "addressRegion": "Mallorca" }
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Binissalem",
+            "addressRegion": "Mallorca"
+          }
         },
         "image": "assets/images/artists/donallop.jpg",
         "sameAs": [
@@ -128,13 +232,29 @@
           "https://www.instagram.com/donallop/"
         ],
         "album": [
-          { "@type": "MusicAlbum", "name": "Mos feim bulla", "datePublished": "2016" },
-          { "@type": "MusicAlbum", "name": "Esternut", "datePublished": "2019" }
+          {
+            "@type": "MusicAlbum",
+            "name": "Mos feim bulla",
+            "datePublished": "2016"
+          },
+          {
+            "@type": "MusicAlbum",
+            "name": "Esternut",
+            "datePublished": "2019"
+          }
         ],
         "areaServed": "Raiguer",
         "additionalProperty": [
-          { "@type": "PropertyValue", "name": "spotifyId", "value": "0hYCcY1UMUwNyqvLNjI9kR" },
-          { "@type": "PropertyValue", "name": "featured", "value": true }
+          {
+            "@type": "PropertyValue",
+            "name": "spotifyId",
+            "value": "0hYCcY1UMUwNyqvLNjI9kR"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "featured",
+            "value": true
+          }
         ]
       }
     },
@@ -146,12 +266,20 @@
         "@id": "artist-5",
         "name": "Mans de Breç",
         "description": "Grup de folk mallorqui amb instruments tradicionals. Recuperen la musica popular de les Illes Balears amb un toc contemporani i festiu.",
-        "genre": ["Folk", "Tradicional", "World Music"],
+        "genre": [
+          "Folk",
+          "Tradicional",
+          "World Music"
+        ],
         "foundingDate": "2008",
         "foundingLocation": {
           "@type": "Place",
           "name": "Sineu",
-          "address": { "@type": "PostalAddress", "addressLocality": "Sineu", "addressRegion": "Mallorca" }
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Sineu",
+            "addressRegion": "Mallorca"
+          }
         },
         "image": "assets/images/artists/mans-de-brec.jpg",
         "sameAs": [
@@ -159,13 +287,29 @@
           "https://www.instagram.com/mansdebrec/"
         ],
         "album": [
-          { "@type": "MusicAlbum", "name": "Torrent Amunt", "datePublished": "2010" },
-          { "@type": "MusicAlbum", "name": "Estralls", "datePublished": "2015" }
+          {
+            "@type": "MusicAlbum",
+            "name": "Torrent Amunt",
+            "datePublished": "2010"
+          },
+          {
+            "@type": "MusicAlbum",
+            "name": "Estralls",
+            "datePublished": "2015"
+          }
         ],
         "areaServed": "Pla de Mallorca",
         "additionalProperty": [
-          { "@type": "PropertyValue", "name": "spotifyId", "value": "example5" },
-          { "@type": "PropertyValue", "name": "featured", "value": false }
+          {
+            "@type": "PropertyValue",
+            "name": "spotifyId",
+            "value": "example5"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "featured",
+            "value": false
+          }
         ]
       }
     },
@@ -177,24 +321,43 @@
         "@id": "artist-6",
         "name": "Al-Mayurqa",
         "description": "Grup pioner de musica folk i tradicional mallorquina. Des dels anys 80, han estat fonamentals en la recuperacio del patrimoni musical de les Illes Balears.",
-        "genre": ["Folk", "Tradicional"],
+        "genre": [
+          "Folk",
+          "Tradicional"
+        ],
         "foundingDate": "1978",
         "foundingLocation": {
           "@type": "Place",
           "name": "Palma",
-          "address": { "@type": "PostalAddress", "addressLocality": "Palma", "addressRegion": "Mallorca" }
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Palma",
+            "addressRegion": "Mallorca"
+          }
         },
         "image": "assets/images/artists/al-mayurqa.jpg",
         "sameAs": [
           "https://ca.wikipedia.org/wiki/Al-Mayurqa"
         ],
         "album": [
-          { "@type": "MusicAlbum", "name": "Al-Mayurqa", "datePublished": "1980" },
-          { "@type": "MusicAlbum", "name": "Mallorca - Camins de Canco", "datePublished": "1995" }
+          {
+            "@type": "MusicAlbum",
+            "name": "Al-Mayurqa",
+            "datePublished": "1980"
+          },
+          {
+            "@type": "MusicAlbum",
+            "name": "Mallorca - Camins de Canco",
+            "datePublished": "1995"
+          }
         ],
         "areaServed": "Palma",
         "additionalProperty": [
-          { "@type": "PropertyValue", "name": "featured", "value": false }
+          {
+            "@type": "PropertyValue",
+            "name": "featured",
+            "value": false
+          }
         ]
       }
     },
@@ -206,24 +369,44 @@
         "@id": "artist-7",
         "name": "Zulu Zulu",
         "description": "Grup de rumba i fusio mallorquina que barreja ritmes llatins, ska i sons del Mediterrani. Especialistes en fer ballar el public amb energia contagiosa.",
-        "genre": ["Rumba", "Fusio", "Ska"],
+        "genre": [
+          "Rumba",
+          "Fusio",
+          "Ska"
+        ],
         "foundingDate": "2012",
         "foundingLocation": {
           "@type": "Place",
           "name": "Manacor",
-          "address": { "@type": "PostalAddress", "addressLocality": "Manacor", "addressRegion": "Mallorca" }
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Manacor",
+            "addressRegion": "Mallorca"
+          }
         },
         "image": "assets/images/artists/zulu-zulu.jpg",
         "sameAs": [
           "https://www.instagram.com/zuluzulumusic/"
         ],
         "album": [
-          { "@type": "MusicAlbum", "name": "Foc i Fum", "datePublished": "2014" },
-          { "@type": "MusicAlbum", "name": "Marejada", "datePublished": "2020" }
+          {
+            "@type": "MusicAlbum",
+            "name": "Foc i Fum",
+            "datePublished": "2014"
+          },
+          {
+            "@type": "MusicAlbum",
+            "name": "Marejada",
+            "datePublished": "2020"
+          }
         ],
         "areaServed": "Llevant",
         "additionalProperty": [
-          { "@type": "PropertyValue", "name": "featured", "value": false }
+          {
+            "@type": "PropertyValue",
+            "name": "featured",
+            "value": false
+          }
         ]
       }
     },
@@ -235,12 +418,20 @@
         "@id": "artist-8",
         "name": "Cap pela",
         "description": "Grup a cappella de Mallorca que interpreta versions de temes populars i propis amb harmonia vocal. Un projecte unic dins l'escena musical insular.",
-        "genre": ["A Cappella", "Pop", "Vocal"],
+        "genre": [
+          "A Cappella",
+          "Pop",
+          "Vocal"
+        ],
         "foundingDate": "2010",
         "foundingLocation": {
           "@type": "Place",
           "name": "Soller",
-          "address": { "@type": "PostalAddress", "addressLocality": "Soller", "addressRegion": "Mallorca" }
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Soller",
+            "addressRegion": "Mallorca"
+          }
         },
         "image": "assets/images/artists/cap-pela.jpg",
         "sameAs": [
@@ -248,13 +439,29 @@
           "https://www.instagram.com/cappela.music/"
         ],
         "album": [
-          { "@type": "MusicAlbum", "name": "Sense Instruments", "datePublished": "2012" },
-          { "@type": "MusicAlbum", "name": "Veus de la Serra", "datePublished": "2017" }
+          {
+            "@type": "MusicAlbum",
+            "name": "Sense Instruments",
+            "datePublished": "2012"
+          },
+          {
+            "@type": "MusicAlbum",
+            "name": "Veus de la Serra",
+            "datePublished": "2017"
+          }
         ],
         "areaServed": "Serra de Tramuntana",
         "additionalProperty": [
-          { "@type": "PropertyValue", "name": "spotifyId", "value": "example8" },
-          { "@type": "PropertyValue", "name": "featured", "value": false }
+          {
+            "@type": "PropertyValue",
+            "name": "spotifyId",
+            "value": "example8"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "featured",
+            "value": false
+          }
         ]
       }
     },
@@ -266,12 +473,20 @@
         "@id": "artist-9",
         "name": "Joan Miquel Oliver",
         "description": "Cantautor i multi-instrumentista de Sa Pobla. Ex-membre d'Antonia Font, la seva carrera en solitari explora sons electronics, pop experimental i poesia en catala.",
-        "genre": ["Indie", "Electronica", "Pop Experimental"],
+        "genre": [
+          "Indie",
+          "Electronica",
+          "Pop Experimental"
+        ],
         "foundingDate": "2008",
         "foundingLocation": {
           "@type": "Place",
           "name": "Sa Pobla",
-          "address": { "@type": "PostalAddress", "addressLocality": "Sa Pobla", "addressRegion": "Mallorca" }
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Sa Pobla",
+            "addressRegion": "Mallorca"
+          }
         },
         "image": "assets/images/artists/joan-miquel-oliver.jpg",
         "sameAs": [
@@ -279,14 +494,34 @@
           "https://www.instagram.com/joanmigueloliver/"
         ],
         "album": [
-          { "@type": "MusicAlbum", "name": "Surfistes del Sofa", "datePublished": "2008" },
-          { "@type": "MusicAlbum", "name": "Pegasus", "datePublished": "2012" },
-          { "@type": "MusicAlbum", "name": "Electric Enciclopedic", "datePublished": "2018" }
+          {
+            "@type": "MusicAlbum",
+            "name": "Surfistes del Sofa",
+            "datePublished": "2008"
+          },
+          {
+            "@type": "MusicAlbum",
+            "name": "Pegasus",
+            "datePublished": "2012"
+          },
+          {
+            "@type": "MusicAlbum",
+            "name": "Electric Enciclopedic",
+            "datePublished": "2018"
+          }
         ],
         "areaServed": "Raiguer",
         "additionalProperty": [
-          { "@type": "PropertyValue", "name": "spotifyId", "value": "2v9lWpABkOatYJwj3DNZFZ" },
-          { "@type": "PropertyValue", "name": "featured", "value": true }
+          {
+            "@type": "PropertyValue",
+            "name": "spotifyId",
+            "value": "2v9lWpABkOatYJwj3DNZFZ"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "featured",
+            "value": true
+          }
         ]
       }
     },
@@ -298,19 +533,30 @@
         "@id": "artist-10",
         "name": "Xeremiers de Sa Calatrava",
         "description": "Grup de musica tradicional amb xeremies, fobiol i tamborino. Mantenen viva la tradicio ancestral de les xeremies mallorquines a festes i celebracions.",
-        "genre": ["Tradicional", "Folk"],
+        "genre": [
+          "Tradicional",
+          "Folk"
+        ],
         "foundingDate": "1995",
         "foundingLocation": {
           "@type": "Place",
           "name": "Palma",
-          "address": { "@type": "PostalAddress", "addressLocality": "Palma", "addressRegion": "Mallorca" }
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Palma",
+            "addressRegion": "Mallorca"
+          }
         },
         "image": "assets/images/artists/xeremiers.jpg",
         "sameAs": [],
         "album": [],
         "areaServed": "Palma",
         "additionalProperty": [
-          { "@type": "PropertyValue", "name": "featured", "value": false }
+          {
+            "@type": "PropertyValue",
+            "name": "featured",
+            "value": false
+          }
         ]
       }
     },
@@ -322,24 +568,44 @@
         "@id": "artist-11",
         "name": "La Femme Contradiction",
         "description": "Duo electronic de Palma que fusiona synth-pop, new wave i sons obscurs. Actuen amb directes visualment impactants i una estetica retro-futurista.",
-        "genre": ["Electronica", "Synth-Pop", "New Wave"],
+        "genre": [
+          "Electronica",
+          "Synth-Pop",
+          "New Wave"
+        ],
         "foundingDate": "2017",
         "foundingLocation": {
           "@type": "Place",
           "name": "Palma",
-          "address": { "@type": "PostalAddress", "addressLocality": "Palma", "addressRegion": "Mallorca" }
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Palma",
+            "addressRegion": "Mallorca"
+          }
         },
         "image": "assets/images/artists/la-femme-contradiction.jpg",
         "sameAs": [
           "https://www.instagram.com/lafemmecontradiction/"
         ],
         "album": [
-          { "@type": "MusicAlbum", "name": "Neon Balear", "datePublished": "2019" },
-          { "@type": "MusicAlbum", "name": "Midnight Palma", "datePublished": "2023" }
+          {
+            "@type": "MusicAlbum",
+            "name": "Neon Balear",
+            "datePublished": "2019"
+          },
+          {
+            "@type": "MusicAlbum",
+            "name": "Midnight Palma",
+            "datePublished": "2023"
+          }
         ],
         "areaServed": "Palma",
         "additionalProperty": [
-          { "@type": "PropertyValue", "name": "featured", "value": false }
+          {
+            "@type": "PropertyValue",
+            "name": "featured",
+            "value": false
+          }
         ]
       }
     },
@@ -351,24 +617,86 @@
         "@id": "artist-12",
         "name": "Brams de Tramuntana",
         "description": "Quartet de jazz i musica improvisada amb base a la Serra de Tramuntana. El seu so combina jazz contemporani amb melodies inspirades en el paisatge mallorqui.",
-        "genre": ["Jazz", "Fusio", "Contemporani"],
+        "genre": [
+          "Jazz",
+          "Fusio",
+          "Contemporani"
+        ],
         "foundingDate": "2015",
         "foundingLocation": {
           "@type": "Place",
           "name": "Deia",
-          "address": { "@type": "PostalAddress", "addressLocality": "Deia", "addressRegion": "Mallorca" }
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Deia",
+            "addressRegion": "Mallorca"
+          }
         },
         "image": "assets/images/artists/brams-de-tramuntana.jpg",
         "sameAs": [
           "https://www.instagram.com/bramsdetramuntana/"
         ],
         "album": [
-          { "@type": "MusicAlbum", "name": "Olivera", "datePublished": "2017" },
-          { "@type": "MusicAlbum", "name": "Nit Serena", "datePublished": "2022" }
+          {
+            "@type": "MusicAlbum",
+            "name": "Olivera",
+            "datePublished": "2017"
+          },
+          {
+            "@type": "MusicAlbum",
+            "name": "Nit Serena",
+            "datePublished": "2022"
+          }
         ],
         "areaServed": "Serra de Tramuntana",
         "additionalProperty": [
-          { "@type": "PropertyValue", "name": "featured", "value": false }
+          {
+            "@type": "PropertyValue",
+            "name": "featured",
+            "value": false
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "item": {
+        "@type": "MusicGroup",
+        "@id": "artist-13",
+        "name": "Donam Bauxa",
+        "description": "adadsasd",
+        "genre": [
+          "Pop",
+          "Indie"
+        ],
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "featured",
+            "value": false
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "item": {
+        "@type": "MusicGroup",
+        "@id": "artist-14",
+        "name": "Donam Bauxa",
+        "description": "adadsasd",
+        "genre": [
+          "Pop",
+          "Indie"
+        ],
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "featured",
+            "value": false
+          }
         ]
       }
     }

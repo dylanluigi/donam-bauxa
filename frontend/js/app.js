@@ -20,6 +20,7 @@ import {
 import { initMap, addEventMarkers, fitToMarkers } from './modules/mapModule.js';
 import { initRouter, registerRoutes, registerMapCleanup } from './router.js';
 import { getFavorites as getFavoritesForType } from './modules/favorites.js';
+import { initAdmin, checkAuth } from './modules/admin.js';
 
 /* ------------------------------------------------------------------ */
 /*  Shared state                                                       */
@@ -420,13 +421,17 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollToTop();
   updateFavoriteBadge();
 
+  // Check auth state for admin nav
+  checkAuth();
+
   // Register route handlers
   registerRoutes({
     home: initHome,
     artists: initArtists,
     events: initEvents,
     map: initMapView,
-    favorits: initFavorits
+    favorits: initFavorits,
+    admin: initAdmin
   });
 
   // Register map cleanup
