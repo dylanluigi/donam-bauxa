@@ -52,6 +52,29 @@
     #newsGrid { min-height: 320px; }
     /* Font fallback metrics to reduce CLS from font swap */
     body { font-synthesis: none; }
+    /* Placeholder music-note pattern for featured event backgrounds */
+    .feat-pattern {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.07;
+      z-index: 1;
+      pointer-events: none;
+    }
+    /* Placeholder shimmer text bars */
+    .ph-line {
+      display: block;
+      height: 0.8rem;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.22);
+      animation: skeleton-pulse 1.8s ease-in-out infinite;
+      margin-bottom: 0.45rem;
+    }
+    .ph-line--sm { height: 0.65rem; }
+    .ph-line--dark {
+      background: var(--color-border);
+    }
   </style>
 </head>
 <body>
@@ -139,18 +162,83 @@
           <h2 class="section-title">Esdeveniments Destacats</h2>
           <p class="section-subtitle">Els concerts i festivals que no et pots perdre</p>
           <div class="row" id="featuredEvents">
-            <div class="col-md-6 mb-4" aria-hidden="true">
-              <div class="skeleton-block" style="min-height:350px;background:var(--color-bg-alt);border-radius:var(--card-radius);"></div>
+
+            <!-- Placeholder: Featured Event 1 – Concert -->
+            <div class="col-md-6 mb-4 animate-fade-in-up">
+              <article class="featured-event" style="background: linear-gradient(135deg, #7A2E18 0%, #C45A3C 60%, #D4762A 100%);">
+                <svg class="feat-pattern" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="fp1" width="56" height="56" patternUnits="userSpaceOnUse"><text x="28" y="38" text-anchor="middle" font-size="26" fill="white">♪</text></pattern></defs><rect width="100%" height="100%" fill="url(#fp1)"/></svg>
+                <div class="featured-event__overlay"></div>
+                <div class="featured-event__content">
+                  <span class="featured-event__badge">Concert</span>
+                  <h3>Nit de Bauxa al Parc</h3>
+                  <p class="mb-1"><i class="bi bi-calendar3"></i> Dissabte, 22 de març · 21:00</p>
+                  <p class="mb-1"><i class="bi bi-geo-alt-fill"></i> Parc de la Mar, Palma</p>
+                  <p class="mb-2"><i class="bi bi-music-note-beamed"></i> Anegats</p>
+                  <div class="d-flex gap-2 align-items-center">
+                    <span class="badge-price badge-price--free">Gratuit</span>
+                    <button class="btn btn-sm btn-bauxa-secondary" disabled><i class="bi bi-calendar-plus"></i> Calendari</button>
+                  </div>
+                </div>
+              </article>
             </div>
-            <div class="col-md-6 mb-4" aria-hidden="true">
-              <div class="skeleton-block" style="min-height:350px;background:var(--color-bg-alt);border-radius:var(--card-radius);"></div>
+
+            <!-- Placeholder: Featured Event 2 – Festival -->
+            <div class="col-md-6 mb-4 animate-fade-in-up" style="animation-delay:0.1s;">
+              <article class="featured-event" style="background: linear-gradient(135deg, #0F2E42 0%, #1B4965 60%, #2D6A8F 100%);">
+                <svg class="feat-pattern" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="fp2" width="56" height="56" patternUnits="userSpaceOnUse"><text x="28" y="38" text-anchor="middle" font-size="26" fill="white">♫</text></pattern></defs><rect width="100%" height="100%" fill="url(#fp2)"/></svg>
+                <div class="featured-event__overlay"></div>
+                <div class="featured-event__content">
+                  <span class="featured-event__badge">Festival</span>
+                  <h3>Festival de Tramuntana</h3>
+                  <p class="mb-1"><i class="bi bi-calendar3"></i> Divendres, 28 de març · 18:00</p>
+                  <p class="mb-1"><i class="bi bi-geo-alt-fill"></i> Jardins d'Alfabia, Bunyola</p>
+                  <p class="mb-2"><i class="bi bi-music-note-beamed"></i> Brams de Tramuntana · Zulu Zulu</p>
+                  <div class="d-flex gap-2 align-items-center">
+                    <span class="badge-price">15 EUR</span>
+                    <button class="btn btn-sm btn-bauxa" disabled><i class="bi bi-ticket-perforated"></i> Entrades</button>
+                  </div>
+                </div>
+              </article>
             </div>
-            <div class="col-md-6 mb-4" aria-hidden="true">
-              <div class="skeleton-block" style="min-height:350px;background:var(--color-bg-alt);border-radius:var(--card-radius);"></div>
+
+            <!-- Placeholder: Featured Event 3 – Festa Popular -->
+            <div class="col-md-6 mb-4 animate-fade-in-up" style="animation-delay:0.2s;">
+              <article class="featured-event" style="background: linear-gradient(135deg, #3A5A20 0%, #5A8040 60%, #6B8E4E 100%);">
+                <svg class="feat-pattern" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="fp3" width="56" height="56" patternUnits="userSpaceOnUse"><text x="28" y="38" text-anchor="middle" font-size="26" fill="white">🎵</text></pattern></defs><rect width="100%" height="100%" fill="url(#fp3)"/></svg>
+                <div class="featured-event__overlay"></div>
+                <div class="featured-event__content">
+                  <span class="featured-event__badge">Festa Popular</span>
+                  <h3>Festes de Sant Sebastià</h3>
+                  <p class="mb-1"><i class="bi bi-calendar3"></i> Dijous, 20 de gener · 20:00</p>
+                  <p class="mb-1"><i class="bi bi-geo-alt-fill"></i> Plaça Major, Palma</p>
+                  <p class="mb-2"><i class="bi bi-music-note-beamed"></i> Antònia Font</p>
+                  <div class="d-flex gap-2 align-items-center">
+                    <span class="badge-price badge-price--free">Gratuit</span>
+                    <button class="btn btn-sm btn-bauxa-secondary" disabled><i class="bi bi-calendar-plus"></i> Calendari</button>
+                  </div>
+                </div>
+              </article>
             </div>
-            <div class="col-md-6 mb-4" aria-hidden="true">
-              <div class="skeleton-block" style="min-height:350px;background:var(--color-bg-alt);border-radius:var(--card-radius);"></div>
+
+            <!-- Placeholder: Featured Event 4 – Concert -->
+            <div class="col-md-6 mb-4 animate-fade-in-up" style="animation-delay:0.3s;">
+              <article class="featured-event" style="background: linear-gradient(135deg, #1B3A55 0%, #2A5A7A 50%, #7A5C1E 100%);">
+                <svg class="feat-pattern" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="fp4" width="56" height="56" patternUnits="userSpaceOnUse"><text x="28" y="38" text-anchor="middle" font-size="26" fill="white">♩</text></pattern></defs><rect width="100%" height="100%" fill="url(#fp4)"/></svg>
+                <div class="featured-event__overlay"></div>
+                <div class="featured-event__content">
+                  <span class="featured-event__badge">Concert</span>
+                  <h3>Jazz al Claustre</h3>
+                  <p class="mb-1"><i class="bi bi-calendar3"></i> Dissabte, 5 d'abril · 19:30</p>
+                  <p class="mb-1"><i class="bi bi-geo-alt-fill"></i> Convent de Sant Domingo, Pollença</p>
+                  <p class="mb-2"><i class="bi bi-music-note-beamed"></i> Joan Miquel Oliver</p>
+                  <div class="d-flex gap-2 align-items-center">
+                    <span class="badge-price">10 EUR</span>
+                    <button class="btn btn-sm btn-bauxa" disabled><i class="bi bi-ticket-perforated"></i> Entrades</button>
+                  </div>
+                </div>
+              </article>
             </div>
+
           </div>
         </div>
       </section>
@@ -168,11 +256,162 @@
             </a>
           </div>
           <div class="row" id="upcomingEvents">
-            <div class="col-12 mb-3" aria-hidden="true"><div class="skeleton-block" style="height:130px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
-            <div class="col-12 mb-3" aria-hidden="true"><div class="skeleton-block" style="height:130px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
-            <div class="col-12 mb-3" aria-hidden="true"><div class="skeleton-block" style="height:130px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
-            <div class="col-12 mb-3" aria-hidden="true"><div class="skeleton-block" style="height:130px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
-            <div class="col-12 mb-3" aria-hidden="true"><div class="skeleton-block" style="height:130px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
+
+            <!-- Placeholder: Upcoming Event 1 -->
+            <div class="col-12 mb-3 animate-fade-in-up">
+              <article class="card-bauxa">
+                <div class="card-body">
+                  <div class="d-flex gap-3 align-items-start">
+                    <div class="event-card__date">
+                      <span class="event-card__date-day">22</span>
+                      <span class="event-card__date-month">Mar</span>
+                    </div>
+                    <div class="event-card__info flex-grow-1">
+                      <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                        <div>
+                          <span class="badge-category">concert</span>
+                          <h3 class="card-title mt-1 mb-1">Nit de Bauxa al Parc</h3>
+                        </div>
+                        <span class="badge-price badge-price--free">Gratuit</span>
+                      </div>
+                      <p class="mb-1 small"><strong><i class="bi bi-music-note-beamed"></i> Anegats</strong></p>
+                      <p class="event-card__time mb-1"><i class="bi bi-clock"></i> 21:00 — Dissabte, 22 de març de 2026</p>
+                      <p class="event-card__location mb-2"><i class="bi bi-geo-alt-fill"></i> Parc de la Mar, Palma</p>
+                      <div class="d-flex flex-wrap align-items-center gap-2">
+                        <span class="badge-genre">Folk</span>
+                        <span class="badge-genre">Tradicional</span>
+                        <span class="badge-zone ms-1">Palma</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Placeholder: Upcoming Event 2 -->
+            <div class="col-12 mb-3 animate-fade-in-up" style="animation-delay:0.05s;">
+              <article class="card-bauxa">
+                <div class="card-body">
+                  <div class="d-flex gap-3 align-items-start">
+                    <div class="event-card__date" style="background:#1B4965;">
+                      <span class="event-card__date-day">28</span>
+                      <span class="event-card__date-month">Mar</span>
+                    </div>
+                    <div class="event-card__info flex-grow-1">
+                      <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                        <div>
+                          <span class="badge-category">festival</span>
+                          <h3 class="card-title mt-1 mb-1">Festival de Tramuntana</h3>
+                        </div>
+                        <span class="badge-price">15 EUR</span>
+                      </div>
+                      <p class="mb-1 small"><strong><i class="bi bi-music-note-beamed"></i> Brams de Tramuntana · Zulu Zulu</strong></p>
+                      <p class="event-card__time mb-1"><i class="bi bi-clock"></i> 18:00 — Divendres, 28 de març de 2026</p>
+                      <p class="event-card__location mb-2"><i class="bi bi-geo-alt-fill"></i> Jardins d'Alfabia, Bunyola</p>
+                      <div class="d-flex flex-wrap align-items-center gap-2">
+                        <span class="badge-genre">Folk</span>
+                        <span class="badge-genre">World</span>
+                        <span class="badge-zone ms-1">Serra de Tramuntana</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Placeholder: Upcoming Event 3 -->
+            <div class="col-12 mb-3 animate-fade-in-up" style="animation-delay:0.1s;">
+              <article class="card-bauxa">
+                <div class="card-body">
+                  <div class="d-flex gap-3 align-items-start">
+                    <div class="event-card__date" style="background:#4F6B38;">
+                      <span class="event-card__date-day">5</span>
+                      <span class="event-card__date-month">Abr</span>
+                    </div>
+                    <div class="event-card__info flex-grow-1">
+                      <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                        <div>
+                          <span class="badge-category">concert</span>
+                          <h3 class="card-title mt-1 mb-1">Jazz al Claustre</h3>
+                        </div>
+                        <span class="badge-price">10 EUR</span>
+                      </div>
+                      <p class="mb-1 small"><strong><i class="bi bi-music-note-beamed"></i> Joan Miquel Oliver</strong></p>
+                      <p class="event-card__time mb-1"><i class="bi bi-clock"></i> 19:30 — Dissabte, 5 d'abril de 2026</p>
+                      <p class="event-card__location mb-2"><i class="bi bi-geo-alt-fill"></i> Convent de Sant Domingo, Pollença</p>
+                      <div class="d-flex flex-wrap align-items-center gap-2">
+                        <span class="badge-genre">Jazz</span>
+                        <span class="badge-genre">Indie</span>
+                        <span class="badge-zone ms-1">Raiguer</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Placeholder: Upcoming Event 4 -->
+            <div class="col-12 mb-3 animate-fade-in-up" style="animation-delay:0.15s;">
+              <article class="card-bauxa">
+                <div class="card-body">
+                  <div class="d-flex gap-3 align-items-start">
+                    <div class="event-card__date" style="background:#7A3A55;">
+                      <span class="event-card__date-day">12</span>
+                      <span class="event-card__date-month">Abr</span>
+                    </div>
+                    <div class="event-card__info flex-grow-1">
+                      <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                        <div>
+                          <span class="badge-category" style="background:#6B8E4E;">festa popular</span>
+                          <h3 class="card-title mt-1 mb-1">Fira de Música de Llevant</h3>
+                        </div>
+                        <span class="badge-price badge-price--free">Gratuit</span>
+                      </div>
+                      <p class="mb-1 small"><strong><i class="bi bi-music-note-beamed"></i> Donallop · Cap Pelat</strong></p>
+                      <p class="event-card__time mb-1"><i class="bi bi-clock"></i> 17:00 — Diumenge, 12 d'abril de 2026</p>
+                      <p class="event-card__location mb-2"><i class="bi bi-geo-alt-fill"></i> Plaça de la Constitució, Artà</p>
+                      <div class="d-flex flex-wrap align-items-center gap-2">
+                        <span class="badge-genre">Pop</span>
+                        <span class="badge-genre">Indie</span>
+                        <span class="badge-zone ms-1">Llevant</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Placeholder: Upcoming Event 5 -->
+            <div class="col-12 mb-3 animate-fade-in-up" style="animation-delay:0.2s;">
+              <article class="card-bauxa">
+                <div class="card-body">
+                  <div class="d-flex gap-3 align-items-start">
+                    <div class="event-card__date" style="background:#A3432A;">
+                      <span class="event-card__date-day">19</span>
+                      <span class="event-card__date-month">Abr</span>
+                    </div>
+                    <div class="event-card__info flex-grow-1">
+                      <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                        <div>
+                          <span class="badge-category">concert</span>
+                          <h3 class="card-title mt-1 mb-1">Veus de la Mediterrània</h3>
+                        </div>
+                        <span class="badge-price">8 EUR</span>
+                      </div>
+                      <p class="mb-1 small"><strong><i class="bi bi-music-note-beamed"></i> Maria del Mar Bonet</strong></p>
+                      <p class="event-card__time mb-1"><i class="bi bi-clock"></i> 20:30 — Diumenge, 19 d'abril de 2026</p>
+                      <p class="event-card__location mb-2"><i class="bi bi-geo-alt-fill"></i> Teatre Principal, Palma</p>
+                      <div class="d-flex flex-wrap align-items-center gap-2">
+                        <span class="badge-genre">Cantautor</span>
+                        <span class="badge-genre">Mediterrani</span>
+                        <span class="badge-zone ms-1">Palma</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
           </div>
         </div>
       </section>
@@ -190,10 +429,146 @@
             </a>
           </div>
           <div class="row" id="featuredArtists">
-            <div class="col-md-6 col-lg-4 mb-4" aria-hidden="true"><div class="skeleton-block" style="height:380px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
-            <div class="col-md-6 col-lg-4 mb-4" aria-hidden="true"><div class="skeleton-block" style="height:380px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
-            <div class="col-md-6 col-lg-4 mb-4" aria-hidden="true"><div class="skeleton-block" style="height:380px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
-            <div class="col-md-6 col-lg-4 mb-4" aria-hidden="true"><div class="skeleton-block" style="height:380px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
+
+            <!-- Placeholder: Artist Card 1 -->
+            <div class="col-md-6 col-lg-3 mb-4 animate-fade-in-up">
+              <article class="card-bauxa artist-card">
+                <div class="artist-card__image-wrapper">
+                  <svg class="placeholder-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#1B4965"/>
+                    <circle cx="200" cy="120" r="60" fill="rgba(255,255,255,0.15)"/>
+                    <text x="200" y="135" font-family="Georgia,serif" font-size="42" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="bold">BT</text>
+                    <text x="200" y="230" font-family="sans-serif" font-size="15" fill="rgba(255,255,255,0.6)" text-anchor="middle">Brams de Tramuntana</text>
+                  </svg>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex align-items-start justify-content-between mb-1">
+                    <h3 class="card-title mb-0">Brams de Tramuntana</h3>
+                    <span class="badge-zone">Tramuntana</span>
+                  </div>
+                  <div class="artist-card__genres">
+                    <span class="badge-genre">Folk</span>
+                    <span class="badge-genre">Tradicional</span>
+                  </div>
+                  <p class="card-text small text-muted-custom mb-2">Grup mallorquí de folk tradicional amb arrels profundes a la Serra de Tramuntana...</p>
+                  <div class="artist-card__meta">
+                    <span><i class="bi bi-calendar3"></i> 2008</span>
+                    <span><i class="bi bi-disc"></i> 4 àlbums</span>
+                  </div>
+                  <div class="d-flex gap-2 mt-3">
+                    <button class="btn btn-sm btn-bauxa flex-grow-1" disabled>
+                      <i class="bi bi-info-circle"></i> Veure mes
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Placeholder: Artist Card 2 -->
+            <div class="col-md-6 col-lg-3 mb-4 animate-fade-in-up" style="animation-delay:0.1s;">
+              <article class="card-bauxa artist-card">
+                <div class="artist-card__image-wrapper">
+                  <svg class="placeholder-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#C45A3C"/>
+                    <circle cx="200" cy="120" r="60" fill="rgba(255,255,255,0.15)"/>
+                    <text x="200" y="135" font-family="Georgia,serif" font-size="42" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="bold">AF</text>
+                    <text x="200" y="230" font-family="sans-serif" font-size="15" fill="rgba(255,255,255,0.6)" text-anchor="middle">Antònia Font</text>
+                  </svg>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex align-items-start justify-content-between mb-1">
+                    <h3 class="card-title mb-0">Antònia Font</h3>
+                    <span class="badge-zone">Palma</span>
+                  </div>
+                  <div class="artist-card__genres">
+                    <span class="badge-genre">Indie Pop</span>
+                    <span class="badge-genre">Rock</span>
+                  </div>
+                  <p class="card-text small text-muted-custom mb-2">Una de les bandes de pop-rock en català més importants de les Illes Balears...</p>
+                  <div class="artist-card__meta">
+                    <span><i class="bi bi-calendar3"></i> 1994</span>
+                    <span><i class="bi bi-disc"></i> 8 àlbums</span>
+                  </div>
+                  <div class="d-flex gap-2 mt-3">
+                    <button class="btn btn-sm btn-bauxa flex-grow-1" disabled>
+                      <i class="bi bi-info-circle"></i> Veure mes
+                    </button>
+                    <button class="btn btn-sm btn-bauxa-secondary" disabled>
+                      <i class="bi bi-spotify"></i>
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Placeholder: Artist Card 3 -->
+            <div class="col-md-6 col-lg-3 mb-4 animate-fade-in-up" style="animation-delay:0.2s;">
+              <article class="card-bauxa artist-card">
+                <div class="artist-card__image-wrapper">
+                  <svg class="placeholder-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#6B8E4E"/>
+                    <circle cx="200" cy="120" r="60" fill="rgba(255,255,255,0.15)"/>
+                    <text x="200" y="135" font-family="Georgia,serif" font-size="42" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="bold">JMO</text>
+                    <text x="200" y="230" font-family="sans-serif" font-size="15" fill="rgba(255,255,255,0.6)" text-anchor="middle">Joan Miquel Oliver</text>
+                  </svg>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex align-items-start justify-content-between mb-1">
+                    <h3 class="card-title mb-0">Joan Miquel Oliver</h3>
+                    <span class="badge-zone">Llevant</span>
+                  </div>
+                  <div class="artist-card__genres">
+                    <span class="badge-genre">Indie</span>
+                    <span class="badge-genre">Jazz</span>
+                  </div>
+                  <p class="card-text small text-muted-custom mb-2">Músic i compositor mallorquí, co-fundador d'Antònia Font i referent de la música en català...</p>
+                  <div class="artist-card__meta">
+                    <span><i class="bi bi-calendar3"></i> 2005</span>
+                    <span><i class="bi bi-disc"></i> 6 àlbums</span>
+                  </div>
+                  <div class="d-flex gap-2 mt-3">
+                    <button class="btn btn-sm btn-bauxa flex-grow-1" disabled>
+                      <i class="bi bi-info-circle"></i> Veure mes
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Placeholder: Artist Card 4 -->
+            <div class="col-md-6 col-lg-3 mb-4 animate-fade-in-up" style="animation-delay:0.3s;">
+              <article class="card-bauxa artist-card">
+                <div class="artist-card__image-wrapper">
+                  <svg class="placeholder-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#A3432A"/>
+                    <circle cx="200" cy="120" r="60" fill="rgba(255,255,255,0.15)"/>
+                    <text x="200" y="135" font-family="Georgia,serif" font-size="42" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="bold">MB</text>
+                    <text x="200" y="230" font-family="sans-serif" font-size="15" fill="rgba(255,255,255,0.6)" text-anchor="middle">Maria del Mar Bonet</text>
+                  </svg>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex align-items-start justify-content-between mb-1">
+                    <h3 class="card-title mb-0">Maria del Mar Bonet</h3>
+                    <span class="badge-zone">Palma</span>
+                  </div>
+                  <div class="artist-card__genres">
+                    <span class="badge-genre">Cantautor</span>
+                    <span class="badge-genre">Mediterrani</span>
+                  </div>
+                  <p class="card-text small text-muted-custom mb-2">Llegendària cantautora mallorquina, veu icònica de la música mediterrània en català...</p>
+                  <div class="artist-card__meta">
+                    <span><i class="bi bi-calendar3"></i> 1965</span>
+                    <span><i class="bi bi-disc"></i> 20 àlbums</span>
+                  </div>
+                  <div class="d-flex gap-2 mt-3">
+                    <button class="btn btn-sm btn-bauxa flex-grow-1" disabled>
+                      <i class="bi bi-info-circle"></i> Veure mes
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
           </div>
         </div>
       </section>
@@ -204,9 +579,58 @@
           <h2 class="section-title">Noticies de l'Escena</h2>
           <p class="section-subtitle">Actualitat musical de les Illes Balears</p>
           <div class="row" id="newsGrid">
-            <div class="col-md-6 col-lg-4 mb-4" aria-hidden="true"><div class="skeleton-block" style="height:320px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
-            <div class="col-md-6 col-lg-4 mb-4" aria-hidden="true"><div class="skeleton-block" style="height:320px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
-            <div class="col-md-6 col-lg-4 mb-4" aria-hidden="true"><div class="skeleton-block" style="height:320px;background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);"></div></div>
+
+            <!-- Placeholder: News Card 1 -->
+            <div class="col-md-6 col-lg-4 mb-4 animate-fade-in-up">
+              <article class="card-bauxa">
+                <div class="news-card__image-wrapper" style="background: linear-gradient(135deg, #1B4965, #2D6A8F); display:flex; align-items:center; justify-content:center;">
+                  <i class="bi bi-newspaper" style="font-size:3.5rem; color:rgba(255,255,255,0.3);"></i>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="news-card__category">Escena Local</span>
+                    <span class="news-card__date">14 de març 2026</span>
+                  </div>
+                  <h3 class="card-title">Nova temporada de concerts al Parc de la Mar</h3>
+                  <p class="card-text small text-muted-custom">L'Ajuntament de Palma anuncia una programació de concerts gratuïts per a la primavera amb més de 20 artistes locals.</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Placeholder: News Card 2 -->
+            <div class="col-md-6 col-lg-4 mb-4 animate-fade-in-up" style="animation-delay:0.1s;">
+              <article class="card-bauxa">
+                <div class="news-card__image-wrapper" style="background: linear-gradient(135deg, #8B3D28, #C45A3C); display:flex; align-items:center; justify-content:center;">
+                  <i class="bi bi-music-note-list" style="font-size:3.5rem; color:rgba(255,255,255,0.3);"></i>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="news-card__category">Festival</span>
+                    <span class="news-card__date">10 de març 2026</span>
+                  </div>
+                  <h3 class="card-title">El Festival de Tramuntana amplía cartell amb tres nous artistes</h3>
+                  <p class="card-text small text-muted-custom">L'edició d'enguany del Festival de Tramuntana suma nous noms a un cartell que ja prometia ser el millor de la seva historia.</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Placeholder: News Card 3 -->
+            <div class="col-md-6 col-lg-4 mb-4 animate-fade-in-up" style="animation-delay:0.2s;">
+              <article class="card-bauxa">
+                <div class="news-card__image-wrapper" style="background: linear-gradient(135deg, #4F6B38, #6B8E4E); display:flex; align-items:center; justify-content:center;">
+                  <i class="bi bi-award" style="font-size:3.5rem; color:rgba(255,255,255,0.3);"></i>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="news-card__category">Premis</span>
+                    <span class="news-card__date">5 de març 2026</span>
+                  </div>
+                  <h3 class="card-title">Antònia Font guanya el premi a millor àlbum en català</h3>
+                  <p class="card-text small text-muted-custom">La banda mallorquina es fa amb el guardó als Premis de la Música Catalana per al seu darrer treball discogràfic.</p>
+                </div>
+              </article>
+            </div>
+
           </div>
         </div>
       </section>
@@ -271,7 +695,116 @@
 
           <!-- Artists Grid -->
           <div class="row" id="artistsGrid">
-            <!-- Dynamically loaded -->
+
+            <!-- Placeholder artists (6 cards) -->
+            <div class="col-md-6 col-lg-4 mb-4 animate-fade-in-up">
+              <article class="card-bauxa artist-card">
+                <div class="artist-card__image-wrapper">
+                  <svg class="placeholder-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#1B4965"/><circle cx="200" cy="120" r="60" fill="rgba(255,255,255,0.15)"/><text x="200" y="135" font-family="Georgia,serif" font-size="42" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="bold">BT</text><text x="200" y="230" font-family="sans-serif" font-size="15" fill="rgba(255,255,255,0.6)" text-anchor="middle">Brams de Tramuntana</text></svg>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex align-items-start justify-content-between mb-1">
+                    <h3 class="card-title mb-0">Brams de Tramuntana</h3>
+                    <span class="badge-zone">Tramuntana</span>
+                  </div>
+                  <div class="artist-card__genres"><span class="badge-genre">Folk</span><span class="badge-genre">Tradicional</span></div>
+                  <p class="card-text small text-muted-custom mb-2">Grup mallorquí de folk tradicional amb arrels profundes a la Serra de Tramuntana...</p>
+                  <div class="artist-card__meta"><span><i class="bi bi-calendar3"></i> 2008</span><span><i class="bi bi-disc"></i> 4 àlbums</span></div>
+                  <div class="d-flex gap-2 mt-3"><button class="btn btn-sm btn-bauxa flex-grow-1" disabled><i class="bi bi-info-circle"></i> Veure mes</button></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4 animate-fade-in-up" style="animation-delay:0.05s;">
+              <article class="card-bauxa artist-card">
+                <div class="artist-card__image-wrapper">
+                  <svg class="placeholder-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#C45A3C"/><circle cx="200" cy="120" r="60" fill="rgba(255,255,255,0.15)"/><text x="200" y="135" font-family="Georgia,serif" font-size="42" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="bold">AF</text><text x="200" y="230" font-family="sans-serif" font-size="15" fill="rgba(255,255,255,0.6)" text-anchor="middle">Antònia Font</text></svg>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex align-items-start justify-content-between mb-1">
+                    <h3 class="card-title mb-0">Antònia Font</h3>
+                    <span class="badge-zone">Palma</span>
+                  </div>
+                  <div class="artist-card__genres"><span class="badge-genre">Indie Pop</span><span class="badge-genre">Rock</span></div>
+                  <p class="card-text small text-muted-custom mb-2">Una de les bandes de pop-rock en català més importants de les Illes Balears...</p>
+                  <div class="artist-card__meta"><span><i class="bi bi-calendar3"></i> 1994</span><span><i class="bi bi-disc"></i> 8 àlbums</span></div>
+                  <div class="d-flex gap-2 mt-3"><button class="btn btn-sm btn-bauxa flex-grow-1" disabled><i class="bi bi-info-circle"></i> Veure mes</button><button class="btn btn-sm btn-bauxa-secondary" disabled><i class="bi bi-spotify"></i></button></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4 animate-fade-in-up" style="animation-delay:0.1s;">
+              <article class="card-bauxa artist-card">
+                <div class="artist-card__image-wrapper">
+                  <svg class="placeholder-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#6B8E4E"/><circle cx="200" cy="120" r="60" fill="rgba(255,255,255,0.15)"/><text x="200" y="135" font-family="Georgia,serif" font-size="42" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="bold">JMO</text><text x="200" y="230" font-family="sans-serif" font-size="15" fill="rgba(255,255,255,0.6)" text-anchor="middle">Joan Miquel Oliver</text></svg>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex align-items-start justify-content-between mb-1">
+                    <h3 class="card-title mb-0">Joan Miquel Oliver</h3>
+                    <span class="badge-zone">Llevant</span>
+                  </div>
+                  <div class="artist-card__genres"><span class="badge-genre">Indie</span><span class="badge-genre">Jazz</span></div>
+                  <p class="card-text small text-muted-custom mb-2">Músic i compositor mallorquí, co-fundador d'Antònia Font i referent de la música en català...</p>
+                  <div class="artist-card__meta"><span><i class="bi bi-calendar3"></i> 2005</span><span><i class="bi bi-disc"></i> 6 àlbums</span></div>
+                  <div class="d-flex gap-2 mt-3"><button class="btn btn-sm btn-bauxa flex-grow-1" disabled><i class="bi bi-info-circle"></i> Veure mes</button></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4 animate-fade-in-up" style="animation-delay:0.15s;">
+              <article class="card-bauxa artist-card">
+                <div class="artist-card__image-wrapper">
+                  <svg class="placeholder-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#A3432A"/><circle cx="200" cy="120" r="60" fill="rgba(255,255,255,0.15)"/><text x="200" y="135" font-family="Georgia,serif" font-size="42" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="bold">MB</text><text x="200" y="230" font-family="sans-serif" font-size="15" fill="rgba(255,255,255,0.6)" text-anchor="middle">Maria del Mar Bonet</text></svg>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex align-items-start justify-content-between mb-1">
+                    <h3 class="card-title mb-0">Maria del Mar Bonet</h3>
+                    <span class="badge-zone">Palma</span>
+                  </div>
+                  <div class="artist-card__genres"><span class="badge-genre">Cantautor</span><span class="badge-genre">Mediterrani</span></div>
+                  <p class="card-text small text-muted-custom mb-2">Llegendària cantautora mallorquina, veu icònica de la música mediterrània en català...</p>
+                  <div class="artist-card__meta"><span><i class="bi bi-calendar3"></i> 1965</span><span><i class="bi bi-disc"></i> 20 àlbums</span></div>
+                  <div class="d-flex gap-2 mt-3"><button class="btn btn-sm btn-bauxa flex-grow-1" disabled><i class="bi bi-info-circle"></i> Veure mes</button></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4 animate-fade-in-up" style="animation-delay:0.2s;">
+              <article class="card-bauxa artist-card">
+                <div class="artist-card__image-wrapper">
+                  <svg class="placeholder-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#2D6A8F"/><circle cx="200" cy="120" r="60" fill="rgba(255,255,255,0.15)"/><text x="200" y="135" font-family="Georgia,serif" font-size="42" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="bold">AN</text><text x="200" y="230" font-family="sans-serif" font-size="15" fill="rgba(255,255,255,0.6)" text-anchor="middle">Anegats</text></svg>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex align-items-start justify-content-between mb-1">
+                    <h3 class="card-title mb-0">Anegats</h3>
+                    <span class="badge-zone">Palma</span>
+                  </div>
+                  <div class="artist-card__genres"><span class="badge-genre">Rock</span><span class="badge-genre">Punk</span></div>
+                  <p class="card-text small text-muted-custom mb-2">Banda de rock alternatiu en català, coneguda per les seves lletres compromeses i els seus concerts enèrgics...</p>
+                  <div class="artist-card__meta"><span><i class="bi bi-calendar3"></i> 2003</span><span><i class="bi bi-disc"></i> 5 àlbums</span></div>
+                  <div class="d-flex gap-2 mt-3"><button class="btn btn-sm btn-bauxa flex-grow-1" disabled><i class="bi bi-info-circle"></i> Veure mes</button></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4 animate-fade-in-up" style="animation-delay:0.25s;">
+              <article class="card-bauxa artist-card">
+                <div class="artist-card__image-wrapper">
+                  <svg class="placeholder-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#D4A843"/><circle cx="200" cy="120" r="60" fill="rgba(255,255,255,0.15)"/><text x="200" y="135" font-family="Georgia,serif" font-size="42" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="bold">ZZ</text><text x="200" y="230" font-family="sans-serif" font-size="15" fill="rgba(255,255,255,0.6)" text-anchor="middle">Zulu Zulu</text></svg>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex align-items-start justify-content-between mb-1">
+                    <h3 class="card-title mb-0">Zulu Zulu</h3>
+                    <span class="badge-zone">Serra de Tramuntana</span>
+                  </div>
+                  <div class="artist-card__genres"><span class="badge-genre">World Music</span><span class="badge-genre">Fusion</span></div>
+                  <p class="card-text small text-muted-custom mb-2">Grup de música del món que fusiona ritmes africans, mediterranis i tradicionals mallorquins...</p>
+                  <div class="artist-card__meta"><span><i class="bi bi-calendar3"></i> 2011</span><span><i class="bi bi-disc"></i> 3 àlbums</span></div>
+                  <div class="d-flex gap-2 mt-3"><button class="btn btn-sm btn-bauxa flex-grow-1" disabled><i class="bi bi-info-circle"></i> Veure mes</button></div>
+                </div>
+              </article>
+            </div>
+
           </div>
 
         </div>
@@ -342,7 +875,104 @@
 
           <!-- Events List -->
           <div class="row" id="eventsGrid">
-            <!-- Dynamically loaded -->
+
+            <!-- Placeholder events (6 cards) -->
+            <div class="col-12 mb-3 animate-fade-in-up">
+              <article class="card-bauxa"><div class="card-body"><div class="d-flex gap-3 align-items-start">
+                <div class="event-card__date"><span class="event-card__date-day">22</span><span class="event-card__date-month">Mar</span></div>
+                <div class="event-card__info flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                    <div><span class="badge-category">concert</span><h3 class="card-title mt-1 mb-1">Nit de Bauxa al Parc</h3></div>
+                    <span class="badge-price badge-price--free">Gratuit</span>
+                  </div>
+                  <p class="mb-1 small"><strong><i class="bi bi-music-note-beamed"></i> Anegats</strong></p>
+                  <p class="event-card__time mb-1"><i class="bi bi-clock"></i> 21:00 — Dissabte, 22 de març de 2026</p>
+                  <p class="event-card__location mb-2"><i class="bi bi-geo-alt-fill"></i> Parc de la Mar, Palma</p>
+                  <div class="d-flex flex-wrap align-items-center gap-2"><span class="badge-genre">Folk</span><span class="badge-zone ms-1">Palma</span></div>
+                </div>
+              </div></div></article>
+            </div>
+
+            <div class="col-12 mb-3 animate-fade-in-up" style="animation-delay:0.05s;">
+              <article class="card-bauxa"><div class="card-body"><div class="d-flex gap-3 align-items-start">
+                <div class="event-card__date" style="background:#1B4965;"><span class="event-card__date-day">28</span><span class="event-card__date-month">Mar</span></div>
+                <div class="event-card__info flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                    <div><span class="badge-category">festival</span><h3 class="card-title mt-1 mb-1">Festival de Tramuntana</h3></div>
+                    <span class="badge-price">15 EUR</span>
+                  </div>
+                  <p class="mb-1 small"><strong><i class="bi bi-music-note-beamed"></i> Brams de Tramuntana · Zulu Zulu</strong></p>
+                  <p class="event-card__time mb-1"><i class="bi bi-clock"></i> 18:00 — Divendres, 28 de març de 2026</p>
+                  <p class="event-card__location mb-2"><i class="bi bi-geo-alt-fill"></i> Jardins d'Alfabia, Bunyola</p>
+                  <div class="d-flex flex-wrap align-items-center gap-2"><span class="badge-genre">Folk</span><span class="badge-genre">World</span><span class="badge-zone ms-1">Serra de Tramuntana</span></div>
+                </div>
+              </div></div></article>
+            </div>
+
+            <div class="col-12 mb-3 animate-fade-in-up" style="animation-delay:0.1s;">
+              <article class="card-bauxa"><div class="card-body"><div class="d-flex gap-3 align-items-start">
+                <div class="event-card__date" style="background:#4F6B38;"><span class="event-card__date-day">5</span><span class="event-card__date-month">Abr</span></div>
+                <div class="event-card__info flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                    <div><span class="badge-category">concert</span><h3 class="card-title mt-1 mb-1">Jazz al Claustre</h3></div>
+                    <span class="badge-price">10 EUR</span>
+                  </div>
+                  <p class="mb-1 small"><strong><i class="bi bi-music-note-beamed"></i> Joan Miquel Oliver</strong></p>
+                  <p class="event-card__time mb-1"><i class="bi bi-clock"></i> 19:30 — Dissabte, 5 d'abril de 2026</p>
+                  <p class="event-card__location mb-2"><i class="bi bi-geo-alt-fill"></i> Convent de Sant Domingo, Pollença</p>
+                  <div class="d-flex flex-wrap align-items-center gap-2"><span class="badge-genre">Jazz</span><span class="badge-genre">Indie</span><span class="badge-zone ms-1">Raiguer</span></div>
+                </div>
+              </div></div></article>
+            </div>
+
+            <div class="col-12 mb-3 animate-fade-in-up" style="animation-delay:0.15s;">
+              <article class="card-bauxa"><div class="card-body"><div class="d-flex gap-3 align-items-start">
+                <div class="event-card__date" style="background:#7A3A55;"><span class="event-card__date-day">12</span><span class="event-card__date-month">Abr</span></div>
+                <div class="event-card__info flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                    <div><span class="badge-category" style="background:#6B8E4E;">festa popular</span><h3 class="card-title mt-1 mb-1">Fira de Música de Llevant</h3></div>
+                    <span class="badge-price badge-price--free">Gratuit</span>
+                  </div>
+                  <p class="mb-1 small"><strong><i class="bi bi-music-note-beamed"></i> Donallop · Cap Pelat</strong></p>
+                  <p class="event-card__time mb-1"><i class="bi bi-clock"></i> 17:00 — Diumenge, 12 d'abril de 2026</p>
+                  <p class="event-card__location mb-2"><i class="bi bi-geo-alt-fill"></i> Plaça de la Constitució, Artà</p>
+                  <div class="d-flex flex-wrap align-items-center gap-2"><span class="badge-genre">Pop</span><span class="badge-genre">Indie</span><span class="badge-zone ms-1">Llevant</span></div>
+                </div>
+              </div></div></article>
+            </div>
+
+            <div class="col-12 mb-3 animate-fade-in-up" style="animation-delay:0.2s;">
+              <article class="card-bauxa"><div class="card-body"><div class="d-flex gap-3 align-items-start">
+                <div class="event-card__date" style="background:#A3432A;"><span class="event-card__date-day">19</span><span class="event-card__date-month">Abr</span></div>
+                <div class="event-card__info flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                    <div><span class="badge-category">concert</span><h3 class="card-title mt-1 mb-1">Veus de la Mediterrània</h3></div>
+                    <span class="badge-price">8 EUR</span>
+                  </div>
+                  <p class="mb-1 small"><strong><i class="bi bi-music-note-beamed"></i> Maria del Mar Bonet</strong></p>
+                  <p class="event-card__time mb-1"><i class="bi bi-clock"></i> 20:30 — Diumenge, 19 d'abril de 2026</p>
+                  <p class="event-card__location mb-2"><i class="bi bi-geo-alt-fill"></i> Teatre Principal, Palma</p>
+                  <div class="d-flex flex-wrap align-items-center gap-2"><span class="badge-genre">Cantautor</span><span class="badge-genre">Mediterrani</span><span class="badge-zone ms-1">Palma</span></div>
+                </div>
+              </div></div></article>
+            </div>
+
+            <div class="col-12 mb-3 animate-fade-in-up" style="animation-delay:0.25s;">
+              <article class="card-bauxa"><div class="card-body"><div class="d-flex gap-3 align-items-start">
+                <div class="event-card__date" style="background:#D4A843;"><span class="event-card__date-day">3</span><span class="event-card__date-month">Mai</span></div>
+                <div class="event-card__info flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                    <div><span class="badge-category">concert</span><h3 class="card-title mt-1 mb-1">Nit de Xeremies i Ball de Bot</h3></div>
+                    <span class="badge-price badge-price--free">Gratuit</span>
+                  </div>
+                  <p class="mb-1 small"><strong><i class="bi bi-music-note-beamed"></i> Xeremiers de Mallorca</strong></p>
+                  <p class="event-card__time mb-1"><i class="bi bi-clock"></i> 19:00 — Diumenge, 3 de maig de 2026</p>
+                  <p class="event-card__location mb-2"><i class="bi bi-geo-alt-fill"></i> Plaça de Cort, Palma</p>
+                  <div class="d-flex flex-wrap align-items-center gap-2"><span class="badge-genre">Tradicional</span><span class="badge-genre">Ball de Bot</span><span class="badge-zone ms-1">Palma</span></div>
+                </div>
+              </div></div></article>
+            </div>
+
           </div>
 
         </div>
@@ -390,8 +1020,12 @@
                 </div>
               </div>
 
-              <!-- Map Container -->
-              <div id="map" role="application" aria-label="Mapa d'esdeveniments de Mallorca"></div>
+              <!-- Map Container (static placeholder) -->
+              <div id="map" role="application" aria-label="Mapa d'esdeveniments de Mallorca" style="position:relative;overflow:hidden;">
+                <img src="assets/images/icons/mallorca.png"
+                     alt="Mapa de Mallorca amb esdeveniments marcats"
+                     style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
 
               <!-- Legend -->
               <div class="map-legend mt-3">
@@ -417,10 +1051,150 @@
             <div class="col-lg-4">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <h2 class="h5 mb-0" style="font-family:var(--font-heading);">Esdeveniments</h2>
-                <span class="text-muted-custom small" id="mapEventsCount"></span>
+                <span class="text-muted-custom small" id="mapEventsCount">7 esdeveniments</span>
               </div>
               <div id="mapEventsList" style="max-height:600px;overflow-y:auto;">
-                <!-- Dynamically loaded -->
+
+                <!-- Sidebar event 1 -->
+                <div class="card-bauxa mb-2 animate-fade-in-up" style="border-radius:0.6rem;">
+                  <div class="card-body py-2 px-3">
+                    <div class="d-flex gap-2 align-items-start">
+                      <div class="event-card__date flex-shrink-0" style="width:46px;min-width:46px;height:46px;font-size:0.85rem;">
+                        <span class="event-card__date-day" style="font-size:1.1rem;">22</span>
+                        <span class="event-card__date-month">Mar</span>
+                      </div>
+                      <div style="min-width:0;">
+                        <div class="d-flex align-items-center gap-1 mb-0">
+                          <span class="badge-category" style="font-size:0.62rem;padding:0.15rem 0.4rem;">concert</span>
+                          <span class="badge-price badge-price--free" style="font-size:0.7rem;padding:0.15rem 0.45rem;">Gratuit</span>
+                        </div>
+                        <h4 class="mb-0" style="font-family:var(--font-heading);font-size:0.88rem;color:var(--color-secondary-dark);line-height:1.3;">Nit de Bauxa al Parc</h4>
+                        <p class="mb-0 small text-muted-custom" style="font-size:0.78rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"><i class="bi bi-geo-alt-fill" style="color:#C45A3C;"></i> Parc de la Mar, Palma</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Sidebar event 2 -->
+                <div class="card-bauxa mb-2 animate-fade-in-up" style="border-radius:0.6rem;animation-delay:0.05s;">
+                  <div class="card-body py-2 px-3">
+                    <div class="d-flex gap-2 align-items-start">
+                      <div class="event-card__date flex-shrink-0" style="width:46px;min-width:46px;height:46px;background:#1B4965;">
+                        <span class="event-card__date-day" style="font-size:1.1rem;">28</span>
+                        <span class="event-card__date-month">Mar</span>
+                      </div>
+                      <div style="min-width:0;">
+                        <div class="d-flex align-items-center gap-1 mb-0">
+                          <span class="badge-category" style="font-size:0.62rem;padding:0.15rem 0.4rem;">festival</span>
+                          <span class="badge-price" style="font-size:0.7rem;padding:0.15rem 0.45rem;">15 EUR</span>
+                        </div>
+                        <h4 class="mb-0" style="font-family:var(--font-heading);font-size:0.88rem;color:var(--color-secondary-dark);line-height:1.3;">Festival de Tramuntana</h4>
+                        <p class="mb-0 small text-muted-custom" style="font-size:0.78rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"><i class="bi bi-geo-alt-fill" style="color:#C45A3C;"></i> Jardins d'Alfabia, Bunyola</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Sidebar event 3 -->
+                <div class="card-bauxa mb-2 animate-fade-in-up" style="border-radius:0.6rem;animation-delay:0.1s;">
+                  <div class="card-body py-2 px-3">
+                    <div class="d-flex gap-2 align-items-start">
+                      <div class="event-card__date flex-shrink-0" style="width:46px;min-width:46px;height:46px;background:#4F6B38;">
+                        <span class="event-card__date-day" style="font-size:1.1rem;">5</span>
+                        <span class="event-card__date-month">Abr</span>
+                      </div>
+                      <div style="min-width:0;">
+                        <div class="d-flex align-items-center gap-1 mb-0">
+                          <span class="badge-category" style="font-size:0.62rem;padding:0.15rem 0.4rem;">concert</span>
+                          <span class="badge-price" style="font-size:0.7rem;padding:0.15rem 0.45rem;">10 EUR</span>
+                        </div>
+                        <h4 class="mb-0" style="font-family:var(--font-heading);font-size:0.88rem;color:var(--color-secondary-dark);line-height:1.3;">Jazz al Claustre</h4>
+                        <p class="mb-0 small text-muted-custom" style="font-size:0.78rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"><i class="bi bi-geo-alt-fill" style="color:#C45A3C;"></i> Convent de Sant Domingo, Pollença</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Sidebar event 4 -->
+                <div class="card-bauxa mb-2 animate-fade-in-up" style="border-radius:0.6rem;animation-delay:0.15s;">
+                  <div class="card-body py-2 px-3">
+                    <div class="d-flex gap-2 align-items-start">
+                      <div class="event-card__date flex-shrink-0" style="width:46px;min-width:46px;height:46px;background:#3A6A88;">
+                        <span class="event-card__date-day" style="font-size:1.1rem;">10</span>
+                        <span class="event-card__date-month">Abr</span>
+                      </div>
+                      <div style="min-width:0;">
+                        <div class="d-flex align-items-center gap-1 mb-0">
+                          <span class="badge-category" style="font-size:0.62rem;padding:0.15rem 0.4rem;background:#D4A843;">festival</span>
+                          <span class="badge-price badge-price--free" style="font-size:0.7rem;padding:0.15rem 0.45rem;">Gratuit</span>
+                        </div>
+                        <h4 class="mb-0" style="font-family:var(--font-heading);font-size:0.88rem;color:var(--color-secondary-dark);line-height:1.3;">Festival Badia d'Alcúdia</h4>
+                        <p class="mb-0 small text-muted-custom" style="font-size:0.78rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"><i class="bi bi-geo-alt-fill" style="color:#C45A3C;"></i> Platja d'Alcúdia, Alcúdia</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Sidebar event 5 -->
+                <div class="card-bauxa mb-2 animate-fade-in-up" style="border-radius:0.6rem;animation-delay:0.2s;">
+                  <div class="card-body py-2 px-3">
+                    <div class="d-flex gap-2 align-items-start">
+                      <div class="event-card__date flex-shrink-0" style="width:46px;min-width:46px;height:46px;background:#7A3A55;">
+                        <span class="event-card__date-day" style="font-size:1.1rem;">12</span>
+                        <span class="event-card__date-month">Abr</span>
+                      </div>
+                      <div style="min-width:0;">
+                        <div class="d-flex align-items-center gap-1 mb-0">
+                          <span class="badge-category" style="font-size:0.62rem;padding:0.15rem 0.4rem;background:#6B8E4E;">festa popular</span>
+                          <span class="badge-price badge-price--free" style="font-size:0.7rem;padding:0.15rem 0.45rem;">Gratuit</span>
+                        </div>
+                        <h4 class="mb-0" style="font-family:var(--font-heading);font-size:0.88rem;color:var(--color-secondary-dark);line-height:1.3;">Fira de Música de Llevant</h4>
+                        <p class="mb-0 small text-muted-custom" style="font-size:0.78rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"><i class="bi bi-geo-alt-fill" style="color:#C45A3C;"></i> Plaça de la Constitució, Artà</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Sidebar event 6 -->
+                <div class="card-bauxa mb-2 animate-fade-in-up" style="border-radius:0.6rem;animation-delay:0.25s;">
+                  <div class="card-body py-2 px-3">
+                    <div class="d-flex gap-2 align-items-start">
+                      <div class="event-card__date flex-shrink-0" style="width:46px;min-width:46px;height:46px;background:#A3432A;">
+                        <span class="event-card__date-day" style="font-size:1.1rem;">19</span>
+                        <span class="event-card__date-month">Abr</span>
+                      </div>
+                      <div style="min-width:0;">
+                        <div class="d-flex align-items-center gap-1 mb-0">
+                          <span class="badge-category" style="font-size:0.62rem;padding:0.15rem 0.4rem;">concert</span>
+                          <span class="badge-price" style="font-size:0.7rem;padding:0.15rem 0.45rem;">8 EUR</span>
+                        </div>
+                        <h4 class="mb-0" style="font-family:var(--font-heading);font-size:0.88rem;color:var(--color-secondary-dark);line-height:1.3;">Veus de la Mediterrània</h4>
+                        <p class="mb-0 small text-muted-custom" style="font-size:0.78rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"><i class="bi bi-geo-alt-fill" style="color:#C45A3C;"></i> Teatre Principal, Palma</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Sidebar event 7 -->
+                <div class="card-bauxa mb-2 animate-fade-in-up" style="border-radius:0.6rem;animation-delay:0.3s;">
+                  <div class="card-body py-2 px-3">
+                    <div class="d-flex gap-2 align-items-start">
+                      <div class="event-card__date flex-shrink-0" style="width:46px;min-width:46px;height:46px;background:#5A4A90;">
+                        <span class="event-card__date-day" style="font-size:1.1rem;">26</span>
+                        <span class="event-card__date-month">Abr</span>
+                      </div>
+                      <div style="min-width:0;">
+                        <div class="d-flex align-items-center gap-1 mb-0">
+                          <span class="badge-category" style="font-size:0.62rem;padding:0.15rem 0.4rem;">concert</span>
+                          <span class="badge-price" style="font-size:0.7rem;padding:0.15rem 0.45rem;">12 EUR</span>
+                        </div>
+                        <h4 class="mb-0" style="font-family:var(--font-heading);font-size:0.88rem;color:var(--color-secondary-dark);line-height:1.3;">Nit de Guitarra a Manacor</h4>
+                        <p class="mb-0 small text-muted-custom" style="font-size:0.78rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"><i class="bi bi-geo-alt-fill" style="color:#C45A3C;"></i> Auditori de Manacor, Manacor</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
 
@@ -444,7 +1218,10 @@
       <div class="section-padding">
         <div class="container">
           <div id="favoritsContent">
-            <!-- Dynamically loaded -->
+            <div class="empty-state">
+              <i class="bi bi-heart"></i>
+              <p>No tens cap favorit guardat. Explora artistes i esdeveniments per afegir-ne!</p>
+            </div>
           </div>
         </div>
       </div>
