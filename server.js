@@ -3,20 +3,21 @@ import express from 'express';
 import session from 'express-session';
 import passport from 'passport';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
-import { readFileSync, writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { readJSON, writeJSONSafe, generateId } from './helpers/json.js';
+
+// Route modules
+import profileRoutes from './routes/profile.js';
+import contentRoutes from './routes/content.js';
+import usersRoutes from './routes/users.js';
+import requestsRoutes from './routes/requests.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || '')
-  .split(',')
-  .map(e => e.trim().toLowerCase())
-  .filter(Boolean);
-
-const ARTISTS_PATH = join(__dirname, 'frontend', 'data', 'artists.json');
+const USERS_PATH = join(__dirname, 'server-data', 'users.json');
 
 // --- Passport setup ---
 
@@ -27,17 +28,70 @@ passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   callbackURL: '/auth/google/callback'
-}, (_accessToken, _refreshToken, profile, done) => {
+}, async (_accessToken, _refreshToken, profile, done) => {
   const email = profile.emails?.[0]?.value?.toLowerCase() || '';
-  done(null, { id: profile.id, name: profile.displayName, email });
+  const user = {
+    id: profile.id,
+    name: profile.displayName,
+    email,
+    image: profile.photos?.[0]?.value || ''
+  };
+
+  // Find or create user in users.json
+  await findOrCreateUser(user);
+
+  done(null, user);
 }));
+
+async function findOrCreateUser(googleUser) {
+  const data = readJSON(USERS_PATH);
+  const existing = data.itemListElement.find(
+    el => el.item.identifier === googleUser.id
+  );
+
+  if (existing) {
+    // Update name/email/image from Google in case they changed
+    existing.item.name = googleUser.name;
+    existing.item.email = googleUser.email;
+    existing.item.image = googleUser.image;
+    const { writeJSON } = await import('./helpers/json.js');
+    writeJSON(USERS_PATH, data);
+    return existing.item;
+  }
+
+  // Create new user with role 'lector'
+  await writeJSONSafe(USERS_PATH, async (data) => {
+    const { id, position } = generateId('user', data.itemListElement);
+
+    data.itemListElement.push({
+      '@type': 'ListItem',
+      position,
+      item: {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        '@id': id,
+        identifier: googleUser.id,
+        name: googleUser.name,
+        email: googleUser.email,
+        image: googleUser.image,
+        jobTitle: 'lector',
+        description: '',
+        additionalProperty: [
+          { '@type': 'PropertyValue', name: 'displayName', value: googleUser.name }
+        ],
+        dateCreated: new Date().toISOString()
+      }
+    });
+    data.numberOfItems = data.itemListElement.length;
+  });
+}
 
 // --- Middleware ---
 
 const isProduction = process.env.NODE_ENV === 'production';
 
 if (isProduction) {
-  app.set('trust proxy', 1); // Trust reverse proxy (nginx, Cloudflare, etc.)
+  app.set('trust proxy', 1);
 }
 
 app.use(session({
@@ -45,8 +99,8 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    maxAge: 24 * 60 * 60 * 1000, // 24h
-    secure: isProduction,         // HTTPS only in production
+    maxAge: 24 * 60 * 60 * 1000,
+    secure: isProduction,
     sameSite: 'lax'
   }
 }));
@@ -66,7 +120,7 @@ app.get('/auth/google', passport.authenticate('google', {
 
 app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/#home' }),
-  (_req, res) => res.redirect('/#admin')
+  (_req, res) => res.redirect('/#home')
 );
 
 app.get('/auth/logout', (req, res) => {
@@ -75,131 +129,37 @@ app.get('/auth/logout', (req, res) => {
 
 app.get('/auth/me', (req, res) => {
   if (!req.user) return res.json({ authenticated: false });
-  const isAdmin = ADMIN_EMAILS.includes(req.user.email);
-  res.json({ authenticated: true, user: req.user, isAdmin });
-});
 
-// --- Admin API ---
+  const users = readJSON(USERS_PATH);
+  const userItem = users.itemListElement.find(
+    el => el.item.identifier === req.user.id
+  );
 
-function requireAdmin(req, res, next) {
-  if (!req.user) return res.status(401).json({ error: 'No autenticat' });
-  if (!ADMIN_EMAILS.includes(req.user.email)) {
-    return res.status(403).json({ error: 'No autoritzat' });
-  }
-  next();
-}
+  if (!userItem) return res.json({ authenticated: false });
 
-app.get('/api/artists', requireAdmin, (_req, res) => {
-  const data = JSON.parse(readFileSync(ARTISTS_PATH, 'utf-8'));
-  res.json(data);
-});
-
-app.post('/api/artists', requireAdmin, (req, res) => {
-  const artist = req.body;
-
-  // Validate required fields
-  if (!artist.name || !artist.description || !Array.isArray(artist.genre) || artist.genre.length === 0) {
-    return res.status(400).json({ error: 'Falten camps obligatoris: name, description, genre' });
-  }
-
-  // Read current data
-  const data = JSON.parse(readFileSync(ARTISTS_PATH, 'utf-8'));
-  const items = data.itemListElement || [];
-
-  // Generate next position and ID
-  const maxPos = items.reduce((max, el) => Math.max(max, el.position || 0), 0);
-  const nextPos = maxPos + 1;
-  const artistId = `artist-${nextPos}`;
-
-  // Build Schema.org compliant entry
-  const newItem = {
-    "@type": "MusicGroup",
-    "@id": artistId,
-    "name": artist.name,
-    "description": artist.description,
-    "genre": artist.genre
-  };
-
-  if (artist.foundingDate) {
-    newItem.foundingDate = artist.foundingDate;
-  }
-
-  if (artist.locationName) {
-    newItem.foundingLocation = {
-      "@type": "Place",
-      "name": artist.locationName,
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": artist.locationName,
-        "addressRegion": "Mallorca"
-      }
-    };
-  }
-
-  if (artist.image) {
-    newItem.image = artist.image;
-  }
-
-  // Build sameAs from provided URLs
-  const sameAs = [];
-  if (artist.spotifyUrl) sameAs.push(artist.spotifyUrl);
-  if (artist.instagramUrl) sameAs.push(artist.instagramUrl);
-  if (artist.wikipediaUrl) sameAs.push(artist.wikipediaUrl);
-  if (sameAs.length > 0) newItem.sameAs = sameAs;
-
-  // Members
-  if (Array.isArray(artist.members) && artist.members.length > 0) {
-    newItem.member = artist.members
-      .filter(m => m.trim())
-      .map(name => ({ "@type": "Person", "name": name.trim() }));
-  }
-
-  // Albums
-  if (Array.isArray(artist.albums) && artist.albums.length > 0) {
-    newItem.album = artist.albums
-      .filter(a => a.name?.trim())
-      .map(a => ({ "@type": "MusicAlbum", "name": a.name.trim(), "datePublished": a.year || '' }));
-  }
-
-  // Area served (zone)
-  if (artist.areaServed) {
-    newItem.areaServed = artist.areaServed;
-  }
-
-  // Additional properties (spotifyId, featured)
-  const additionalProperty = [];
-  if (artist.spotifyUrl) {
-    const match = artist.spotifyUrl.match(/artist\/([a-zA-Z0-9]+)/);
-    if (match) {
-      additionalProperty.push({ "@type": "PropertyValue", "name": "spotifyId", "value": match[1] });
+  res.json({
+    authenticated: true,
+    user: req.user,
+    profile: {
+      '@id': userItem.item['@id'],
+      role: userItem.item.jobTitle,
+      displayName: userItem.item.additionalProperty?.find(p => p.name === 'displayName')?.value || userItem.item.name,
+      image: userItem.item.image,
+      description: userItem.item.description
     }
-  }
-  additionalProperty.push({
-    "@type": "PropertyValue",
-    "name": "featured",
-    "value": artist.featured === true
   });
-  newItem.additionalProperty = additionalProperty;
-
-  // Append to list
-  const newListItem = {
-    "@type": "ListItem",
-    "position": nextPos,
-    "item": newItem
-  };
-
-  data.itemListElement.push(newListItem);
-  data.numberOfItems = data.itemListElement.length;
-
-  // Write back
-  writeFileSync(ARTISTS_PATH, JSON.stringify(data, null, 2), 'utf-8');
-
-  res.status(201).json({ success: true, artist: newItem, id: artistId });
 });
+
+// --- API routes ---
+
+app.use('/api/profile', profileRoutes);
+app.use('/api/admin', contentRoutes);
+app.use('/api/admin/users', usersRoutes);
+app.use('/api/requests', requestsRoutes);
+app.use('/api/admin/requests', requestsRoutes);
 
 // --- Start ---
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
-  console.log(`Admin emails: ${ADMIN_EMAILS.join(', ') || '(none configured)'}`);
 });
