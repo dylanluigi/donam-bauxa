@@ -6,6 +6,11 @@
 /** @type {Map<string, any>} In-memory cache for loaded data */
 const cache = new Map();
 
+
+export function clearDataCache() {
+  cache.clear();
+}
+
 /**
  * Fetches JSON data from a given path, with caching.
  * @param {string} path - Relative path to the JSON file (e.g. 'data/artists.json')
@@ -16,9 +21,9 @@ export async function loadData(path) {
 
   let preload = null;
   if (window.__dataPreload) {
-    if (path === 'data/events.json')  { preload = window.__dataPreload.events;  window.__dataPreload.events  = null; }
+    if (path === 'data/events.json') { preload = window.__dataPreload.events; window.__dataPreload.events = null; }
     if (path === 'data/artists.json') { preload = window.__dataPreload.artists; window.__dataPreload.artists = null; }
-    if (path === 'data/news.json')    { preload = window.__dataPreload.news;    window.__dataPreload.news    = null; }
+    if (path === 'data/news.json') { preload = window.__dataPreload.news; window.__dataPreload.news = null; }
   }
 
   try {
@@ -43,22 +48,24 @@ export async function loadData(path) {
  */
 export function extractItems(data) {
   if (!data || !data.itemListElement) return [];
-  return data.itemListElement.map(entry => {
-    const item = { ...entry.item };
-    // Hydrate additionalProperty into flat fields
-    if (Array.isArray(item.additionalProperty)) {
-      for (const prop of item.additionalProperty) {
-        if (prop.name && prop.name !== '@type') {
-          item[prop.name] = prop.value;
+  return data.itemListElement
+    .map(entry => {
+      const item = { ...entry.item };
+      // Hydrate additionalProperty into flat fields
+      if (Array.isArray(item.additionalProperty)) {
+        for (const prop of item.additionalProperty) {
+          if (prop.name && prop.name !== '@type') {
+            item[prop.name] = prop.value;
+          }
         }
       }
-    }
-    // Map Schema.org areaServed → zone for internal use
-    if (item.areaServed && !item.zone) {
-      item.zone = item.areaServed;
-    }
-    return item;
-  });
+      // Map Schema.org areaServed → zone for internal use
+      if (item.areaServed && !item.zone) {
+        item.zone = item.areaServed;
+      }
+      return item;
+    })
+    .filter(item => item.archived !== true); // Exclude archived items from public views
 }
 
 /**

@@ -3,6 +3,8 @@
  * @description Handles authentication state, navbar updates, and the admin dashboard.
  */
 
+import { clearDataCache } from './dataLoader.js';
+
 /** @type {{ authenticated: boolean, user: Object|null, profile: Object|null }|null} */
 let authState = null;
 
@@ -108,6 +110,8 @@ function renderContentTable(items, entityType) {
 }
 
 async function loadContentList(entityType, containerId) {
+  clearDataCache(); // Invalidate public data cache
+  document.dispatchEvent(new CustomEvent('admin:contentChanged')); // Signal app.js to re-fetch
   try {
     const data = await apiFetch(`/api/admin/${entityType}`);
     const container = document.getElementById(containerId);

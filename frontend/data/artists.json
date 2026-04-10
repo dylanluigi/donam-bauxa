@@ -3,7 +3,7 @@
   "@type": "ItemList",
   "name": "Artistes de Mallorca",
   "description": "Directori d'artistes i grups musicals de l'escena mallorquina",
-  "numberOfItems": 12,
+  "numberOfItems": 11,
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -94,66 +94,6 @@
       "position": 2,
       "item": {
         "@type": "MusicGroup",
-        "@id": "artist-2",
-        "name": "Maria del Mar Bonet",
-        "description": "Cantautora mallorquina, una de les veus mes importants de la canco en catala. Ha recorregut el mon amb la seva musica arrelada al Mediterrani.",
-        "genre": [
-          "Folk",
-          "Canco d'Autor",
-          "Mediterrania"
-        ],
-        "foundingDate": "1967",
-        "foundingLocation": {
-          "@type": "Place",
-          "name": "Palma",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Palma",
-            "addressRegion": "Mallorca"
-          }
-        },
-        "image": "assets/images/artists/maria-del-mar-bonet.jpg",
-        "sameAs": [
-          "https://open.spotify.com/artist/4HCgOSMQRCkN9q3Bs11lCl",
-          "https://ca.wikipedia.org/wiki/Maria_del_Mar_Bonet"
-        ],
-        "album": [
-          {
-            "@type": "MusicAlbum",
-            "name": "Maria del Mar Bonet",
-            "datePublished": "1969"
-          },
-          {
-            "@type": "MusicAlbum",
-            "name": "Jardí Tancat",
-            "datePublished": "1981"
-          },
-          {
-            "@type": "MusicAlbum",
-            "name": "Ultramar",
-            "datePublished": "2006"
-          }
-        ],
-        "areaServed": "Palma",
-        "additionalProperty": [
-          {
-            "@type": "PropertyValue",
-            "name": "spotifyId",
-            "value": "4HCgOSMQRCkN9q3Bs11lCl"
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "featured",
-            "value": true
-          }
-        ]
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "item": {
-        "@type": "MusicGroup",
         "@id": "artist-3",
         "name": "Anegats",
         "description": "Grup de rock en catala de Mallorca, coneguts per les seves lletres reivindicatives i els seus directes intensos. Referents del rock en catala a les Illes.",
@@ -210,7 +150,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 4,
+      "position": 3,
       "item": {
         "@type": "MusicGroup",
         "@id": "artist-4",
@@ -265,7 +205,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 5,
+      "position": 4,
       "item": {
         "@type": "MusicGroup",
         "@id": "artist-5",
@@ -320,7 +260,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 6,
+      "position": 5,
       "item": {
         "@type": "MusicGroup",
         "@id": "artist-6",
@@ -368,7 +308,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 7,
+      "position": 6,
       "item": {
         "@type": "MusicGroup",
         "@id": "artist-7",
@@ -411,13 +351,18 @@
             "@type": "PropertyValue",
             "name": "featured",
             "value": false
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "archived",
+            "value": false
           }
         ]
       }
     },
     {
       "@type": "ListItem",
-      "position": 8,
+      "position": 7,
       "item": {
         "@type": "MusicGroup",
         "@id": "artist-8",
@@ -466,13 +411,18 @@
             "@type": "PropertyValue",
             "name": "featured",
             "value": false
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "archived",
+            "value": false
           }
         ]
       }
     },
     {
       "@type": "ListItem",
-      "position": 9,
+      "position": 8,
       "item": {
         "@type": "MusicGroup",
         "@id": "artist-9",
@@ -526,13 +476,18 @@
             "@type": "PropertyValue",
             "name": "featured",
             "value": true
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "archived",
+            "value": false
           }
         ]
       }
     },
     {
       "@type": "ListItem",
-      "position": 10,
+      "position": 9,
       "item": {
         "@type": "MusicGroup",
         "@id": "artist-10",
@@ -567,7 +522,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 11,
+      "position": 10,
       "item": {
         "@type": "MusicGroup",
         "@id": "artist-11",
@@ -616,7 +571,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 12,
+      "position": 11,
       "item": {
         "@type": "MusicGroup",
         "@id": "artist-12",

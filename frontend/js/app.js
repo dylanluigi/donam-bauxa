@@ -426,6 +426,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Check auth state for admin nav
   checkAuth();
 
+  document.addEventListener('admin:contentChanged', () => {
+    dataLoaded = false;
+    initializedViews.delete('home');
+    initializedViews.delete('artists');
+    initializedViews.delete('events');
+    initializedViews.delete('map');
+  });
+
   // Register route handlers
   registerRoutes({
     home: initHome,

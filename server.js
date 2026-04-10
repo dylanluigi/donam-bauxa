@@ -5,7 +5,7 @@ import passport from 'passport';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { readJSON, writeJSONSafe, generateId } from './helpers/json.js';
+import { readJSON, writeJSON, writeJSONSafe, generateId } from './helpers/json.js';
 
 // Route modules
 import profileRoutes from './routes/profile.js';
@@ -54,7 +54,6 @@ async function findOrCreateUser(googleUser) {
     existing.item.name = googleUser.name;
     existing.item.email = googleUser.email;
     existing.item.image = googleUser.image;
-    const { writeJSON } = await import('./helpers/json.js');
     writeJSON(USERS_PATH, data);
     return existing.item;
   }
