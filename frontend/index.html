@@ -88,11 +88,26 @@
               <span id="favBadge" class="badge rounded-pill bg-danger ms-1" style="display:none;">0</span>
             </a>
           </li>
-          <li class="nav-item" id="adminNavItem" style="display:none;">
-            <a class="nav-link" href="#admin"><i class="bi bi-gear"></i> Admin</a>
+          <!-- Login button (visible when not authenticated) -->
+          <li class="nav-item" id="navLogin">
+            <a class="nav-link btn btn-bauxa-outline btn-sm ms-lg-2" href="/auth/google">
+              <i class="bi bi-google"></i> Iniciar Sessio
+            </a>
           </li>
-          <li class="nav-item" id="authNavItem">
-            <a class="nav-link" href="/auth/google" id="authLink"><i class="bi bi-person-circle"></i> <span id="authLabel">Login</span></a>
+          <!-- User dropdown (visible when authenticated) -->
+          <li class="nav-item dropdown d-none" id="navUser">
+            <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              <img id="userAvatar" class="rounded-circle" width="28" height="28" alt="Avatar" src="">
+              <span id="userName"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#profile"><i class="bi bi-person"></i> El meu Perfil</a></li>
+              <li id="navSolicituds" class="d-none"><a class="dropdown-item" href="#solicituds"><i class="bi bi-pencil-square"></i> Solicituds</a></li>
+              <li id="navAdmin" class="d-none"><a class="dropdown-item" href="#admin"><i class="bi bi-gear"></i> Administracio</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="/auth/logout"><i class="bi bi-box-arrow-right"></i> Tancar Sessio</a></li>
+            </ul>
           </li>
         </ul>
       </div>
@@ -451,13 +466,161 @@
 
     </div>
 
+    <!-- ===================== PROFILE VIEW ===================== -->
+    <div data-view="profile" style="display:none;">
+
+      <header class="hero" style="padding:3rem 0 2.5rem;">
+        <div class="container">
+          <h1><i class="bi bi-person"></i> El Meu <span>Perfil</span></h1>
+          <p>Gestiona la teva informacio personal</p>
+        </div>
+      </header>
+
+      <div class="section-padding">
+        <div class="container">
+          <div id="profileNotAuth" style="display:none;">
+            <div class="empty-state">
+              <i class="bi bi-shield-lock"></i>
+              <p>Has d'iniciar sessio per veure el teu perfil.</p>
+              <a href="/auth/google" class="btn btn-bauxa"><i class="bi bi-google"></i> Iniciar Sessio amb Google</a>
+            </div>
+          </div>
+
+          <div id="profileContent" style="display:none;">
+            <div id="profileAlert" style="display:none;" class="mb-4"></div>
+
+            <div class="card-bauxa" style="padding:2rem;max-width:600px;">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <img id="profileAvatar" class="rounded-circle" width="64" height="64" alt="Avatar" src="">
+                <div>
+                  <h2 class="h5 mb-0" id="profileName"></h2>
+                  <span class="badge bg-secondary" id="profileRole"></span>
+                </div>
+              </div>
+
+              <form id="profileForm">
+                <div class="mb-3">
+                  <label for="profileEmail" class="form-label small fw-semibold">Email</label>
+                  <input type="email" class="form-control form-control-bauxa" id="profileEmail" disabled>
+                </div>
+                <div class="mb-3">
+                  <label for="profileDisplayName" class="form-label small fw-semibold">Nom visible</label>
+                  <input type="text" class="form-control form-control-bauxa" id="profileDisplayName"
+                         placeholder="El teu nom visible">
+                </div>
+                <div class="mb-3">
+                  <label for="profileBio" class="form-label small fw-semibold">Bio</label>
+                  <textarea class="form-control form-control-bauxa" id="profileBio" rows="3"
+                            placeholder="Conta'ns una mica sobre tu..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-bauxa">
+                  <i class="bi bi-check-lg"></i> Guardar Canvis
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===================== SOLICITUDS VIEW (PROMOTORS) ===================== -->
+    <div data-view="solicituds" style="display:none;">
+
+      <header class="hero" style="padding:3rem 0 2.5rem;">
+        <div class="container">
+          <h1><i class="bi bi-pencil-square"></i> Les Meves <span>Solicituds</span></h1>
+          <p>Envia solicituds d'edicio per artistes, events o noticies</p>
+        </div>
+      </header>
+
+      <div class="section-padding">
+        <div class="container">
+          <div id="solicitudsNotAuth" style="display:none;">
+            <div class="empty-state">
+              <i class="bi bi-shield-lock"></i>
+              <p>Necessites rol de promotor per accedir a les solicituds.</p>
+            </div>
+          </div>
+
+          <div id="solicitudsContent" style="display:none;">
+            <div id="solicitudsAlert" style="display:none;" class="mb-4"></div>
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h2 class="h5 mb-0">Les meves solicituds</h2>
+              <button class="btn btn-bauxa" id="newRequestBtn">
+                <i class="bi bi-plus-lg"></i> Nova Solicitud
+              </button>
+            </div>
+
+            <!-- Request list -->
+            <div id="solicitudsList">
+              <!-- Dynamically loaded -->
+            </div>
+
+            <!-- New request form (hidden by default) -->
+            <div id="newRequestForm" style="display:none;" class="card-bauxa mt-4" style="padding:2rem;">
+              <h3 class="h5 mb-3">Nova Solicitud d'Edicio</h3>
+              <form id="requestForm">
+                <div class="row g-3">
+                  <div class="col-md-4">
+                    <label for="requestEntityType" class="form-label small fw-semibold">Tipus d'entitat *</label>
+                    <select class="form-select form-select-bauxa" id="requestEntityType" required>
+                      <option value="">Selecciona...</option>
+                      <option value="artist">Artista</option>
+                      <option value="event">Esdeveniment</option>
+                      <option value="news">Noticia</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="requestAction" class="form-label small fw-semibold">Accio *</label>
+                    <select class="form-select form-select-bauxa" id="requestAction" required>
+                      <option value="">Selecciona...</option>
+                      <option value="create">Crear nou</option>
+                      <option value="update">Editar existent</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4" id="requestEntitySelectWrapper" style="display:none;">
+                    <label for="requestEntitySelect" class="form-label small fw-semibold">Entitat a editar *</label>
+                    <select class="form-select form-select-bauxa" id="requestEntitySelect">
+                      <option value="">Selecciona...</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label for="requestDescription" class="form-label small fw-semibold">Motiu de la solicitud *</label>
+                    <textarea class="form-control form-control-bauxa" id="requestDescription" rows="2" required
+                              placeholder="Explica breument per que vols fer aquest canvi..."></textarea>
+                  </div>
+                  <div class="col-12">
+                    <label for="requestData" class="form-label small fw-semibold">Dades proposades (JSON) *</label>
+                    <textarea class="form-control form-control-bauxa" id="requestData" rows="8" required
+                              placeholder='{"name": "Nom", "description": "Descripcio...", "genre": ["Pop"]}'></textarea>
+                    <small class="text-muted">Introdueix les dades en format JSON Schema.org</small>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-bauxa me-2">
+                      <i class="bi bi-send"></i> Enviar Solicitud
+                    </button>
+                    <button type="button" class="btn btn-bauxa-outline" id="cancelRequestBtn">
+                      Cancelar
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
     <!-- ===================== ADMIN VIEW ===================== -->
     <div data-view="admin" style="display:none;">
 
       <header class="hero" style="padding:3rem 0 2.5rem;">
         <div class="container">
-          <h1><i class="bi bi-gear"></i> Administracio d'<span>Artistes</span></h1>
-          <p>Afegeix nous artistes al directori (Schema.org MusicGroup)</p>
+          <h1><i class="bi bi-gear"></i> Panel d'<span>Administracio</span></h1>
+          <p>Gestiona contingut, solicituds i usuaris</p>
         </div>
       </header>
 
@@ -467,7 +630,7 @@
           <div id="adminNotAuth" style="display:none;">
             <div class="empty-state">
               <i class="bi bi-shield-lock"></i>
-              <p>Has d'iniciar sessio amb un compte autoritzat.</p>
+              <p>Has d'iniciar sessio amb un compte d'administrador.</p>
               <a href="/auth/google" class="btn btn-bauxa"><i class="bi bi-google"></i> Iniciar Sessio amb Google</a>
             </div>
           </div>
@@ -475,123 +638,311 @@
           <div id="adminContent" style="display:none;">
             <div id="adminAlert" style="display:none;" class="mb-4"></div>
 
-            <form id="addArtistForm" class="card-bauxa" style="padding:2rem;">
-              <h2 class="h4 mb-4" style="font-family:var(--font-heading);">Nou Artista</h2>
+            <!-- Admin Tabs -->
+            <ul class="nav nav-tabs mb-4" id="adminTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="tab-artists" data-bs-toggle="tab" data-bs-target="#panel-artists"
+                        type="button" role="tab"><i class="bi bi-music-note-list"></i> Artistes</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-events" data-bs-toggle="tab" data-bs-target="#panel-events"
+                        type="button" role="tab"><i class="bi bi-calendar-event"></i> Events</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-news" data-bs-toggle="tab" data-bs-target="#panel-news"
+                        type="button" role="tab"><i class="bi bi-newspaper"></i> Noticies</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-requests" data-bs-toggle="tab" data-bs-target="#panel-requests"
+                        type="button" role="tab">
+                  <i class="bi bi-pencil-square"></i> Solicituds
+                  <span id="pendingRequestsBadge" class="badge bg-danger ms-1" style="display:none;">0</span>
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-users" data-bs-toggle="tab" data-bs-target="#panel-users"
+                        type="button" role="tab"><i class="bi bi-people"></i> Usuaris</button>
+              </li>
+            </ul>
 
-              <div class="row g-3">
-                <!-- Required fields -->
-                <div class="col-md-6">
-                  <label for="artistName" class="form-label small fw-semibold">Nom *</label>
-                  <input type="text" class="form-control form-control-bauxa" id="artistName" required
-                         placeholder="Nom del grup o artista">
-                </div>
-                <div class="col-md-6">
-                  <label for="artistGenres" class="form-label small fw-semibold">Generes * <span class="text-muted">(separats per coma)</span></label>
-                  <input type="text" class="form-control form-control-bauxa" id="artistGenres" required
-                         placeholder="Pop, Rock, Indie...">
-                </div>
-                <div class="col-12">
-                  <label for="artistDescription" class="form-label small fw-semibold">Descripcio *</label>
-                  <textarea class="form-control form-control-bauxa" id="artistDescription" rows="3" required
-                            placeholder="Breu descripcio de l'artista o grup..."></textarea>
-                </div>
+            <!-- Tab Content -->
+            <div class="tab-content" id="adminTabContent">
 
-                <!-- Optional fields -->
-                <div class="col-md-4">
-                  <label for="artistFoundingDate" class="form-label small fw-semibold">Any de formacio</label>
-                  <input type="text" class="form-control form-control-bauxa" id="artistFoundingDate"
-                         placeholder="2015" pattern="[0-9]{4}" maxlength="4">
+              <!-- Artists Panel -->
+              <div class="tab-pane fade show active" id="panel-artists" role="tabpanel">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h2 class="h5 mb-0">Gestio d'Artistes</h2>
+                  <button class="btn btn-bauxa btn-sm" id="adminNewArtist">
+                    <i class="bi bi-plus-lg"></i> Nou Artista
+                  </button>
                 </div>
-                <div class="col-md-4">
-                  <label for="artistLocation" class="form-label small fw-semibold">Localitat</label>
-                  <input type="text" class="form-control form-control-bauxa" id="artistLocation"
-                         placeholder="Palma, Manacor, Inca...">
+                <div id="adminArtistsList" class="table-responsive">
+                  <!-- Dynamically loaded -->
                 </div>
-                <div class="col-md-4">
-                  <label for="artistZone" class="form-label small fw-semibold">Zona (areaServed)</label>
-                  <select class="form-select form-select-bauxa" id="artistZone">
-                    <option value="">Selecciona zona</option>
-                    <option value="Palma">Palma</option>
-                    <option value="Serra de Tramuntana">Serra de Tramuntana</option>
-                    <option value="Raiguer">Raiguer</option>
-                    <option value="Pla de Mallorca">Pla de Mallorca</option>
-                    <option value="Llevant">Llevant</option>
-                    <option value="Migjorn">Migjorn</option>
-                  </select>
-                </div>
-
-                <!-- Links -->
-                <div class="col-md-4">
-                  <label for="artistSpotify" class="form-label small fw-semibold">Spotify URL</label>
-                  <input type="url" class="form-control form-control-bauxa" id="artistSpotify"
-                         placeholder="https://open.spotify.com/artist/...">
-                </div>
-                <div class="col-md-4">
-                  <label for="artistInstagram" class="form-label small fw-semibold">Instagram URL</label>
-                  <input type="url" class="form-control form-control-bauxa" id="artistInstagram"
-                         placeholder="https://www.instagram.com/...">
-                </div>
-                <div class="col-md-4">
-                  <label for="artistWikipedia" class="form-label small fw-semibold">Wikipedia URL</label>
-                  <input type="url" class="form-control form-control-bauxa" id="artistWikipedia"
-                         placeholder="https://ca.wikipedia.org/wiki/...">
-                </div>
-
-                <!-- Image -->
-                <div class="col-md-6">
-                  <label for="artistImage" class="form-label small fw-semibold">Ruta imatge</label>
-                  <input type="text" class="form-control form-control-bauxa" id="artistImage"
-                         placeholder="assets/images/artists/nom-artista.jpg">
-                </div>
-                <div class="col-md-6 d-flex align-items-end">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="artistFeatured">
-                    <label class="form-check-label small" for="artistFeatured">Artista destacat (apareix a la portada)</label>
-                  </div>
-                </div>
-
-                <!-- Members -->
-                <div class="col-12">
-                  <label for="artistMembers" class="form-label small fw-semibold">Membres <span class="text-muted">(separats per coma)</span></label>
-                  <input type="text" class="form-control form-control-bauxa" id="artistMembers"
-                         placeholder="Pau Debon, Joan Miquel Oliver...">
-                </div>
-
-                <!-- Albums -->
-                <div class="col-12">
-                  <label class="form-label small fw-semibold">Albums</label>
-                  <div id="albumsContainer">
-                    <div class="row g-2 mb-2 album-row">
-                      <div class="col-8">
-                        <input type="text" class="form-control form-control-bauxa form-control-sm album-name"
-                               placeholder="Nom de l'album">
+                <!-- Artist form (hidden by default) -->
+                <div id="adminArtistForm" style="display:none;" class="card-bauxa mt-3 p-3">
+                  <h3 class="h6 mb-3" id="adminArtistFormTitle">Nou Artista</h3>
+                  <form id="addArtistForm">
+                    <div class="row g-3">
+                      <input type="hidden" id="editArtistId">
+                      <div class="col-md-6">
+                        <label for="artistName" class="form-label small fw-semibold">Nom *</label>
+                        <input type="text" class="form-control form-control-bauxa" id="artistName" required placeholder="Nom del grup o artista">
                       </div>
-                      <div class="col-4">
-                        <input type="text" class="form-control form-control-bauxa form-control-sm album-year"
-                               placeholder="Any" pattern="[0-9]{4}" maxlength="4">
+                      <div class="col-md-6">
+                        <label for="artistGenres" class="form-label small fw-semibold">Generes * <span class="text-muted">(separats per coma)</span></label>
+                        <input type="text" class="form-control form-control-bauxa" id="artistGenres" required placeholder="Pop, Rock, Indie...">
+                      </div>
+                      <div class="col-12">
+                        <label for="artistDescription" class="form-label small fw-semibold">Descripcio *</label>
+                        <textarea class="form-control form-control-bauxa" id="artistDescription" rows="3" required placeholder="Breu descripcio..."></textarea>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="artistFoundingDate" class="form-label small fw-semibold">Any de formacio</label>
+                        <input type="text" class="form-control form-control-bauxa" id="artistFoundingDate" placeholder="2015" pattern="[0-9]{4}" maxlength="4">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="artistLocation" class="form-label small fw-semibold">Localitat</label>
+                        <input type="text" class="form-control form-control-bauxa" id="artistLocation" placeholder="Palma, Manacor...">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="artistZone" class="form-label small fw-semibold">Zona</label>
+                        <select class="form-select form-select-bauxa" id="artistZone">
+                          <option value="">Selecciona zona</option>
+                          <option value="Palma">Palma</option>
+                          <option value="Serra de Tramuntana">Serra de Tramuntana</option>
+                          <option value="Raiguer">Raiguer</option>
+                          <option value="Pla de Mallorca">Pla de Mallorca</option>
+                          <option value="Llevant">Llevant</option>
+                          <option value="Migjorn">Migjorn</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="artistSpotify" class="form-label small fw-semibold">Spotify URL</label>
+                        <input type="url" class="form-control form-control-bauxa" id="artistSpotify" placeholder="https://open.spotify.com/artist/...">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="artistInstagram" class="form-label small fw-semibold">Instagram URL</label>
+                        <input type="url" class="form-control form-control-bauxa" id="artistInstagram" placeholder="https://www.instagram.com/...">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="artistWikipedia" class="form-label small fw-semibold">Wikipedia URL</label>
+                        <input type="url" class="form-control form-control-bauxa" id="artistWikipedia" placeholder="https://ca.wikipedia.org/wiki/...">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="artistImage" class="form-label small fw-semibold">Ruta imatge</label>
+                        <input type="text" class="form-control form-control-bauxa" id="artistImage" placeholder="assets/images/artists/nom.jpg">
+                      </div>
+                      <div class="col-md-6 d-flex align-items-end">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="artistFeatured">
+                          <label class="form-check-label small" for="artistFeatured">Artista destacat</label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <label for="artistMembers" class="form-label small fw-semibold">Membres <span class="text-muted">(separats per coma)</span></label>
+                        <input type="text" class="form-control form-control-bauxa" id="artistMembers" placeholder="Pau Debon, Joan Miquel Oliver...">
+                      </div>
+                      <div class="col-12">
+                        <label class="form-label small fw-semibold">Albums</label>
+                        <div id="albumsContainer">
+                          <div class="row g-2 mb-2 album-row">
+                            <div class="col-8"><input type="text" class="form-control form-control-bauxa form-control-sm album-name" placeholder="Nom de l'album"></div>
+                            <div class="col-4"><input type="text" class="form-control form-control-bauxa form-control-sm album-year" placeholder="Any" pattern="[0-9]{4}" maxlength="4"></div>
+                          </div>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-bauxa-outline mt-1" id="addAlbumRow"><i class="bi bi-plus-circle"></i> Afegir album</button>
+                      </div>
+                      <div class="col-12 mt-3">
+                        <button type="submit" class="btn btn-bauxa me-2" id="submitArtist"><i class="bi bi-check-lg"></i> Guardar</button>
+                        <button type="button" class="btn btn-bauxa-outline" id="cancelArtistForm">Cancelar</button>
                       </div>
                     </div>
-                  </div>
-                  <button type="button" class="btn btn-sm btn-bauxa-outline mt-1" id="addAlbumRow">
-                    <i class="bi bi-plus-circle"></i> Afegir album
-                  </button>
-                </div>
-
-                <!-- Submit -->
-                <div class="col-12 mt-4">
-                  <button type="submit" class="btn btn-bauxa btn-lg" id="submitArtist">
-                    <i class="bi bi-plus-lg"></i> Afegir Artista
-                  </button>
+                  </form>
                 </div>
               </div>
-            </form>
 
-            <!-- JSON Preview -->
-            <details class="mt-4">
-              <summary class="small fw-semibold" style="cursor:pointer;">Previsualitzar JSON (Schema.org)</summary>
-              <pre id="jsonPreview" class="mt-2 p-3" style="background:var(--color-bg-alt);border-radius:var(--card-radius);border:1px solid var(--color-border);font-size:0.8rem;max-height:400px;overflow:auto;"></pre>
-            </details>
+              <!-- Events Panel -->
+              <div class="tab-pane fade" id="panel-events" role="tabpanel">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h2 class="h5 mb-0">Gestio d'Esdeveniments</h2>
+                  <button class="btn btn-bauxa btn-sm" id="adminNewEvent">
+                    <i class="bi bi-plus-lg"></i> Nou Event
+                  </button>
+                </div>
+                <div id="adminEventsList" class="table-responsive">
+                  <!-- Dynamically loaded -->
+                </div>
+                <div id="adminEventForm" style="display:none;" class="card-bauxa mt-3 p-3">
+                  <h3 class="h6 mb-3" id="adminEventFormTitle">Nou Esdeveniment</h3>
+                  <form id="addEventForm">
+                    <div class="row g-3">
+                      <input type="hidden" id="editEventId">
+                      <div class="col-md-6">
+                        <label for="eventName" class="form-label small fw-semibold">Nom *</label>
+                        <input type="text" class="form-control form-control-bauxa" id="eventName" required placeholder="Nom de l'esdeveniment">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="eventCategory" class="form-label small fw-semibold">Categoria</label>
+                        <select class="form-select form-select-bauxa" id="eventCategory">
+                          <option value="concert">Concert</option>
+                          <option value="festival">Festival</option>
+                          <option value="festa popular">Festa Popular</option>
+                        </select>
+                      </div>
+                      <div class="col-12">
+                        <label for="eventDescription" class="form-label small fw-semibold">Descripcio *</label>
+                        <textarea class="form-control form-control-bauxa" id="eventDescription" rows="3" required placeholder="Descripcio de l'esdeveniment..."></textarea>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="eventStartDate" class="form-label small fw-semibold">Data inici *</label>
+                        <input type="datetime-local" class="form-control form-control-bauxa" id="eventStartDate" required>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="eventEndDate" class="form-label small fw-semibold">Data fi</label>
+                        <input type="datetime-local" class="form-control form-control-bauxa" id="eventEndDate">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="eventPrice" class="form-label small fw-semibold">Preu (EUR)</label>
+                        <input type="number" class="form-control form-control-bauxa" id="eventPrice" step="0.01" min="0" placeholder="0.00">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="eventLocationName" class="form-label small fw-semibold">Lloc</label>
+                        <input type="text" class="form-control form-control-bauxa" id="eventLocationName" placeholder="Nom del lloc">
+                      </div>
+                      <div class="col-md-3">
+                        <label for="eventLat" class="form-label small fw-semibold">Latitud</label>
+                        <input type="number" class="form-control form-control-bauxa" id="eventLat" step="any" placeholder="39.5696">
+                      </div>
+                      <div class="col-md-3">
+                        <label for="eventLng" class="form-label small fw-semibold">Longitud</label>
+                        <input type="number" class="form-control form-control-bauxa" id="eventLng" step="any" placeholder="2.6502">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="eventZone" class="form-label small fw-semibold">Zona</label>
+                        <select class="form-select form-select-bauxa" id="eventZone">
+                          <option value="">Selecciona zona</option>
+                          <option value="Palma">Palma</option>
+                          <option value="Serra de Tramuntana">Serra de Tramuntana</option>
+                          <option value="Raiguer">Raiguer</option>
+                          <option value="Pla de Mallorca">Pla de Mallorca</option>
+                          <option value="Llevant">Llevant</option>
+                          <option value="Migjorn">Migjorn</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="eventGenres" class="form-label small fw-semibold">Generes <span class="text-muted">(coma)</span></label>
+                        <input type="text" class="form-control form-control-bauxa" id="eventGenres" placeholder="Pop, Rock...">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="eventImage" class="form-label small fw-semibold">Ruta imatge</label>
+                        <input type="text" class="form-control form-control-bauxa" id="eventImage" placeholder="assets/images/events/nom.jpg">
+                      </div>
+                      <div class="col-md-6 d-flex align-items-end">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="eventFeatured">
+                          <label class="form-check-label small" for="eventFeatured">Esdeveniment destacat</label>
+                        </div>
+                      </div>
+                      <div class="col-12 mt-3">
+                        <button type="submit" class="btn btn-bauxa me-2" id="submitEvent"><i class="bi bi-check-lg"></i> Guardar</button>
+                        <button type="button" class="btn btn-bauxa-outline" id="cancelEventForm">Cancelar</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
 
+              <!-- News Panel -->
+              <div class="tab-pane fade" id="panel-news" role="tabpanel">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h2 class="h5 mb-0">Gestio de Noticies</h2>
+                  <button class="btn btn-bauxa btn-sm" id="adminNewNews">
+                    <i class="bi bi-plus-lg"></i> Nova Noticia
+                  </button>
+                </div>
+                <div id="adminNewsList" class="table-responsive">
+                  <!-- Dynamically loaded -->
+                </div>
+                <div id="adminNewsForm" style="display:none;" class="card-bauxa mt-3 p-3">
+                  <h3 class="h6 mb-3" id="adminNewsFormTitle">Nova Noticia</h3>
+                  <form id="addNewsForm">
+                    <div class="row g-3">
+                      <input type="hidden" id="editNewsId">
+                      <div class="col-md-8">
+                        <label for="newsHeadline" class="form-label small fw-semibold">Titular *</label>
+                        <input type="text" class="form-control form-control-bauxa" id="newsHeadline" required placeholder="Titular de la noticia">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="newsCategory" class="form-label small fw-semibold">Categoria</label>
+                        <input type="text" class="form-control form-control-bauxa" id="newsCategory" placeholder="Musica, Festivals...">
+                      </div>
+                      <div class="col-12">
+                        <label for="newsDescription" class="form-label small fw-semibold">Descripcio *</label>
+                        <textarea class="form-control form-control-bauxa" id="newsDescription" rows="4" required placeholder="Contingut de la noticia..."></textarea>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="newsDate" class="form-label small fw-semibold">Data de publicacio</label>
+                        <input type="date" class="form-control form-control-bauxa" id="newsDate">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="newsAuthor" class="form-label small fw-semibold">Autor</label>
+                        <input type="text" class="form-control form-control-bauxa" id="newsAuthor" placeholder="Nom de l'autor">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="newsImage" class="form-label small fw-semibold">Ruta imatge</label>
+                        <input type="text" class="form-control form-control-bauxa" id="newsImage" placeholder="assets/images/news/nom.jpg">
+                      </div>
+                      <div class="col-12 mt-3">
+                        <button type="submit" class="btn btn-bauxa me-2" id="submitNews"><i class="bi bi-check-lg"></i> Guardar</button>
+                        <button type="button" class="btn btn-bauxa-outline" id="cancelNewsForm">Cancelar</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <!-- Requests Panel -->
+              <div class="tab-pane fade" id="panel-requests" role="tabpanel">
+                <h2 class="h5 mb-3">Solicituds d'Edicio</h2>
+                <div class="mb-3">
+                  <select class="form-select form-select-bauxa" style="max-width:200px;display:inline-block;" id="adminRequestsFilter">
+                    <option value="pending">Pendents</option>
+                    <option value="">Totes</option>
+                    <option value="approved">Aprovades</option>
+                    <option value="rejected">Rebutjades</option>
+                  </select>
+                </div>
+                <div id="adminRequestsList">
+                  <!-- Dynamically loaded -->
+                </div>
+                <!-- Request detail modal area -->
+                <div id="adminRequestDetail" style="display:none;" class="card-bauxa mt-3 p-3">
+                  <h3 class="h6 mb-3">Detall de la Solicitud</h3>
+                  <div id="requestDetailContent">
+                    <!-- Dynamically loaded -->
+                  </div>
+                  <div class="mt-3" id="requestActions" style="display:none;">
+                    <div class="mb-2">
+                      <label for="adminReviewerNotes" class="form-label small fw-semibold">Notes (opcional)</label>
+                      <textarea class="form-control form-control-bauxa" id="adminReviewerNotes" rows="2" placeholder="Notes per al promotor..."></textarea>
+                    </div>
+                    <button class="btn btn-success btn-sm me-2" id="approveRequestBtn"><i class="bi bi-check-lg"></i> Aprovar</button>
+                    <button class="btn btn-danger btn-sm me-2" id="rejectRequestBtn"><i class="bi bi-x-lg"></i> Rebutjar</button>
+                    <button class="btn btn-bauxa-outline btn-sm" id="closeRequestDetail">Tancar</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Users Panel -->
+              <div class="tab-pane fade" id="panel-users" role="tabpanel">
+                <h2 class="h5 mb-3">Gestio d'Usuaris</h2>
+                <div id="adminUsersList" class="table-responsive">
+                  <!-- Dynamically loaded -->
+                </div>
+              </div>
+
+            </div>
           </div>
 
         </div>

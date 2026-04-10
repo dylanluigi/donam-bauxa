@@ -21,6 +21,8 @@ import { initMap, addEventMarkers, fitToMarkers } from './modules/mapModule.js';
 import { initRouter, registerRoutes, registerMapCleanup } from './router.js';
 import { getFavorites as getFavoritesForType } from './modules/favorites.js';
 import { initAdmin, checkAuth } from './modules/admin.js';
+import { initProfile } from './modules/profile.js';
+import { initSolicituds } from './modules/solicituds.js';
 
 /* ------------------------------------------------------------------ */
 /*  Shared state                                                       */
@@ -431,6 +433,8 @@ document.addEventListener('DOMContentLoaded', () => {
     events: initEvents,
     map: initMapView,
     favorits: initFavorits,
+    profile: initProfile,
+    solicituds: initSolicituds,
     admin: initAdmin
   });
 
