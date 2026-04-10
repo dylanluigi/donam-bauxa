@@ -3,7 +3,7 @@
   "@type": "ItemList",
   "name": "Artistes de Mallorca",
   "description": "Directori d'artistes i grups musicals de l'escena mallorquina",
-  "numberOfItems": 14,
+  "numberOfItems": 12,
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -80,6 +80,11 @@
             "@type": "PropertyValue",
             "name": "featured",
             "value": true
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "archived",
+            "value": false
           }
         ]
       }
@@ -649,48 +654,6 @@
           }
         ],
         "areaServed": "Serra de Tramuntana",
-        "additionalProperty": [
-          {
-            "@type": "PropertyValue",
-            "name": "featured",
-            "value": false
-          }
-        ]
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 13,
-      "item": {
-        "@type": "MusicGroup",
-        "@id": "artist-13",
-        "name": "Donam Bauxa",
-        "description": "adadsasd",
-        "genre": [
-          "Pop",
-          "Indie"
-        ],
-        "additionalProperty": [
-          {
-            "@type": "PropertyValue",
-            "name": "featured",
-            "value": false
-          }
-        ]
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 14,
-      "item": {
-        "@type": "MusicGroup",
-        "@id": "artist-14",
-        "name": "Donam Bauxa",
-        "description": "adadsasd",
-        "genre": [
-          "Pop",
-          "Indie"
-        ],
         "additionalProperty": [
           {
             "@type": "PropertyValue",

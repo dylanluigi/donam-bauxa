@@ -46,10 +46,21 @@
           "url": "https://www.truiteatre.es",
           "availability": "https://schema.org/InStock"
         },
-        "genre": ["Pop", "Rock", "Indie"],
+        "genre": [
+          "Pop",
+          "Rock",
+          "Indie"
+        ],
         "zone": "Palma",
         "featured": true,
-        "category": "concert"
+        "category": "concert",
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "archived",
+            "value": true
+          }
+        ]
       }
     },
     {
@@ -81,9 +92,21 @@
           }
         },
         "performer": [
-          { "@type": "MusicGroup", "@id": "artist-4", "name": "Donallop" },
-          { "@type": "MusicGroup", "@id": "artist-5", "name": "Mans de Brec" },
-          { "@type": "MusicGroup", "@id": "artist-3", "name": "Anegats" }
+          {
+            "@type": "MusicGroup",
+            "@id": "artist-4",
+            "name": "Donallop"
+          },
+          {
+            "@type": "MusicGroup",
+            "@id": "artist-5",
+            "name": "Mans de Brec"
+          },
+          {
+            "@type": "MusicGroup",
+            "@id": "artist-3",
+            "name": "Anegats"
+          }
         ],
         "image": "assets/images/events/fora-vila-sounds.jpg",
         "offers": {
@@ -93,7 +116,11 @@
           "url": "https://www.foravilasounds.com",
           "availability": "https://schema.org/InStock"
         },
-        "genre": ["Folk", "Rock", "Pop"],
+        "genre": [
+          "Folk",
+          "Rock",
+          "Pop"
+        ],
         "zone": "Pla de Mallorca",
         "featured": true,
         "category": "festival"
@@ -140,7 +167,10 @@
           "url": "#",
           "availability": "https://schema.org/InStock"
         },
-        "genre": ["Jazz", "Fusio"],
+        "genre": [
+          "Jazz",
+          "Fusio"
+        ],
         "zone": "Serra de Tramuntana",
         "featured": true,
         "category": "concert"
@@ -175,9 +205,21 @@
           }
         },
         "performer": [
-          { "@type": "MusicGroup", "@id": "artist-3", "name": "Anegats" },
-          { "@type": "MusicGroup", "@id": "artist-7", "name": "Zulu Zulu" },
-          { "@type": "MusicGroup", "@id": "artist-4", "name": "Donallop" }
+          {
+            "@type": "MusicGroup",
+            "@id": "artist-3",
+            "name": "Anegats"
+          },
+          {
+            "@type": "MusicGroup",
+            "@id": "artist-7",
+            "name": "Zulu Zulu"
+          },
+          {
+            "@type": "MusicGroup",
+            "@id": "artist-4",
+            "name": "Donallop"
+          }
         ],
         "image": "assets/images/events/sant-sebastia.jpg",
         "offers": {
@@ -187,7 +229,11 @@
           "url": "https://www.palma.cat",
           "availability": "https://schema.org/InStock"
         },
-        "genre": ["Rock", "Folk", "Rumba"],
+        "genre": [
+          "Rock",
+          "Folk",
+          "Rumba"
+        ],
         "zone": "Palma",
         "featured": true,
         "category": "festa popular"
@@ -234,7 +280,11 @@
           "url": "https://www.factoriadessons.com",
           "availability": "https://schema.org/InStock"
         },
-        "genre": ["Indie", "Electronica", "Pop Experimental"],
+        "genre": [
+          "Indie",
+          "Electronica",
+          "Pop Experimental"
+        ],
         "zone": "Palma",
         "featured": false,
         "category": "concert"
@@ -281,7 +331,10 @@
           "url": "#",
           "availability": "https://schema.org/InStock"
         },
-        "genre": ["Tradicional", "Folk"],
+        "genre": [
+          "Tradicional",
+          "Folk"
+        ],
         "zone": "Serra de Tramuntana",
         "featured": false,
         "category": "festa popular"
@@ -316,9 +369,21 @@
           }
         },
         "performer": [
-          { "@type": "MusicGroup", "@id": "artist-1", "name": "Antonia Font" },
-          { "@type": "MusicGroup", "@id": "artist-9", "name": "Joan Miquel Oliver" },
-          { "@type": "MusicGroup", "@id": "artist-11", "name": "La Femme Contradiction" }
+          {
+            "@type": "MusicGroup",
+            "@id": "artist-1",
+            "name": "Antonia Font"
+          },
+          {
+            "@type": "MusicGroup",
+            "@id": "artist-9",
+            "name": "Joan Miquel Oliver"
+          },
+          {
+            "@type": "MusicGroup",
+            "@id": "artist-11",
+            "name": "La Femme Contradiction"
+          }
         ],
         "image": "assets/images/events/mallorca-live.jpg",
         "offers": {
@@ -328,7 +393,12 @@
           "url": "https://www.mallorcalivefestival.com",
           "availability": "https://schema.org/LimitedAvailability"
         },
-        "genre": ["Pop", "Rock", "Indie", "Electronica"],
+        "genre": [
+          "Pop",
+          "Rock",
+          "Indie",
+          "Electronica"
+        ],
         "zone": "Ponent",
         "featured": true,
         "category": "festival"
@@ -375,7 +445,10 @@
           "url": "https://www.teatreprincipal.com",
           "availability": "https://schema.org/InStock"
         },
-        "genre": ["Folk", "Canco d'Autor"],
+        "genre": [
+          "Folk",
+          "Canco d'Autor"
+        ],
         "zone": "Palma",
         "featured": false,
         "category": "concert"
@@ -422,7 +495,10 @@
           "url": "#",
           "availability": "https://schema.org/InStock"
         },
-        "genre": ["Rumba", "Fusio"],
+        "genre": [
+          "Rumba",
+          "Fusio"
+        ],
         "zone": "Llevant",
         "featured": false,
         "category": "festa popular"
@@ -469,7 +545,10 @@
           "url": "#",
           "availability": "https://schema.org/InStock"
         },
-        "genre": ["A Cappella", "Pop"],
+        "genre": [
+          "A Cappella",
+          "Pop"
+        ],
         "zone": "Serra de Tramuntana",
         "featured": false,
         "category": "concert"
@@ -500,7 +579,7 @@
           "geo": {
             "@type": "GeoCoordinates",
             "latitude": 39.7216,
-            "longitude": 2.9110
+            "longitude": 2.911
           }
         },
         "performer": {
@@ -516,7 +595,11 @@
           "url": "#",
           "availability": "https://schema.org/InStock"
         },
-        "genre": ["Folk", "Pop", "Humor"],
+        "genre": [
+          "Folk",
+          "Pop",
+          "Humor"
+        ],
         "zone": "Raiguer",
         "featured": false,
         "category": "festa popular"
@@ -563,7 +646,10 @@
           "url": "#",
           "availability": "https://schema.org/InStock"
         },
-        "genre": ["Electronica", "Synth-Pop"],
+        "genre": [
+          "Electronica",
+          "Synth-Pop"
+        ],
         "zone": "Palma",
         "featured": false,
         "category": "concert"
@@ -594,7 +680,7 @@
           "geo": {
             "@type": "GeoCoordinates",
             "latitude": 39.5634,
-            "longitude": 2.6250
+            "longitude": 2.625
           }
         },
         "performer": {
@@ -610,7 +696,10 @@
           "url": "https://www.auditoriumpalma.com",
           "availability": "https://schema.org/InStock"
         },
-        "genre": ["Folk", "Tradicional"],
+        "genre": [
+          "Folk",
+          "Tradicional"
+        ],
         "zone": "Palma",
         "featured": false,
         "category": "concert"
@@ -657,7 +746,10 @@
           "url": "#",
           "availability": "https://schema.org/InStock"
         },
-        "genre": ["Rock", "Rock en Catala"],
+        "genre": [
+          "Rock",
+          "Rock en Catala"
+        ],
         "zone": "Nord",
         "featured": false,
         "category": "concert"
@@ -704,7 +796,10 @@
           "url": "#",
           "availability": "https://schema.org/InStock"
         },
-        "genre": ["Folk", "Tradicional"],
+        "genre": [
+          "Folk",
+          "Tradicional"
+        ],
         "zone": "Pla de Mallorca",
         "featured": false,
         "category": "festa popular"
