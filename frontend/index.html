@@ -559,10 +559,12 @@
             </div>
 
             <!-- New request form (hidden by default) -->
-            <div id="newRequestForm" style="display:none;" class="card-bauxa mt-4" style="padding:2rem;">
-              <h3 class="h5 mb-3">Nova Solicitud d'Edicio</h3>
+            <div id="newRequestForm" style="display:none;" class="card-bauxa mt-4 p-4">
+              <h3 class="h5 mb-4">Nova Solicitud d'Edicio</h3>
               <form id="requestForm">
                 <div class="row g-3">
+
+                  <!-- Step 1: Type + Action + Entity selector -->
                   <div class="col-md-4">
                     <label for="requestEntityType" class="form-label small fw-semibold">Tipus d'entitat *</label>
                     <select class="form-select form-select-bauxa" id="requestEntityType" required>
@@ -586,18 +588,176 @@
                       <option value="">Selecciona...</option>
                     </select>
                   </div>
-                  <div class="col-12">
+
+                  <!-- Motiu -->
+                  <div class="col-12" id="requestMotiveWrapper" style="display:none;">
                     <label for="requestDescription" class="form-label small fw-semibold">Motiu de la solicitud *</label>
                     <textarea class="form-control form-control-bauxa" id="requestDescription" rows="2" required
                               placeholder="Explica breument per que vols fer aquest canvi..."></textarea>
                   </div>
-                  <div class="col-12">
-                    <label for="requestData" class="form-label small fw-semibold">Dades proposades (JSON) *</label>
-                    <textarea class="form-control form-control-bauxa" id="requestData" rows="8" required
-                              placeholder='{"name": "Nom", "description": "Descripcio...", "genre": ["Pop"]}'></textarea>
-                    <small class="text-muted">Introdueix les dades en format JSON Schema.org</small>
+
+                  <!-- Dynamic fields: Artist -->
+                  <div id="requestFieldsArtist" style="display:none;" class="col-12">
+                    <hr class="my-2">
+                    <p class="small fw-semibold mb-3">Dades de l'artista</p>
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label class="form-label small fw-semibold">Nom *</label>
+                        <input type="text" class="form-control form-control-bauxa" id="req_artistName" placeholder="Nom del grup o artista">
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label small fw-semibold">Generes * <span class="text-muted">(separats per coma)</span></label>
+                        <input type="text" class="form-control form-control-bauxa" id="req_artistGenres" placeholder="Pop, Rock, Indie...">
+                      </div>
+                      <div class="col-12">
+                        <label class="form-label small fw-semibold">Descripcio *</label>
+                        <textarea class="form-control form-control-bauxa" id="req_artistDescription" rows="3" placeholder="Breu descripcio..."></textarea>
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label small fw-semibold">Any de formacio</label>
+                        <input type="text" class="form-control form-control-bauxa" id="req_artistFoundingDate" placeholder="2015" pattern="[0-9]{4}" maxlength="4">
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label small fw-semibold">Localitat</label>
+                        <input type="text" class="form-control form-control-bauxa" id="req_artistLocation" placeholder="Palma, Manacor...">
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label small fw-semibold">Zona</label>
+                        <select class="form-select form-select-bauxa" id="req_artistZone">
+                          <option value="">Selecciona zona</option>
+                          <option value="Palma">Palma</option>
+                          <option value="Serra de Tramuntana">Serra de Tramuntana</option>
+                          <option value="Raiguer">Raiguer</option>
+                          <option value="Pla de Mallorca">Pla de Mallorca</option>
+                          <option value="Llevant">Llevant</option>
+                          <option value="Migjorn">Migjorn</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label small fw-semibold">Spotify URL</label>
+                        <input type="url" class="form-control form-control-bauxa" id="req_artistSpotify" placeholder="https://open.spotify.com/artist/...">
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label small fw-semibold">Instagram URL</label>
+                        <input type="url" class="form-control form-control-bauxa" id="req_artistInstagram" placeholder="https://www.instagram.com/...">
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label small fw-semibold">Wikipedia URL</label>
+                        <input type="url" class="form-control form-control-bauxa" id="req_artistWikipedia" placeholder="https://ca.wikipedia.org/wiki/...">
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label small fw-semibold">Membres <span class="text-muted">(separats per coma)</span></label>
+                        <input type="text" class="form-control form-control-bauxa" id="req_artistMembers" placeholder="Pau Debon, Joan Miquel Oliver...">
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label small fw-semibold">Ruta imatge</label>
+                        <input type="text" class="form-control form-control-bauxa" id="req_artistImage" placeholder="assets/images/artists/nom.jpg">
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-12">
+
+                  <!-- Dynamic fields: Event -->
+                  <div id="requestFieldsEvent" style="display:none;" class="col-12">
+                    <hr class="my-2">
+                    <p class="small fw-semibold mb-3">Dades de l'esdeveniment</p>
+                    <div class="row g-3">
+                      <div class="col-md-8">
+                        <label class="form-label small fw-semibold">Nom *</label>
+                        <input type="text" class="form-control form-control-bauxa" id="req_eventName" placeholder="Nom de l'esdeveniment">
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label small fw-semibold">Categoria</label>
+                        <select class="form-select form-select-bauxa" id="req_eventCategory">
+                          <option value="concert">Concert</option>
+                          <option value="festival">Festival</option>
+                          <option value="festa popular">Festa Popular</option>
+                        </select>
+                      </div>
+                      <div class="col-12">
+                        <label class="form-label small fw-semibold">Descripcio *</label>
+                        <textarea class="form-control form-control-bauxa" id="req_eventDescription" rows="3" placeholder="Descripcio de l'esdeveniment..."></textarea>
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label small fw-semibold">Data inici *</label>
+                        <input type="datetime-local" class="form-control form-control-bauxa" id="req_eventStartDate">
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label small fw-semibold">Data fi</label>
+                        <input type="datetime-local" class="form-control form-control-bauxa" id="req_eventEndDate">
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label small fw-semibold">Preu (EUR)</label>
+                        <input type="number" class="form-control form-control-bauxa" id="req_eventPrice" step="0.01" min="0" placeholder="0.00">
+                      </div>
+                      <div class="col-md-5">
+                        <label class="form-label small fw-semibold">Lloc</label>
+                        <input type="text" class="form-control form-control-bauxa" id="req_eventLocationName" placeholder="Nom del lloc">
+                      </div>
+                      <div class="col-md-2">
+                        <label class="form-label small fw-semibold">Latitud</label>
+                        <input type="number" class="form-control form-control-bauxa" id="req_eventLat" step="any" placeholder="39.56">
+                      </div>
+                      <div class="col-md-2">
+                        <label class="form-label small fw-semibold">Longitud</label>
+                        <input type="number" class="form-control form-control-bauxa" id="req_eventLng" step="any" placeholder="2.65">
+                      </div>
+                      <div class="col-md-3">
+                        <label class="form-label small fw-semibold">Zona</label>
+                        <select class="form-select form-select-bauxa" id="req_eventZone">
+                          <option value="">Selecciona zona</option>
+                          <option value="Palma">Palma</option>
+                          <option value="Serra de Tramuntana">Serra de Tramuntana</option>
+                          <option value="Raiguer">Raiguer</option>
+                          <option value="Pla de Mallorca">Pla de Mallorca</option>
+                          <option value="Llevant">Llevant</option>
+                          <option value="Migjorn">Migjorn</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label small fw-semibold">Generes <span class="text-muted">(coma)</span></label>
+                        <input type="text" class="form-control form-control-bauxa" id="req_eventGenres" placeholder="Pop, Rock...">
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label small fw-semibold">Ruta imatge</label>
+                        <input type="text" class="form-control form-control-bauxa" id="req_eventImage" placeholder="assets/images/events/nom.jpg">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Dynamic fields: News -->
+                  <div id="requestFieldsNews" style="display:none;" class="col-12">
+                    <hr class="my-2">
+                    <p class="small fw-semibold mb-3">Dades de la noticia</p>
+                    <div class="row g-3">
+                      <div class="col-md-8">
+                        <label class="form-label small fw-semibold">Titular *</label>
+                        <input type="text" class="form-control form-control-bauxa" id="req_newsHeadline" placeholder="Titular de la noticia">
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label small fw-semibold">Categoria</label>
+                        <input type="text" class="form-control form-control-bauxa" id="req_newsCategory" placeholder="Musica, Festivals...">
+                      </div>
+                      <div class="col-12">
+                        <label class="form-label small fw-semibold">Contingut *</label>
+                        <textarea class="form-control form-control-bauxa" id="req_newsDescription" rows="4" placeholder="Contingut de la noticia..."></textarea>
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label small fw-semibold">Data de publicacio</label>
+                        <input type="date" class="form-control form-control-bauxa" id="req_newsDate">
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label small fw-semibold">Autor</label>
+                        <input type="text" class="form-control form-control-bauxa" id="req_newsAuthor" placeholder="Nom de l'autor">
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label small fw-semibold">Ruta imatge</label>
+                        <input type="text" class="form-control form-control-bauxa" id="req_newsImage" placeholder="assets/images/news/nom.jpg">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Submit buttons -->
+                  <div class="col-12 mt-2" id="requestSubmitWrapper" style="display:none;">
                     <button type="submit" class="btn btn-bauxa me-2">
                       <i class="bi bi-send"></i> Enviar Solicitud
                     </button>
@@ -605,6 +765,7 @@
                       Cancelar
                     </button>
                   </div>
+
                 </div>
               </form>
             </div>

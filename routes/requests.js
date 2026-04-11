@@ -18,76 +18,81 @@ const router = Router();
 
 // POST /api/requests — create edit request (promotor or admin)
 router.post('/', requireRole('promotor', 'admin'), async (req, res) => {
-  const { entityType, entityId, action, proposedData, description } = req.body;
+  try {
+    const { entityType, entityId, action, proposedData, description } = req.body;
 
-  if (!['artist', 'event', 'news'].includes(entityType)) {
-    return res.status(400).json({ error: 'entityType invàlid (artist, event, news)' });
-  }
-  if (!['create', 'update'].includes(action)) {
-    return res.status(400).json({ error: 'action invàlida (create, update)' });
-  }
-  if (!proposedData || !description) {
-    return res.status(400).json({ error: 'Falten camps obligatoris: proposedData, description' });
-  }
-
-  // For updates, get current data snapshot
-  let currentObject = null;
-  if (action === 'update' && entityId) {
-    const contentData = readJSON(CONTENT_PATHS[entityType]);
-    const existing = contentData.itemListElement.find(el => el.item['@id'] === entityId);
-    if (!existing) {
-      return res.status(404).json({ error: 'Entitat no trobada' });
+    if (!['artist', 'event', 'news'].includes(entityType)) {
+      return res.status(400).json({ error: 'entityType invàlid (artist, event, news)' });
     }
-    currentObject = existing.item;
-  }
+    if (!['create', 'update'].includes(action)) {
+      return res.status(400).json({ error: 'action invàlida (create, update)' });
+    }
+    if (!proposedData || !description) {
+      return res.status(400).json({ error: 'Falten camps obligatoris: proposedData, description' });
+    }
 
-  const actionType = action === 'create' ? 'CreateAction' : 'UpdateAction';
-
-  let newRequest;
-  await writeJSONSafe(REQUESTS_PATH, async (data) => {
-    const { id, position } = generateId('request', data.itemListElement);
-
-    const requestItem = {
-      '@context': 'https://schema.org',
-      '@type': actionType,
-      '@id': id,
-      agent: {
-        '@type': 'Person',
-        '@id': req.userProfile['@id'],
-        name: req.userProfile.name,
-        email: req.userProfile.email
-      },
-      actionStatus: 'https://schema.org/PotentialActionStatus',
-      object: currentObject || {
-        '@type': 'Thing',
-        name: entityType,
-        description: `Nova entitat de tipus ${entityType}`
-      },
-      result: proposedData,
-      description,
-      startTime: new Date().toISOString(),
-      endTime: null,
-      instrument: {
-        '@type': 'Thing',
-        name: 'entityType',
-        description: entityType
+    // For updates, get current data snapshot
+    let currentObject = null;
+    if (action === 'update' && entityId) {
+      const contentData = readJSON(CONTENT_PATHS[entityType]);
+      const existing = contentData.itemListElement.find(el => el.item['@id'] === entityId);
+      if (!existing) {
+        return res.status(404).json({ error: 'Entitat no trobada' });
       }
-    };
-
-    if (entityId) {
-      requestItem.object['@id'] = entityId;
+      currentObject = existing.item;
     }
 
-    data.itemListElement.push({
-      '@type': 'ListItem',
-      position,
-      item: requestItem
-    });
-    data.numberOfItems = data.itemListElement.length;
-    newRequest = requestItem;
-  });
+    const actionType = action === 'create' ? 'CreateAction' : 'UpdateAction';
 
-  res.status(201).json({ success: true, request: newRequest });
+    let newRequest;
+    await writeJSONSafe(REQUESTS_PATH, async (data) => {
+      const { id, position } = generateId('request', data.itemListElement);
+
+      const requestItem = {
+        '@context': 'https://schema.org',
+        '@type': actionType,
+        '@id': id,
+        agent: {
+          '@type': 'Person',
+          '@id': req.userProfile['@id'],
+          name: req.userProfile.name,
+          email: req.userProfile.email
+        },
+        actionStatus: 'https://schema.org/PotentialActionStatus',
+        object: currentObject || {
+          '@type': 'Thing',
+          name: entityType,
+          description: `Nova entitat de tipus ${entityType}`
+        },
+        result: proposedData,
+        description,
+        startTime: new Date().toISOString(),
+        endTime: null,
+        instrument: {
+          '@type': 'Thing',
+          name: 'entityType',
+          description: entityType
+        }
+      };
+
+      if (entityId) {
+        requestItem.object['@id'] = entityId;
+      }
+
+      data.itemListElement.push({
+        '@type': 'ListItem',
+        position,
+        item: requestItem
+      });
+      data.numberOfItems = data.itemListElement.length;
+      newRequest = requestItem;
+    });
+
+    res.status(201).json({ success: true, request: newRequest });
+  } catch (err) {
+    console.error('[requests] POST error:', err);
+    res.status(500).json({ error: err.message || 'Error intern del servidor' });
+  }
 });
 
 // GET /api/requests — promotor sees own, admin sees all

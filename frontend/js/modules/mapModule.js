@@ -83,7 +83,7 @@ function createMarkerIcon(color) {
  * @returns {Object} Leaflet layer group containing all markers
  */
 export function addEventMarkers(map, events) {
-  const markers = L.layerGroup();
+  const markers = L.featureGroup();
 
   events.forEach(event => {
     const geo = event.location?.geo;

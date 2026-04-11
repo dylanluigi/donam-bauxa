@@ -3,7 +3,7 @@
   "@type": "ItemList",
   "name": "Artistes de Mallorca",
   "description": "Directori d'artistes i grups musicals de l'escena mallorquina",
-  "numberOfItems": 11,
+  "numberOfItems": 12,
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -616,6 +616,30 @@
             "value": false
           }
         ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "item": {
+        "@type": "MusicGroup",
+        "name": "Cabre Loke",
+        "description": "Millor grup de punk de Palma",
+        "genre": [
+          "Punk"
+        ],
+        "foundingDate": "2021",
+        "foundingLocation": {
+          "@type": "Place",
+          "name": "Son Sardina",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Son Sardina",
+            "addressRegion": "Mallorca"
+          }
+        },
+        "areaServed": "Palma",
+        "@id": "artist-12"
       }
     }
   ]
